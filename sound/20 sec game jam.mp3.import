@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/20 sec game jam.mp3-c29d73211a7d1f5bdfec2c3aab1f21bc.mp3str"
+
+[deps]
+
+source_file="res://sound/20 sec game jam.mp3"
+dest_files=[ "res://.import/20 sec game jam.mp3-c29d73211a7d1f5bdfec2c3aab1f21bc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

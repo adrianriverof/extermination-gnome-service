@@ -1,0 +1,146 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Prototiping/player.gd" type="Script" id=1]
+[ext_resource path="res://Prototiping/shotgun/shotgun_4.png" type="Texture" id=2]
+[ext_resource path="res://Prototiping/shotgun/shotgun_3.png" type="Texture" id=3]
+[ext_resource path="res://Prototiping/shotgun/shotgun_1.png" type="Texture" id=4]
+[ext_resource path="res://Prototiping/shotgun/shotgun_2.png" type="Texture" id=5]
+[ext_resource path="res://crosshair.png" type="Texture" id=6]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.5
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 0.2, 0.2, 0.5 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Head/Camera:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "WallRight"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head/Camera:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 15 ) ]
+}
+
+[node name="Player" type="KinematicBody"]
+collision_layer = 2
+script = ExtResource( 1 )
+ACCEL_TYPE = {
+"air": 5,
+"default": 10
+}
+
+[node name="PlayerCollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Laterals" type="Spatial" parent="."]
+
+[node name="WallCastRight" type="RayCast" parent="Laterals"]
+enabled = true
+cast_to = Vector3( 0.7, 0, 0 )
+
+[node name="WallCastLeft" type="RayCast" parent="Laterals"]
+enabled = true
+cast_to = Vector3( -0.7, 0, 0 )
+
+[node name="Head" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+
+[node name="Camera" type="Camera" parent="Head"]
+fov = 90.0
+
+[node name="RayCast" type="RayCast" parent="Head/Camera"]
+enabled = true
+cast_to = Vector3( 0, 0, -20 )
+
+[node name="CameraTween" type="Tween" parent="Head/Camera"]
+
+[node name="RightArm" type="MeshInstance" parent="Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.378335, -0.561418, -0.696038 )
+visible = false
+mesh = SubResource( 2 )
+
+[node name="LeftArm" type="MeshInstance" parent="Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.394099, -0.561418, -0.696038 )
+visible = false
+mesh = SubResource( 2 )
+
+[node name="Hand" type="Position3D" parent="Head"]
+transform = Transform( 1, 0, 0, 0, 0.999997, -0.00246091, 0, 0.00246091, 0.999997, 0, -0.728066, -1.40332 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+modulate = Color( 0.541176, 0.254902, 0.254902, 1 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_top = -123.0
+margin_bottom = -123.0
+
+[node name="shotgun_sprite" type="AnimatedSprite" parent="CanvasLayer/Control"]
+position = Vector2( 0, 38 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 3 )
+
+[node name="Position2D" type="Control" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="Crosshair" type="Sprite" parent="CanvasLayer/Position2D"]
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+texture = ExtResource( 6 )
+
+[node name="WallAnimation" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 5 )
+anims/WallRight = SubResource( 6 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="DashCooldownTimer" type="Timer" parent="."]
+one_shot = true

@@ -1,0 +1,46 @@
+
+
+
+Tareas
+
+	- Sacar las variables a export para modificar rapido tiempos de dash y tal
+	- subir proyecto a github 
+
+
+A implementar o ver si implemento
+
+
+Movimiento (PRIORIDAD)
+
+	Pulido:
+	
+	- Wallrun que mantenga pegado mientras no apunto delante
+	- dash partículas
+	- experimentar con variaciones del dash 
+			(titanfall, ultrakill, ...)
+
+
+
+Armas
+- Melee (multiarmas)
+		cuidado con expansibilidad
+- MultiRaycast para la escopeta*
+		# y reducir rango seguramente
+
+
+Enemigos
+- Movimiento elaborado
+- Aggro?
+
+
+Sistemas
+- Menú principal y escenas
+- control de audio y música
+- Puntuación
+
+- Leaderboard
+
+
+
+
+
