@@ -11,7 +11,7 @@ onready var impact_scene = preload("res://Prototiping/impact.tscn")
 
 
 # Constant variables for Movement
-export var SPEED = 10
+export var SPEED = 30
 export var GRAVITY = 20
 export var JUMP = 8
 export var FALL_MULTY = 1
@@ -74,7 +74,7 @@ func _manage_mouse_capture():
 
 func _input(event):
 	
-	_manage_mouse_capture()
+	_manage_mouse_capture()	
 	
 	# Get mouse input for camera rotation
 	
