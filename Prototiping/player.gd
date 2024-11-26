@@ -11,7 +11,7 @@ onready var impact_scene = preload("res://Prototiping/impact.tscn")
 
 
 # Constant variables for Movement
-export var SPEED = 30
+var SPEED = 30
 
 export var Run_Speed = 10
 export var Wall_Speed = 20
