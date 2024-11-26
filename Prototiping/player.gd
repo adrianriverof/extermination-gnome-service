@@ -12,6 +12,11 @@ onready var impact_scene = preload("res://Prototiping/impact.tscn")
 
 # Constant variables for Movement
 export var SPEED = 30
+
+export var Run_Speed = 10
+export var Wall_Speed = 20
+export var Dash_Speed = 20
+
 export var GRAVITY = 20
 export var JUMP = 8
 export var FALL_MULTY = 1
@@ -50,7 +55,6 @@ onready var WallCastLeft = $Laterals/WallCastLeft
 
 
 var is_dashing = false
-var dash_speed = 20
 var dash_duration = 0.3
 var original_head_height = 0.5
 var lowered_head_height = -0.5
@@ -129,12 +133,12 @@ func _move(delta):
 		
 		#movement.y = 0
 		#velocity.y = 0
-		SPEED = 20
+		SPEED = Wall_Speed #20
 	elif is_dashing:
-		SPEED = 20
+		SPEED = Dash_Speed #20
 		
 	else:
-		SPEED = 10
+		SPEED = Run_Speed #10
 		
 	# warning-ignore:return_value_discarded
 	move_and_slide_with_snap(movement, snap, Vector3.UP)
