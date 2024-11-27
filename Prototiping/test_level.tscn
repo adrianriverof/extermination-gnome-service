@@ -38,10 +38,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10682, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.70742, 1.10682, -8.28389 )
 
 [node name="enemy3" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.94875, 1.10682, -8.28389 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02425, 1.10682, -8.28389 )
 
 [node name="enemy4" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.94875, 1.10682, -3.53596 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.22008, 1.10682, -2.71592 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )

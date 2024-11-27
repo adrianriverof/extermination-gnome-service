@@ -1,4 +1,4 @@
-# Author Kamyab Nazari - 2021
+# Based on work by Kamyab Nazari - 2021
 
 extends KinematicBody
 
@@ -99,7 +99,7 @@ func theres_wall_right():
 func theres_wall_left():
 	if WallCastLeft.is_colliding() and !is_on_floor():
 		
-		print(WallCastLeft.get_collider().get_parent().name)
+		#print(WallCastLeft.get_collider().get_parent().name)
 		
 		if (WallCastLeft.get_collider().get_parent().name == "structure") or (WallCastLeft.get_collider().get_parent().name == "prueba 8"):
 			return true 
@@ -157,7 +157,7 @@ func _shoot():
 			var raycast = $Head/Camera/RayCast
 			
 			
-			for n in range(6):
+			for _n in range(6):
 				randomize()
 				#print("---", n)
 				var spread = 5
@@ -236,7 +236,7 @@ func _physics_process(delta):
 	
 	
 	if Input.is_action_pressed("dash") and is_on_floor() and $DashCooldownTimer.is_stopped() and movement != Vector3.ZERO:
-		print("dash")
+		#print("dash")
 		$DashCooldownTimer.start()
 		dash()
 		

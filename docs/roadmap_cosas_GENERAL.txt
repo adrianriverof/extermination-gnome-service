@@ -3,8 +3,8 @@
 
 Tareas
 
-	- Sacar las variables a export para modificar rapido tiempos de dash y tal
-	- subir proyecto a github 
+	- Sacar las variables a export para modificar rapido tiempos de dash y tal*
+	- subir proyecto a github *
 
 
 A implementar o ver si implemento
@@ -31,6 +31,8 @@ Armas
 Enemigos
 - Movimiento elaborado
 - Aggro?
+- gravedad
+- Enemigos de las paredes
 
 
 Sistemas
