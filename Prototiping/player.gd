@@ -11,9 +11,9 @@ onready var impact_scene = preload("res://Prototiping/impact.tscn")
 
 
 # Constant variables for Movement
-var SPEED = 30
+var SPEED = 30		
 
-export var Run_Speed = 10
+export var Run_Speed = 15
 export var Wall_Speed = 20
 export var Dash_Speed = 20
 
@@ -89,8 +89,10 @@ func _input(event):
 
 func theres_wall_right():
 	if WallCastRight.is_colliding() and !is_on_floor():
-		if WallCastRight.get_collider().get_parent().name == "structure":
-			return true 
+		if (WallCastRight.get_collider().get_parent().name == "structure") or (WallCastRight.get_collider().get_parent().name == "prueba 8"):
+			
+			return true
+			
 	return false
 #	WallCastRight.is_colliding()
 
@@ -99,7 +101,7 @@ func theres_wall_left():
 		
 		print(WallCastLeft.get_collider().get_parent().name)
 		
-		if (WallCastLeft.get_collider().get_parent().name == "structure") or (WallCastLeft.get_collider().get_parent().name == "prueba 1"):
+		if (WallCastLeft.get_collider().get_parent().name == "structure") or (WallCastLeft.get_collider().get_parent().name == "prueba 8"):
 			return true 
 	return false
 
