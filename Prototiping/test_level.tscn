@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Prototiping/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://NIVEL 8.glb" type="PackedScene" id=2]
 [ext_resource path="res://Prototiping/enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sound/20 sec game jam.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Prototiping/test_level.gd" type="Script" id=5]
 
 [sub_resource type="Environment" id=2]
 ambient_light_color = Color( 0.141176, 0.141176, 0.141176, 1 )
@@ -12,6 +13,7 @@ fog_color = Color( 0, 0, 0, 1 )
 fog_depth_end = 33.0
 
 [node name="test_level" type="Spatial"]
+script = ExtResource( 5 )
 
 [node name="structure" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.40023, 0 )
@@ -52,3 +54,14 @@ autoplay = true
 
 [node name="NIVEL 8" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.981, -0.979128, -2.39618 )
+
+[node name="UI" type="Control" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI"]
+margin_left = 428.0
+margin_top = 58.0
+margin_right = 525.0
+margin_bottom = 125.0
+text = "rtrtrtr"

@@ -241,6 +241,7 @@ func _physics_process(delta):
 		dash()
 		
 	
+	
 	if theres_wall_right():
 		tilt_camera(30) # Inclinación a la derecha
 	elif theres_wall_left():
