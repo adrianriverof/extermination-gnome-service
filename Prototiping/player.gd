@@ -9,6 +9,8 @@ extends KinematicBody
 
 onready var impact_scene = preload("res://Prototiping/impact.tscn")
 
+onready var level = get_parent()
+
 
 # Constant variables for Movement
 var SPEED = 30		
@@ -146,6 +148,7 @@ func _move(delta):
 	move_and_slide_with_snap(movement, snap, Vector3.UP)
 
 func _shoot():
+	
 	if Input.is_action_pressed("shoot"):
 		#spell_controller.cast()
 		#print("disparamos")
@@ -180,11 +183,15 @@ func _shoot():
 					else:
 						#print("spawn impact")
 						#print(coll_point)
+						
+						level.add_score(50)
+						
 						pass
 				
 				spawn_impact_at(coll_point)
 
 func dash():
+	level.add_score(143)
 	if is_dashing:
 		return # Evita múltiples dashes simultáneos
 	
@@ -244,8 +251,10 @@ func _physics_process(delta):
 	
 	if theres_wall_right():
 		tilt_camera(30) # Inclinación a la derecha
+		level.add_score(1)
 	elif theres_wall_left():
 		tilt_camera(-30) # Inclinación a la izquierda
+		level.add_score(1)
 	else:
 		tilt_camera(0) # Regresa a posición neutra
 	
@@ -267,11 +276,14 @@ func _physics_process(delta):
 	
 	
 	if Input.is_action_just_pressed("jump"):
+		level.add_score(20)
 		if is_on_floor():
 			double_jump_charged = true
 			snap = Vector3.ZERO
 			gravity_vec = Vector3.UP * JUMP
 		elif  is_wallruning():
+			
+			level.add_score(123)
 			
 			var walljumpdirection = 0
 			if theres_wall_right():
@@ -282,6 +294,8 @@ func _physics_process(delta):
 			
 			direction = Vector3(walljumpdirection, 0, 0).rotated(Vector3.UP, global_transform.basis.get_euler().y).normalized()
 			SPEED = 200
+			
+			level.add_score(37)
 			
 			
 			double_jump_charged = true
