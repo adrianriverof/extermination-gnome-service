@@ -5,6 +5,7 @@ export var reset_on_timeout = true
 
 export var total_time = 20
 onready var time_view = $UI/RichTextLabel
+var game_end = false
 
 onready var results_menu = preload("res://scenes/results.tscn")
 
@@ -18,7 +19,8 @@ func _physics_process(delta):
 	
 	if total_time <= 0:
 		total_time = 0
-		if reset_on_timeout:
+		if reset_on_timeout and !game_end:
+			game_end = true
 			show_results()
 
 
