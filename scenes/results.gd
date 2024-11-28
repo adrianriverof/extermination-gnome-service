@@ -15,8 +15,7 @@ func go_to_level():
 
 func _on_ButtonMenu_pressed():
 	go_to_menu()
-	print("eeeeee")
-	print(queue_free())
+	queue_free()
 	
 
 

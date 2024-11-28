@@ -1,6 +1,10 @@
 extends KinematicBody
 
 
+export var affected_by_gravity = true
+
+var gravity_vec = Vector3.ZERO
+var GRAVITY = 10
 var speed = 120.0
 
 export var target_to_follow : String = "Player"
@@ -30,8 +34,9 @@ func _physics_process(delta):
 	#print(destination)
 	
 	
+	if affected_by_gravity: _manage_gravity(delta)
+	
 	if moving:
-		#print("moving")
 		
 		var direction = (destination - global_transform.origin).normalized()
 		var distance_to_target = global_transform.origin.distance_to(destination)
@@ -41,14 +46,20 @@ func _physics_process(delta):
 			var motion = direction * speed * delta
 			self.look_at(Vector3(destination.x, self.translation.y, destination.z), Vector3.UP)
 			self.rotation.x= 0
-			#$compa/AnimationPlayer.play("walkin")
 			
-			motion = move_and_slide(motion)
-		#self.translation.y = player.altitude + 0.08# !!! recenter
-		
-#		else:
-#			$compa/AnimationPlayer.play("Iddle")
+			
+			motion = move_and_slide(motion + gravity_vec)
 	else:
 		#pass
 		print("not moving")
-		#$compa/AnimationPlayer.play("Iddle")
+
+
+func _manage_gravity(delta):
+	
+	if is_on_floor():
+		gravity_vec = Vector3.ZERO
+	else:
+		gravity_vec += Vector3.DOWN * GRAVITY * delta
+	
+	
+	
