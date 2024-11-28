@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Screenshot 2024-11-28 at 00-11-47 (1) intro trailer gnomos prueba 1 - YouTube.png-8287a395b2159f45b648e61eeb5d545c.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://scenes/dummy_intro/Screenshot 2024-11-28 at 00-11-47 (1) intro trailer gnomos prueba 1 - YouTube.png"
+dest_files=[ "res://.import/Screenshot 2024-11-28 at 00-11-47 (1) intro trailer gnomos prueba 1 - YouTube.png-8287a395b2159f45b648e61eeb5d545c.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
