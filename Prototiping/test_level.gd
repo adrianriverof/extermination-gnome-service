@@ -7,11 +7,20 @@ export var total_time = 20
 onready var time_view = $UI/RichTextLabel
 var game_end = false
 
+
+var score = 0
+onready var score_view = $UI/ScoreLabel
+
+
 onready var results_menu = preload("res://scenes/results.tscn")
+
+
 
 
 func _physics_process(delta):
 	
+	
+	score_view.text = str(score)
 	
 	total_time -= delta
 	
@@ -36,4 +45,6 @@ func show_results():
 	$Player.pause_mode = Node.PAUSE_MODE_STOP
 	self.pause_mode = PAUSE_MODE_STOP
 	
-	
+
+func add_score(points:int):
+	score += points

@@ -68,3 +68,20 @@ margin_right = 97.0
 margin_bottom = 67.0
 rect_scale = Vector2( 3, 3 )
 text = "rtrtrtr"
+
+[node name="Label" type="Label" parent="UI"]
+margin_left = 1545.0
+margin_top = 32.0
+margin_right = 1586.0
+margin_bottom = 63.0
+rect_scale = Vector2( 5, 5 )
+text = "SCORE
+"
+
+[node name="ScoreLabel" type="RichTextLabel" parent="UI"]
+margin_left = 1618.0
+margin_top = 127.0
+margin_right = 1676.0
+margin_bottom = 159.0
+rect_scale = Vector2( 5, 5 )
+text = "0"

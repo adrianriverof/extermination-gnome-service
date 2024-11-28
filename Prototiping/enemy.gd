@@ -24,6 +24,7 @@ func _ready():
 	
 func damage():
 	print("...enemy damaged")
+	get_parent().add_score(100)
 	queue_free()
 
 func _physics_process(delta):
