@@ -72,7 +72,7 @@ func _ready():
 func _manage_mouse_capture():
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") and !pause_mode == PAUSE_MODE_STOP:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 
