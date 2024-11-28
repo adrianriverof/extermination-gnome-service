@@ -32,7 +32,7 @@ const LEAN_MULT : float = 0.066
 const LEAM_AMOUNT : float = 0.7
 
 # Mouse sensitivity
-var mouse_sense = 0.3
+export var mouse_sense = 0.15
 var snap
 
 var currentStrafeDir = 0

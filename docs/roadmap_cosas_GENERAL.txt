@@ -30,6 +30,7 @@ Armas
 
 Enemigos
 - Movimiento elaborado
+- aleatorizar inicio si no hay aggro
 - Aggro?
 - gravedad
 - Enemigos de las paredes
@@ -41,6 +42,9 @@ Sistemas
 - Puntuación
 
 - Leaderboard
+- sensibilidad*
+- menú opciones? (sensibilidad)
+
 
 
 
