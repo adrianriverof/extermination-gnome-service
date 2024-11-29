@@ -41,6 +41,8 @@ var first_jump_charged = true
 var double_jump_charged = true
 
 
+var player_input_active = true
+
 
 # Vectors for movement
 var direction = Vector3()
@@ -76,6 +78,7 @@ func _ready():
 
 func _physics_process(delta):
 	
+	
 	_manage_dash()
 	
 	_manage_tilting()
@@ -106,6 +109,8 @@ func _physics_process(delta):
 
 
 func _input(event):
+	
+	if !player_input_active: return
 	
 	_manage_mouse_capture()	
 	
@@ -148,6 +153,9 @@ func is_wallruning():
 	
 
 func _get_keyboard_input():
+	
+	if !player_input_active: return
+	
 	direction = Vector3.ZERO
 	var h_rot = global_transform.basis.get_euler().y
 	var f_input = Input.get_action_strength("move_backward") - Input.get_action_strength("move_forward")
@@ -288,6 +296,9 @@ func init_dashbuffer():
 	$DashBufferTimer.start()
 
 func _manage_jump():
+	
+	
+	if !player_input_active: return
 	
 	if Input.is_action_pressed("jump") and is_on_floor():
 		first_jump_charged = false

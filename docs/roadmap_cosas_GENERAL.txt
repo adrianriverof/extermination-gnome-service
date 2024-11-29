@@ -1,10 +1,14 @@
 
 
 
-Tareas
+Tareas:
 
-	- Sacar las variables a export para modificar rapido tiempos de dash y tal*
-	- subir proyecto a github *
+- Que Ctrl+W no cierre la pestaña
+- Subir nueva versión a itch
+- Partículas y juice
+- quitar el control al jugador cuando el juego termina
+
+
 
 
 A implementar o ver si implemento
@@ -16,29 +20,27 @@ Movimiento (PRIORIDAD)
 	
 	- Wallrun que mantenga pegado mientras no apunto delante
 	- dash partículas
-	- experimentar con variaciones del dash 
-			(titanfall, ultrakill, ...)
-	- Buffers y coyote *
+
 
 
 Armas
 - Melee (multiarmas)
 		cuidado con expansibilidad
-- MultiRaycast para la escopeta*
-		# y reducir rango seguramente
+		consultar necesidad en diseño
+
+- Ajustar escopeta (dispersión, daño)
 
 
 Enemigos
 - Movimiento elaborado
 - aleatorizar inicio si no hay aggro
 - Aggro?
-- gravedad*
+
 - Enemigos de las paredes
-		coger el glb*
-		matable
-		
-- Nuevo modelo (glb)
-		faltan animaciones 
+		Animaciones
+		Movimiento (?)
+		Que te empuje
+
 
 
 Sistemas

@@ -15,6 +15,7 @@ fog_depth_end = 33.0
 
 [node name="test_level" type="Spatial"]
 script = ExtResource( 5 )
+total_time = 5
 
 [node name="structure" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.40023, 0 )
@@ -50,6 +51,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.22008, 1.10682, -2.71592 )
 environment = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 4 )
 autoplay = true
 

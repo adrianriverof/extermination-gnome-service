@@ -14,9 +14,11 @@ onready var score_view = $UI/ScoreLabel
 
 onready var results_menu = preload("res://scenes/results.tscn")
 
+func stop_player_control():
+	$Player.player_input_active = false
 
-
-
+func _ready():
+	get_tree().paused = false
 func _physics_process(delta):
 	
 	
@@ -39,7 +41,7 @@ func reload_level():
 
 func show_results():
 	
-	get_tree().get_root().add_child(results_menu.instance())
+	add_child(results_menu.instance())
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	#$Results.visible = true
 	$Player.pause_mode = Node.PAUSE_MODE_STOP
