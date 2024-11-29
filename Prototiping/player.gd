@@ -87,6 +87,7 @@ func _physics_process(delta):
 	
 	# Jumping and gravity
 	if is_on_floor() or is_wallruning():
+		#$BufferTimer.stop()
 		first_jump_charged = true
 		snap = -get_floor_normal()
 		accel = ACCEL_TYPE["default"]
@@ -274,13 +275,25 @@ func tilt_camera(target_angle: float, duration: float = 0.5):
 	tween.start()
 
 
+func buffer_active():
+	return !$BufferTimer.is_stopped()
+
+func init_buffer():
+	$BufferTimer.start()
+
+func dashbuffer_active():
+	return !$DashBufferTimer.is_stopped()
+
+func init_dashbuffer():
+	$DashBufferTimer.start()
+
 func _manage_jump():
 	
 	if Input.is_action_pressed("jump") and is_on_floor():
 		first_jump_charged = false
 		jump()
 		
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") or buffer_active():
 		level.add_score(20)
 		if is_on_floor():
 			first_jump_charged = false
@@ -310,7 +323,8 @@ func _manage_jump():
 		elif double_jump_charged:
 			jump()
 			double_jump_charged = false
-		
+		else:
+			if not buffer_active(): init_buffer()
 
 func jump():
 	double_jump_charged = true
@@ -318,11 +332,15 @@ func jump():
 	gravity_vec = Vector3.UP * JUMP
 
 func _manage_dash():
-	if Input.is_action_pressed("dash") and is_on_floor() and $DashCooldownTimer.is_stopped() and movement != Vector3.ZERO:
+	if (Input.is_action_pressed("dash") or dashbuffer_active()) \
+	and $DashCooldownTimer.is_stopped() \
+	and movement != Vector3.ZERO:
 		#print("dash")
-		$DashCooldownTimer.start()
-		dash()
-		
+		if is_on_floor():
+			$DashCooldownTimer.start()
+			dash()
+		elif !dashbuffer_active():
+			init_dashbuffer()
 	
 func _manage_tilting():
 	if theres_wall_right():

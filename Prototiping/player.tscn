@@ -145,3 +145,11 @@ anims/WallRight = SubResource( 6 )
 
 [node name="DashCooldownTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="BufferTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="DashBufferTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
