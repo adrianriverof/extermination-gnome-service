@@ -96,14 +96,9 @@ func _physics_process(delta):
 		accel = ACCEL_TYPE["air"]
 		gravity_vec += Vector3.DOWN * GRAVITY * delta
 	
-	
 	_manage_jump()
 	
-		
-	
-	# Moving
 	_move(delta)
-	
 	
 	_shoot()
 	
@@ -281,6 +276,10 @@ func tilt_camera(target_angle: float, duration: float = 0.5):
 
 func _manage_jump():
 	
+	if Input.is_action_pressed("jump") and is_on_floor():
+		first_jump_charged = false
+		jump()
+		
 	if Input.is_action_just_pressed("jump"):
 		level.add_score(20)
 		if is_on_floor():
