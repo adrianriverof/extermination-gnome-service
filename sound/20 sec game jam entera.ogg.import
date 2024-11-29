@@ -12,4 +12,4 @@ dest_files=[ "res://.import/20 sec game jam entera.ogg-872718c2e37b5678310efd56f
 [params]
 
 loop=true
-loop_offset=0
+loop_offset=31.15
