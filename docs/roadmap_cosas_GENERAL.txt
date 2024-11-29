@@ -18,7 +18,7 @@ Movimiento (PRIORIDAD)
 	- dash partículas
 	- experimentar con variaciones del dash 
 			(titanfall, ultrakill, ...)
-
+	- Buffers y coyote *
 
 
 Armas
@@ -34,7 +34,9 @@ Enemigos
 - Aggro?
 - gravedad*
 - Enemigos de las paredes
-		coger el glb
+		coger el glb*
+		matable
+		
 - Nuevo modelo (glb)
 		faltan animaciones 
 
