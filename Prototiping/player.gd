@@ -229,14 +229,15 @@ func _shoot():
 						#print("spawn impact")
 						#print(coll_point)
 						
-						level.add_score(50)
+						earn_score(50)
 						
 						pass
 				
 				spawn_impact_at(coll_point)
 
 func dash():
-	level.add_score(143)
+	
+	earn_score(143)
 	if is_dashing:
 		return # Evita múltiples dashes simultáneos
 	
@@ -307,13 +308,13 @@ func _manage_jump():
 		jump()
 		
 	if Input.is_action_just_pressed("jump") or buffer_active():
-		level.add_score(20)
+		earn_score(20)
 		if is_on_floor():
 			first_jump_charged = false
 			jump()
 		elif is_wallruning():
 			
-			level.add_score(123)
+			earn_score(123)
 			
 			var walljumpdirection = 0
 			if theres_wall_right():
@@ -325,7 +326,7 @@ func _manage_jump():
 			direction = Vector3(walljumpdirection, 0, 0).rotated(Vector3.UP, global_transform.basis.get_euler().y).normalized()
 			SPEED = 200
 			
-			level.add_score(37)
+			earn_score(37)
 			
 			first_jump_charged = false
 			jump()
@@ -358,10 +359,10 @@ func _manage_dash():
 func _manage_tilting():
 	if theres_wall_right():
 		tilt_camera(30) # Inclinación a la derecha
-		level.add_score(1)
+		earn_score(1)
 	elif theres_wall_left():
 		tilt_camera(-30) # Inclinación a la izquierda
-		level.add_score(1)
+		earn_score(1)
 	else:
 		tilt_camera(0) # Regresa a posición neutra
 	
@@ -379,6 +380,8 @@ func _on_Stats_died_signal():
 	queue_free()
 
 
-
+func earn_score(quantity):
+	if player_input_active:
+		level.add_score(quantity)
 
 
