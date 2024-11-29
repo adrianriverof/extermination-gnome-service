@@ -37,6 +37,7 @@ var snap
 
 var currentStrafeDir = 0
 
+var first_jump_charged = true
 var double_jump_charged = true
 
 
@@ -266,6 +267,7 @@ func _physics_process(delta):
 	
 	# Jumping and gravity
 	if is_on_floor() or is_wallruning():
+		first_jump_charged = true
 		snap = -get_floor_normal()
 		accel = ACCEL_TYPE["default"]
 		gravity_vec = Vector3.ZERO
@@ -278,6 +280,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		level.add_score(20)
 		if is_on_floor():
+			first_jump_charged = false
 			double_jump_charged = true
 			snap = Vector3.ZERO
 			gravity_vec = Vector3.UP * JUMP
@@ -301,10 +304,16 @@ func _physics_process(delta):
 			double_jump_charged = true
 			snap = Vector3.ZERO
 			gravity_vec = Vector3.UP * JUMP
+		elif first_jump_charged:
+			first_jump_charged = false
+			snap = Vector3.ZERO
+			gravity_vec = Vector3.UP * JUMP
+			double_jump_charged = true
 		elif double_jump_charged:
 			snap = Vector3.ZERO
 			gravity_vec = Vector3.UP * JUMP
 			double_jump_charged = false
+		
 	
 	# Moving
 	_move(delta)
