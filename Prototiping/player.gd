@@ -192,6 +192,8 @@ func _move(delta):
 
 func _shoot():
 	
+	if !player_input_active: return
+	
 	if Input.is_action_pressed("shoot"):
 		#spell_controller.cast()
 		#print("disparamos")
