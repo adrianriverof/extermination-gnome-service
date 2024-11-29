@@ -72,12 +72,42 @@ func _ready():
 
 
 
-func _manage_mouse_capture():
-	if Input.is_action_just_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	if Input.is_action_just_pressed("shoot") and !pause_mode == PAUSE_MODE_STOP:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+
+func _physics_process(delta):
 	
+	_manage_dash()
+	
+	_manage_tilting()
+	
+	
+	# Get keyboard input
+	_get_keyboard_input()
+	
+	
+	# Jumping and gravity
+	if is_on_floor() or is_wallruning():
+		first_jump_charged = true
+		snap = -get_floor_normal()
+		accel = ACCEL_TYPE["default"]
+		gravity_vec = Vector3.ZERO
+	else:
+		snap = Vector3.DOWN
+		accel = ACCEL_TYPE["air"]
+		gravity_vec += Vector3.DOWN * GRAVITY * delta
+	
+	
+	_manage_jump()
+	
+		
+	
+	# Moving
+	_move(delta)
+	
+	
+	_shoot()
+	
+
 
 func _input(event):
 	
@@ -89,6 +119,14 @@ func _input(event):
 		rotate_y(deg2rad(-event.relative.x * mouse_sense))
 		head.rotate_x(deg2rad(-event.relative.y * mouse_sense))
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-89), deg2rad(89))
+
+
+func _manage_mouse_capture():
+	if Input.is_action_just_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if Input.is_action_just_pressed("shoot") and !pause_mode == PAUSE_MODE_STOP:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 
 func theres_wall_right():
 	if WallCastRight.is_colliding() and !is_on_floor():
@@ -240,51 +278,15 @@ func tilt_camera(target_angle: float, duration: float = 0.5):
 	)
 	tween.start()
 
-func _physics_process(delta):
-	
-	
-	if Input.is_action_pressed("dash") and is_on_floor() and $DashCooldownTimer.is_stopped() and movement != Vector3.ZERO:
-		#print("dash")
-		$DashCooldownTimer.start()
-		dash()
-		
-	
-	
-	if theres_wall_right():
-		tilt_camera(30) # Inclinación a la derecha
-		level.add_score(1)
-	elif theres_wall_left():
-		tilt_camera(-30) # Inclinación a la izquierda
-		level.add_score(1)
-	else:
-		tilt_camera(0) # Regresa a posición neutra
-	
-	
-	
-	# Get keyboard input
-	_get_keyboard_input()
-	
-	
-	# Jumping and gravity
-	if is_on_floor() or is_wallruning():
-		first_jump_charged = true
-		snap = -get_floor_normal()
-		accel = ACCEL_TYPE["default"]
-		gravity_vec = Vector3.ZERO
-	else:
-		snap = Vector3.DOWN
-		accel = ACCEL_TYPE["air"]
-		gravity_vec += Vector3.DOWN * GRAVITY * delta
-	
+
+func _manage_jump():
 	
 	if Input.is_action_just_pressed("jump"):
 		level.add_score(20)
 		if is_on_floor():
 			first_jump_charged = false
-			double_jump_charged = true
-			snap = Vector3.ZERO
-			gravity_vec = Vector3.UP * JUMP
-		elif  is_wallruning():
+			jump()
+		elif is_wallruning():
 			
 			level.add_score(123)
 			
@@ -300,28 +302,40 @@ func _physics_process(delta):
 			
 			level.add_score(37)
 			
+			first_jump_charged = false
+			jump()
 			
-			double_jump_charged = true
-			snap = Vector3.ZERO
-			gravity_vec = Vector3.UP * JUMP
 		elif first_jump_charged:
 			first_jump_charged = false
-			snap = Vector3.ZERO
-			gravity_vec = Vector3.UP * JUMP
-			double_jump_charged = true
+			jump()
 		elif double_jump_charged:
-			snap = Vector3.ZERO
-			gravity_vec = Vector3.UP * JUMP
+			jump()
 			double_jump_charged = false
 		
-	
-	# Moving
-	_move(delta)
-	
-	
-	_shoot()
-	
 
+func jump():
+	double_jump_charged = true
+	snap = Vector3.ZERO
+	gravity_vec = Vector3.UP * JUMP
+
+func _manage_dash():
+	if Input.is_action_pressed("dash") and is_on_floor() and $DashCooldownTimer.is_stopped() and movement != Vector3.ZERO:
+		#print("dash")
+		$DashCooldownTimer.start()
+		dash()
+		
+	
+func _manage_tilting():
+	if theres_wall_right():
+		tilt_camera(30) # Inclinación a la derecha
+		level.add_score(1)
+	elif theres_wall_left():
+		tilt_camera(-30) # Inclinación a la izquierda
+		level.add_score(1)
+	else:
+		tilt_camera(0) # Regresa a posición neutra
+	
+	
 
 func spawn_impact_at(some_location):
 	var impact_instance = impact_scene.instance()
