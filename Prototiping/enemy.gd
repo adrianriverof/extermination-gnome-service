@@ -29,7 +29,7 @@ func damage():
 
 func _physics_process(delta):
 	
-	$CucamanAnimated/AnimationPlayer.play("Action")
+	$cucaman_model/AnimationPlayer.play("Running3")
 	
 	destination = player.translation
 	#print(destination)

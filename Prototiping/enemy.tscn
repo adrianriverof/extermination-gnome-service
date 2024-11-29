@@ -4,7 +4,7 @@
 [ext_resource path="res://Prototiping/enemy.gd" type="Script" id=2]
 [ext_resource path="res://Prototiping/cucaman_model.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/cucaman animated.tscn" type="PackedScene" id=4]
-[ext_resource path="res://models/cucaman bien con textura1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://models/cucaman_model_v5.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.570315
@@ -26,6 +26,7 @@ shape = SubResource( 1 )
 
 [node name="CucamanAnimated" parent="." instance=ExtResource( 4 )]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0351178, 0.0749956, -0.0464623 )
+visible = false
 
-[node name="cucaman bien con textura1" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.389, 0 )
+[node name="cucaman_model" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37, 0 )

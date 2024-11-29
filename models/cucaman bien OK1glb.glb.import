@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/cucaman bien con textura1.glb-2561f5e4eca85c6cde25aef3734bb5ca.scn"
+path="res://.import/cucaman bien OK1glb.glb-e431fbbfcbfa13f0e08ec504ae2a055f.scn"
 
 [deps]
 
-source_file="res://models/cucaman bien con textura1.glb"
-dest_files=[ "res://.import/cucaman bien con textura1.glb-2561f5e4eca85c6cde25aef3734bb5ca.scn" ]
+source_file="res://models/cucaman bien OK1glb.glb"
+dest_files=[ "res://.import/cucaman bien OK1glb.glb-e431fbbfcbfa13f0e08ec504ae2a055f.scn" ]
 
 [params]
 
