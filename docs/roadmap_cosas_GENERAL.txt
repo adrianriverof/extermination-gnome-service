@@ -36,6 +36,7 @@ Enemigos
 - Enemigos de las paredes
 		coger el glb
 - Nuevo modelo (glb)
+		faltan animaciones 
 
 
 Sistemas
