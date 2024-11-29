@@ -32,8 +32,10 @@ Enemigos
 - Movimiento elaborado
 - aleatorizar inicio si no hay aggro
 - Aggro?
-- gravedad
+- gravedad*
 - Enemigos de las paredes
+		coger el glb
+- Nuevo modelo (glb)
 
 
 Sistemas

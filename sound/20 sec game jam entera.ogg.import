@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/20 sec game jam entera.ogg-872718c2e37b5678310efd56f73b3354.oggstr"
+
+[deps]
+
+source_file="res://sound/20 sec game jam entera.ogg"
+dest_files=[ "res://.import/20 sec game jam entera.ogg-872718c2e37b5678310efd56f73b3354.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
