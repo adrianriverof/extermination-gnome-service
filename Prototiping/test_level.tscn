@@ -15,13 +15,13 @@ fog_depth_end = 33.0
 
 [node name="test_level" type="Spatial"]
 script = ExtResource( 5 )
-total_time = 5
 
 [node name="structure" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.40023, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4965, 1.05741, 0.357162 )
+mouse_sense = 0.1
 
 [node name="OmniLight" type="OmniLight" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.88467, 0 )
