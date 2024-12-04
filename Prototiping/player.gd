@@ -13,7 +13,7 @@ onready var level = get_parent()
 
 
 # Constant variables for Movement
-var SPEED = 30		
+var SPEED = 30
 
 export var Run_Speed = 15
 export var Wall_Speed = 20
@@ -380,8 +380,13 @@ func _on_Stats_died_signal():
 	queue_free()
 
 
+
 func earn_score(quantity):
 	if player_input_active:
 		level.add_score(quantity)
+
+
+
+
 
 

@@ -52,3 +52,12 @@ func show_results():
 
 func add_score(points:int):
 	score += points
+
+
+
+
+
+
+
+
+
