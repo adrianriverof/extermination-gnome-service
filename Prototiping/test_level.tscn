@@ -15,8 +15,7 @@ fog_depth_end = 33.0
 
 [node name="test_level" type="Spatial"]
 script = ExtResource( 5 )
-reset_on_timeout = false
-total_time = 1
+total_time = 10
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4965, 1.05741, 0.357162 )

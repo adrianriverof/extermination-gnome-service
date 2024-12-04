@@ -3,7 +3,8 @@
 
 Tareas:
 
-- Subir nueva versión a itch
+- ajustar entorno del nivel
+
 - Partículas y juice
 - camara lenta al terminar
 - caer al iniciar
@@ -22,9 +23,7 @@ Movimiento
 
 Armas
 - Melee (multiarmas, 2)
-
 - Ajustar escopeta (dispersión, daño)
-
 - arte de las armas: rotoscopia+pixel
 
 Enemigos
