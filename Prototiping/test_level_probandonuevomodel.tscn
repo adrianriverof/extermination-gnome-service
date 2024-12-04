@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Prototiping/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Prototiping/enemy.tscn" type="PackedScene" id=3]
@@ -7,6 +7,12 @@
 [ext_resource path="res://entities/cucapared.tscn" type="PackedScene" id=6]
 [ext_resource path="res://entities/huevo.tscn" type="PackedScene" id=7]
 [ext_resource path="res://entities/nivel_decorado.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Environment" id=1]
+ambient_light_color = Color( 0.141176, 0.141176, 0.141176, 1 )
+fog_enabled = true
+fog_color = Color( 0, 0, 0, 1 )
+fog_depth_end = 33.0
 
 [node name="test_level" type="Spatial"]
 script = ExtResource( 5 )
@@ -85,3 +91,6 @@ text = "0"
 
 [node name="Cucapared" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.0385845, 0.576247, -0.816364, -0.0272052, 0.817276, 0.575604, 0.998885, 0, 0.0472111, -7.03172, 11.5375, -21.6902 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
