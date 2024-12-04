@@ -57,7 +57,7 @@ func in_combo():
 	return false
 
 func segundos_en_combo():
-	return 1
+	return time_passed - last_kill_time
 
 
 
