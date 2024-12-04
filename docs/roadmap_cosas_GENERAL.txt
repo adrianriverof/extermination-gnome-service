@@ -3,33 +3,29 @@
 
 Tareas:
 
-- Que Ctrl+W no cierre la pestaña
 - Subir nueva versión a itch
 - Partículas y juice
-- quitar el control al jugador cuando el juego termina
-
+- camara lenta al terminar
+- caer al iniciar
 
 
 
 A implementar o ver si implemento
 
 
-Movimiento (PRIORIDAD)
+Movimiento
 
 	Pulido:
-	
-	- Wallrun que mantenga pegado mientras no apunto delante
-	- dash partículas
+	- Wallrun que mantenga pegado mientras no apunto delante (posiblemente fuera de scope)
 
 
 
 Armas
-- Melee (multiarmas)
-		cuidado con expansibilidad
-		consultar necesidad en diseño
+- Melee (multiarmas, 2)
 
 - Ajustar escopeta (dispersión, daño)
 
+- arte de las armas: rotoscopia+pixel
 
 Enemigos
 - Movimiento elaborado
