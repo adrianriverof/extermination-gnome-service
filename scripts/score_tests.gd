@@ -75,3 +75,21 @@ func test_dentro_de_combo_cuando_no_pasa_mas_del_combotime():
 	
 	
 	assert_eq(sut.in_combo(), true )
+	
+	
+func test_segundos_en_combo_son_los_segundos_que_llevamos_sin_perderlo():
+	
+	var sut = ScoreManager.new()
+	
+	sut.time_passed = 0
+	sut.matar_cuca()
+	sut.time_passed += 1 #pasa un segundo
+	
+	assert_eq(sut.segundos_en_combo(), 1 )
+
+
+
+
+
+
+
