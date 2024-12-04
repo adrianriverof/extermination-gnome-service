@@ -39,7 +39,3 @@ func test_last_kill_is_updated():
 	
 	assert_eq(sut.last_kill_time, 24 )
 
-
-
-
-

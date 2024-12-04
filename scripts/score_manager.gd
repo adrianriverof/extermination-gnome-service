@@ -25,7 +25,7 @@ func add_score(points:int):
 
 func matar_cuca():
 	add_score(puntos_cuca_segun_tiempo() * (multip_cuca_distancia + combo()))
-	last_kill_time = time_passed
+	update_last_time_killed()
 
 
 func matar_cuca_wallriding():
@@ -39,6 +39,8 @@ func puntos_cuca_segun_tiempo():
 	return puntos_por_cuca + 25*time_passed
 	
 
+func update_last_time_killed():
+	last_kill_time = time_passed
 
 func combo():
 	
