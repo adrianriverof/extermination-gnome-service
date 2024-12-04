@@ -98,7 +98,7 @@ func test_segundos_en_combo_son_0_si_lo_perdemos():
 	
 	assert_eq(sut.segundos_en_combo(), 0 )
 
-
+#func test_matar_cuca_
 
 
 

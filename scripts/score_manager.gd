@@ -43,12 +43,8 @@ func update_last_time_killed():
 	last_kill_time = time_passed
 
 func combo():
-	
-	#1 comprobar que hay combo
-	#2 añadir 3*tiempo en combo
-	if in_combo():
-		return 3 * segundos_en_combo()
-	else: return 1 
+	return 3 * segundos_en_combo()
+
 
 func in_combo():
 	
