@@ -25,23 +25,36 @@ func add_score(points:int):
 func matar_cuca():
 	add_score(puntos_cuca_segun_tiempo() * (multip_cuca_distancia + combo()))
 
+
+
 func matar_cuca_wallriding():
-	add_score(puntos_cuca_segun_tiempo() * (multip_cuca_distancia + 2) )
+	add_score(puntos_cuca_segun_tiempo() * (multip_cuca_distancia + combo()+ 2) )
 
 func matar_cuca_en_aire():
-	add_score(puntos_cuca_segun_tiempo() * (multip_cuca_distancia + 3) )
+	add_score(puntos_cuca_segun_tiempo() * (multip_cuca_distancia + combo()+ 3) )
 
 
 func puntos_cuca_segun_tiempo():
 	return puntos_por_cuca + 25*time_passed
+	
+
 
 func combo():
 	
 	#1 comprobar que hay combo
 	#2 añadir 3*tiempo en combo
-	
-	
-	
-	return 
+	if in_combo():
+		return 3 * segundos_en_combo()
+	else: return 1 
+
+func in_combo():
+	return true
+
+func segundos_en_combo():
+	return 1
+
+
+
+
 
 
