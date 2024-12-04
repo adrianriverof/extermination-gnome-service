@@ -7,6 +7,7 @@ var puntos_por_cuca = 100
 var multip_cuca_distancia = 2
 var multip_cuca_melee = 4
 
+var last_kill_time = 0.0
 
 
 var score = 0
@@ -24,7 +25,7 @@ func add_score(points:int):
 
 func matar_cuca():
 	add_score(puntos_cuca_segun_tiempo() * (multip_cuca_distancia + combo()))
-
+	last_kill_time = time_passed
 
 
 func matar_cuca_wallriding():
