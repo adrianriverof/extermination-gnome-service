@@ -9,7 +9,7 @@
  "font_color": "ffcccccc",
  "font_name": "CourierPrime",
  "font_size": 16,
- "hide_orphans": false,
+ "hide_orphans": true,
  "ignore_pause": false,
  "include_subdirs": false,
  "inner_class": null,

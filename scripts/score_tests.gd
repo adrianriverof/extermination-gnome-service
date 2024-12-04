@@ -87,6 +87,15 @@ func test_segundos_en_combo_son_los_segundos_que_llevamos_sin_perderlo():
 	
 	assert_eq(sut.segundos_en_combo(), 2 )
 
+func test_segundos_en_combo_son_0_si_lo_perdemos():
+	
+	var sut = ScoreManager.new()
+	
+	sut.time_passed = 0
+	sut.matar_cuca()
+	sut.time_passed += sut.combo_time + 0.1 # perdemos combo
+	
+	assert_eq(sut.segundos_en_combo(), 0 )
 
 
 
