@@ -25,3 +25,15 @@ func add_score(points:int):
 func matar_cuca():
 	add_score(puntos_por_cuca * multip_cuca_distancia * time_passed )
 
+func matar_cuca_wallriding():
+	add_score(puntos_por_cuca * (multip_cuca_distancia + 2) * time_passed )
+
+func matar_cuca_en_aire():
+	add_score(puntos_por_cuca * (multip_cuca_distancia + 3) * time_passed )
+
+
+
+
+
+
+
