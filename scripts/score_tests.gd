@@ -13,9 +13,12 @@ func test_theres_scoremanager():
 	
 	assert_not_null(sut)
 
-func test_en_combo():
+func test_en_combo_cuando_acabamos_de_matar():
 	
 	var sut = ScoreManager.new()
+	
+	sut.matar_cuca()
+	
 	
 	assert_eq(sut.in_combo(), true )
 
@@ -38,4 +41,6 @@ func test_last_kill_is_updated():
 	sut.matar_cuca()
 	
 	assert_eq(sut.last_kill_time, 24 )
+
+
 
