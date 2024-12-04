@@ -21,7 +21,7 @@
  "pre_run_script": "",
  "prefix": "",
  "selected": null,
- "should_exit": false,
+ "should_exit": true,
  "should_exit_on_success": false,
  "should_maximize": true,
  "compact_mode": false,
