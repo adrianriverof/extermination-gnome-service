@@ -83,9 +83,10 @@ func test_segundos_en_combo_son_los_segundos_que_llevamos_sin_perderlo():
 	
 	sut.time_passed = 0
 	sut.matar_cuca()
-	sut.time_passed += 2 #pasa dos segundo
+	var tiempoquepasa = sut.combo_time - 0.1
+	sut.time_passed += tiempoquepasa #pasa tiempo sin perderlo
 	
-	assert_eq(sut.segundos_en_combo(), 2 )
+	assert_eq(sut.segundos_en_combo(), tiempoquepasa )
 
 func test_segundos_en_combo_son_0_si_lo_perdemos():
 	
