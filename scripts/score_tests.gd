@@ -29,6 +29,16 @@ func test_last_kill():
 	assert_eq(sut.last_kill_time, 12 )
 
 
+func test_last_kill_is_updated():
+	var sut = ScoreManager.new()
+	
+	sut.time_passed = 12 
+	sut.matar_cuca()
+	sut.time_passed = 24 
+	sut.matar_cuca()
+	
+	assert_eq(sut.last_kill_time, 24 )
+
 
 
 
