@@ -141,7 +141,7 @@ func theres_wall_right():
 func theres_wall_left():
 	if WallCastLeft.is_colliding() and !is_on_floor():
 		
-		#print(WallCastLeft.get_collider().get_parent().name)
+		print(WallCastLeft.get_collider().get_parent().name)
 		
 		if (WallCastLeft.get_collider().get_parent().name == "structure") or (WallCastLeft.get_collider().get_parent().name == "prueba 8"):
 			return true 
