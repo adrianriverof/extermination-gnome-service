@@ -20,4 +20,15 @@ func test_en_combo():
 	assert_eq(sut.in_combo(), true )
 
 
+func test_last_kill():
+	var sut = ScoreManager.new()
+	
+	sut.time_passed = 12 
+	sut.matar_cuca()
+	
+	assert_eq(sut.last_kill_time, 12 )
+
+
+
+
 
