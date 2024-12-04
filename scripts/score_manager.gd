@@ -13,7 +13,7 @@ var last_kill_time = 0.0
 var score = 0
 
 var time_passed = 0
-
+var combo_time = 2
 
 
 func _calculate_time(delta):
@@ -51,7 +51,12 @@ func combo():
 	else: return 1 
 
 func in_combo():
-	return true
+	
+	if (time_passed - last_kill_time) < combo_time:
+		return true 
+	
+	
+	return false
 
 func segundos_en_combo():
 	return 1
