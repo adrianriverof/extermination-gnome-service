@@ -54,8 +54,6 @@ func in_combo():
 	
 	if (time_passed - last_kill_time) < combo_time:
 		return true 
-	
-	
 	return false
 
 func segundos_en_combo():

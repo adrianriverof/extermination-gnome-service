@@ -52,6 +52,15 @@ func test_fuera_de_combo_cuando_hace_1000s_que_matamos():
 	sut.matar_cuca()
 	sut.time_passed = 1000
 	
-	
 	assert_eq(sut.in_combo(), false )
 
+func test_fuera_de_combo_cuando_pasa_mas_del_combotime():
+	
+	var sut = ScoreManager.new()
+	
+	sut.time_passed = 24
+	sut.matar_cuca()
+	sut.time_passed += sut.combo_time + 0.1
+	
+	
+	assert_eq(sut.in_combo(), false )
