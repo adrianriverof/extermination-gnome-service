@@ -13,4 +13,11 @@ func test_theres_scoremanager():
 	
 	assert_not_null(sut)
 
+func test_en_combo():
+	
+	var sut = ScoreManager.new()
+	
+	assert_eq(sut.in_combo(), true )
+
+
 
