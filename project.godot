@@ -9,24 +9,12 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
-"class": "GutHookScript",
-"language": "GDScript",
-"path": "res://addons/gut/hook_script.gd"
-}, {
-"base": "Node",
-"class": "GutTest",
-"language": "GDScript",
-"path": "res://addons/gut/test.gd"
-}, {
 "base": "Node",
 "class": "Scoremanager",
 "language": "GDScript",
 "path": "res://scripts/score_manager.gd"
 } ]
 _global_script_class_icons={
-"GutHookScript": "",
-"GutTest": "",
 "Scoremanager": ""
 }
 
@@ -50,10 +38,6 @@ window/size/test_width=1280
 window/size/test_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
-
-[editor_plugins]
-
-enabled=PoolStringArray( "res://addons/gut/plugin.cfg" )
 
 [global]
 
