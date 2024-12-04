@@ -71,7 +71,11 @@ func segundos_en_combo():
 	return 0
 
 
+func golpear_huevo():
+	score *= 3
 
+func golpear_huevo_ultimo_segundo():
+	score *= 6
 
 
 
