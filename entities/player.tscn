@@ -1,6 +1,6 @@
 [gd_scene load_steps=60 format=2]
 
-[ext_resource path="res://Prototiping/player.gd" type="Script" id=1]
+[ext_resource path="res://entities/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/weapons/BATE/bat1.png0013.png" type="Texture" id=2]
 [ext_resource path="res://assets/weapons/BATE/bat1.png0012.png" type="Texture" id=3]
 [ext_resource path="res://assets/weapons/BATE/bat1.png0011.png" type="Texture" id=4]

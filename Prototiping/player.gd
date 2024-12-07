@@ -24,7 +24,7 @@ export var JUMP = 8
 export var FALL_MULTY = 1
 export var JUMP_MULTY = 1
 export var CAM_ACCEL = 40
-export var ACCEL_TYPE = {"default": 10, "air": 1}
+export var ACCEL_TYPE = {"default": 10, "air": 5}
 
 # Strafe leaning
 const LEAN_SMOOTH : float = 10.0
@@ -204,8 +204,8 @@ func _shoot():
 	if Input.is_action_pressed("shoot"):
 		#spell_controller.cast()
 		#print("disparamos")
-		var shotgun = $CanvasLayer/Control/ShotgunShoot 
-		if !shotgun.playing or shotgun.frame == 11:
+		var shotgun = $CanvasLayer/Control/shotgun_sprite 
+		if !shotgun.playing or shotgun.frame == 6:
 			shotgun.frame = 0
 			shotgun.playing = true
 			
