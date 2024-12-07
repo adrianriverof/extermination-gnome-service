@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://models/scenary/Maderass.material" type="Material" id=1]
 [ext_resource path="res://models/scenary/Mar.material" type="Material" id=2]
@@ -12,6 +12,13 @@
 [ext_resource path="res://models/scenary/villacuca.material" type="Material" id=10]
 [ext_resource path="res://models/scenary/Carcasahuevo.material" type="Material" id=11]
 [ext_resource path="res://models/scenary/matric.material" type="Material" id=12]
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_unshaded = true
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.05
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "NIVELDEF1_Cube003"
@@ -170,9 +177,12 @@ data = PoolVector3Array( 13.9484, 14.9339, -0.2346, -8.3322, 17.0211, 10.0728, -
 
 [node name="NIVELDEF" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.99983, 0.018456, 0, -0.018456, 0.99983, 3.46825, 10.3502, 17.9394 )
+material_overlay = SubResource( 4 )
+cast_shadow = 0
 mesh = SubResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="NIVELDEF"]
+visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="NIVELDEF/StaticBody"]
 shape = SubResource( 2 )
