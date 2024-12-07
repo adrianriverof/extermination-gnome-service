@@ -25,7 +25,8 @@ Movimiento
 Armas
 - Melee (multiarmas, 2)
 - Ajustar escopeta (dispersión, daño)
-- arte de las armas: rotoscopia+pixel
+- elegir cuando recarga, cuando golpea con bate
+
 
 Enemigos
 - Movimiento elaborado
