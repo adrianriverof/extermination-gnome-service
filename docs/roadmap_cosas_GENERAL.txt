@@ -6,19 +6,7 @@ Tareas:
 - ajustar entorno del nivel
 
 - Partículas y juice
-- camara lenta al terminar*
 - caer al iniciar
-
-
-
-
-A implementar o ver si implemento
-
-
-Movimiento
-
-	Pulido:
-	- Wallrun que mantenga pegado mientras no apunto delante (posiblemente fuera de scope)
 
 
 
@@ -42,19 +30,18 @@ Enemigos
 
 Sistemas
 
-
-- Puntuación
-
-
+- Puntuación (conexión con interfaz)
 - menú opciones? 
 	- sensibilidad
 	- control de audio y música
-
 - Leaderboard
 
 
-- Menú principal y escenas*
-- sensibilidad*
+
+
+PULIDO
+
+- Wallrun que mantenga pegado mientras no apunto delante (posiblemente fuera de scope)
 
 
 
