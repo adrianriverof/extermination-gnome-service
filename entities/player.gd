@@ -226,6 +226,8 @@ func _shoot():
 	
 	
 	if Input.is_action_just_pressed("shoot"):
+		$CanvasLayer/Position2D/AnimatedCrosshair/ShakeTween.start()
+		#$CanvasLayer/Position2D/Crosshair/ShakeTween.start()
 		#spell_controller.cast()
 		#print("disparamos")
 		
@@ -234,6 +236,7 @@ func _shoot():
 		else: 
 			weapon_sprite.frame = 0
 			weapon_sprite.play("noammo")
+			
 			return
 		
 		if !weapon_sprite.playing or weapon_sprite.frame > repeat_frame:
@@ -502,6 +505,7 @@ func reload_ammo():
 	animated_crosshair.play("default")
 
 func sync_ammo():
+	
 	animated_crosshair.frame = ammunition
 
 ############

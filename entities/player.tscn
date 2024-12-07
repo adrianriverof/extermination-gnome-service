@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://entities/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/weapons/BATE/bat1.png0013.png" type="Texture" id=2]
@@ -63,6 +63,7 @@
 [ext_resource path="res://assets/UI/balas/6 BALAS.png" type="Texture" id=61]
 [ext_resource path="res://assets/UI/balas/2 BALAS.png" type="Texture" id=62]
 [ext_resource path="res://assets/UI/balas/1 BALA.png" type="Texture" id=63]
+[ext_resource path="res://shaketween/ShakeTween.tscn" type="PackedScene" id=64]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -189,6 +190,13 @@ texture = ExtResource( 6 )
 [node name="AnimatedCrosshair" type="AnimatedSprite" parent="CanvasLayer/Position2D"]
 frames = SubResource( 5 )
 frame = 6
+
+[node name="ShakeTween" parent="CanvasLayer/Position2D/AnimatedCrosshair" instance=ExtResource( 64 )]
+pivot_below = false
+x_max = 0
+y_max = 10
+r_max = 10
+STOP_THRESHOLD = 0.1
 
 [node name="Tween" type="Tween" parent="."]
 
