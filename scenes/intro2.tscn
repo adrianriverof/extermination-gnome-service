@@ -1,0 +1,525 @@
+[gd_scene load_steps=49 format=2]
+
+[ext_resource path="res://scenes/iNTRO/Splashing Around.mp3" type="AudioStream" id=1]
+[ext_resource path="res://scenes/iNTRO/GNOMOCHUNG/1G.png0007.png" type="Texture" id=2]
+[ext_resource path="res://scenes/iNTRO/GNOMOCHUNG/1G.png0001.png" type="Texture" id=3]
+[ext_resource path="res://scenes/iNTRO/GNOMOCHUNG/1G.png0006.png" type="Texture" id=4]
+[ext_resource path="res://scenes/iNTRO/GNOMOCHUNG/1G.png0008.png" type="Texture" id=5]
+[ext_resource path="res://scenes/iNTRO/GNOMOCHUNG/1G.png0010.png" type="Texture" id=6]
+[ext_resource path="res://scenes/iNTRO/GNOMOCHUNG/1G.png0000.png" type="Texture" id=7]
+[ext_resource path="res://scenes/iNTRO/GNOMOCHUNG/1G.png0011.png" type="Texture" id=8]
+[ext_resource path="res://scenes/iNTRO/GNOMOCHUNG/1G.png0012.png" type="Texture" id=9]
+[ext_resource path="res://scenes/iNTRO/GNOMOCHUNG/1G.png0002.png" type="Texture" id=10]
+[ext_resource path="res://scenes/iNTRO/GNOMOCHUNG/1G.png0004.png" type="Texture" id=11]
+[ext_resource path="res://scenes/iNTRO/GNOMOCHUNG/1G.png0009.png" type="Texture" id=12]
+[ext_resource path="res://scenes/iNTRO/GNOMOCHUNG/1G.png0003.png" type="Texture" id=13]
+[ext_resource path="res://scenes/iNTRO/GNOMOCHUNG/1G.png0005.png" type="Texture" id=14]
+[ext_resource path="res://scenes/iNTRO/FONDOS/F1.png" type="Texture" id=15]
+[ext_resource path="res://scenes/iNTRO/FONDOS/F3.png" type="Texture" id=16]
+[ext_resource path="res://scenes/iNTRO/FONDOS/banda.png" type="Texture" id=17]
+[ext_resource path="res://scenes/iNTRO/FONDOS/F2.png" type="Texture" id=18]
+[ext_resource path="res://scenes/iNTRO/gnomos/3A.png" type="Texture" id=19]
+[ext_resource path="res://scenes/iNTRO/gnomos/3B.png" type="Texture" id=20]
+[ext_resource path="res://scenes/iNTRO/gnomos/2b.png" type="Texture" id=21]
+[ext_resource path="res://scenes/iNTRO/gnomos/2a.png" type="Texture" id=22]
+[ext_resource path="res://scenes/iNTRO/gnomos/1B.png" type="Texture" id=23]
+[ext_resource path="res://scenes/iNTRO/gnomos/1A.png" type="Texture" id=24]
+[ext_resource path="res://scenes/iNTRO/gnomos/4a.png" type="Texture" id=25]
+[ext_resource path="res://scenes/iNTRO/gnomos/4b.png" type="Texture" id=26]
+[ext_resource path="res://scenes/iNTRO/Textos/TC3.png" type="Texture" id=27]
+[ext_resource path="res://scenes/iNTRO/Textos/TC1.png" type="Texture" id=28]
+[ext_resource path="res://scenes/iNTRO/Textos/TC2.png" type="Texture" id=29]
+[ext_resource path="res://scenes/iNTRO/Textos/TD1.png" type="Texture" id=30]
+[ext_resource path="res://scenes/iNTRO/Textos/TD3.png" type="Texture" id=31]
+[ext_resource path="res://scenes/iNTRO/Textos/TD2.png" type="Texture" id=32]
+[ext_resource path="res://scenes/iNTRO/chun.wav" type="AudioStream" id=33]
+[ext_resource path="res://scenes/iNTRO/Textos/TA.png" type="Texture" id=34]
+[ext_resource path="res://scenes/iNTRO/Textos/TB.png" type="Texture" id=35]
+[ext_resource path="res://scenes/iNTRO/Textos/TE.png" type="Texture" id=36]
+[ext_resource path="res://scenes/intro2.gd" type="Script" id=37]
+[ext_resource path="res://fonts/Jacquard_24/Jacquard24-Regular.ttf" type="DynamicFontData" id=38]
+
+[sub_resource type="Animation" id=7]
+resource_name = "Intro 1"
+length = 17.0
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("INTROPLAYER/F1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3.79 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("INTROPLAYER/Banda:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("INTROPLAYER/Banda2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("INTROPLAYER/G1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5, 3.79 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("INTROPLAYER/F2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3.79, 6.16393, 7.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("INTROPLAYER/g2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 3.79, 6.16394, 7.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("INTROPLAYER/g2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 3.79, 7.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 966.667, 539.5 ), Vector2( 1000, 539.5 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("INTROPLAYER/G1:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 3.79 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1025, 546 ), Vector2( 975, 546 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("INTROPLAYER/F3:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 6.78, 8.47287 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("INTROPLAYER/G3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 9.02973, 10.6481 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("INTROPLAYER/tututitu:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.82, 12.69 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("INTROPLAYER/TC:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 6.14, 8.47286 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("fondo:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("INTROPLAYER/TC:frame")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 5.76835, 6.75835, 7.36835 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("INTROPLAYER/TD:frame")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 8.15835, 8.95009, 9.57286 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("INTROPLAYER/TD:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0.00286448, 8.53287, 10.5881 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("INTROPLAYER/g4:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0.00813842, 10.6481 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("INTROPLAYER/GnomoChung:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0.018929, 12.6974 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("INTROPLAYER/drama:playing")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 12.6, 12.73 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("INTROPLAYER/GnomoChung:scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 12.6943 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("INTROPLAYER/TA:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 1.49582, 3.79707 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("INTROPLAYER/TB:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 1.89515, 3.79707, 6.17396 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("INTROPLAYER/TE:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0.0042665, 10.6343, 12.6795 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("fondo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 24 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 27 ) ],
+"loop": false,
+"name": "default",
+"speed": 0.95
+} ]
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 30 ), ExtResource( 32 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 12 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="DynamicFont" id=11]
+size = 62
+font_data = ExtResource( 38 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 37 )
+
+[node name="INTROPLAYER" type="AnimationPlayer" parent="."]
+autoplay = "Intro 1"
+method_call_mode = 1
+"anims/Intro 1" = SubResource( 7 )
+anims/RESET = SubResource( 8 )
+
+[node name="tututitu" type="AudioStreamPlayer2D" parent="INTROPLAYER"]
+position = Vector2( 993, 549 )
+scale = Vector2( 2.16667, 2.16667 )
+stream = ExtResource( 1 )
+
+[node name="drama" type="AudioStreamPlayer2D" parent="INTROPLAYER"]
+position = Vector2( 993, 549 )
+scale = Vector2( 2.16667, 2.16667 )
+stream = ExtResource( 33 )
+
+[node name="F3" type="Sprite" parent="INTROPLAYER"]
+visible = false
+position = Vector2( 949, 543 )
+scale = Vector2( 1.44467, 1.44467 )
+texture = ExtResource( 16 )
+
+[node name="F2" type="Sprite" parent="INTROPLAYER"]
+visible = false
+position = Vector2( 961, 540.25 )
+scale = Vector2( 1.44467, 1.44467 )
+texture = ExtResource( 18 )
+
+[node name="F1" type="Sprite" parent="INTROPLAYER"]
+position = Vector2( 961, 540.25 )
+scale = Vector2( 1.44467, 1.44467 )
+texture = ExtResource( 15 )
+
+[node name="g4" type="AnimatedSprite" parent="INTROPLAYER"]
+position = Vector2( 969, 538.5 )
+scale = Vector2( 1.444, 1.444 )
+frames = SubResource( 6 )
+frame = 1
+playing = true
+
+[node name="G3" type="AnimatedSprite" parent="INTROPLAYER"]
+visible = false
+position = Vector2( 947.667, 538 )
+scale = Vector2( 1.44533, 1.44533 )
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="g2" type="AnimatedSprite" parent="INTROPLAYER"]
+visible = false
+position = Vector2( 1000, 539.5 )
+scale = Vector2( 1.43067, 1.43067 )
+frames = SubResource( 4 )
+frame = 1
+playing = true
+
+[node name="G1" type="AnimatedSprite" parent="INTROPLAYER"]
+visible = false
+position = Vector2( 975, 546 )
+scale = Vector2( 1.43067, 1.43067 )
+frames = SubResource( 5 )
+frame = 1
+playing = true
+
+[node name="TC" type="AnimatedSprite" parent="INTROPLAYER"]
+visible = false
+position = Vector2( 237, 8 )
+scale = Vector2( 1.43067, 1.43067 )
+frames = SubResource( 9 )
+frame = 2
+centered = false
+
+[node name="TD" type="AnimatedSprite" parent="INTROPLAYER"]
+visible = false
+position = Vector2( 937, 553 )
+scale = Vector2( 1.43067, 1.43067 )
+frames = SubResource( 10 )
+frame = 2
+
+[node name="GnomoChung" type="AnimatedSprite" parent="INTROPLAYER"]
+position = Vector2( 960, 540 )
+frames = SubResource( 1 )
+frame = 22
+playing = true
+
+[node name="Banda" type="Sprite" parent="INTROPLAYER"]
+position = Vector2( 114.544, 749 )
+scale = Vector2( 8.92593, 58.0909 )
+texture = ExtResource( 17 )
+offset = Vector2( -0.00487614, -4.92332 )
+
+[node name="Banda2" type="Sprite" parent="INTROPLAYER"]
+position = Vector2( 1802.05, 785 )
+scale = Vector2( 9.40741, 58.0909 )
+texture = ExtResource( 17 )
+offset = Vector2( -0.00487614, -4.92332 )
+
+[node name="TA" type="Sprite" parent="INTROPLAYER"]
+visible = false
+position = Vector2( 937, 553 )
+scale = Vector2( 1.43067, 1.43067 )
+texture = ExtResource( 34 )
+
+[node name="TB" type="Sprite" parent="INTROPLAYER"]
+visible = false
+position = Vector2( 962, 537 )
+scale = Vector2( 1.432, 1.42667 )
+texture = ExtResource( 35 )
+
+[node name="TE" type="Sprite" parent="INTROPLAYER"]
+position = Vector2( 937, 553 )
+scale = Vector2( 1.43067, 1.43067 )
+texture = ExtResource( 36 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="INTROPLAYER"]
+margin_left = 1699.0
+margin_top = 874.0
+margin_right = 1913.0
+margin_bottom = 1077.0
+custom_fonts/normal_font = SubResource( 11 )
+text = "Press again to skip"
+
+[node name="fondo" type="Sprite" parent="."]
+scale = Vector2( 160.639, 127.091 )
+texture = ExtResource( 17 )
