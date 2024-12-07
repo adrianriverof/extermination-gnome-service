@@ -64,6 +64,10 @@ var dash_duration = 0.3
 var original_head_height = 0.5
 var lowered_head_height = -0.5
 
+onready var weapon_sprite = $CanvasLayer/Control/ShotgunShoot 
+enum weapon {SHOTGUN, BATE}
+var weapon_selected = weapon.BATE
+
 
 func _ready():
 	randomize()
@@ -204,10 +208,10 @@ func _shoot():
 	if Input.is_action_pressed("shoot"):
 		#spell_controller.cast()
 		#print("disparamos")
-		var shotgun = $CanvasLayer/Control/ShotgunShoot 
-		if !shotgun.playing or shotgun.frame == 11:
-			shotgun.frame = 0
-			shotgun.playing = true
+		
+		if !weapon_sprite.playing or weapon_sprite.frame > 10:
+			weapon_sprite.frame = 0
+			weapon_sprite.playing = true
 			
 			var raycast = $Head/Camera/RayCast
 			
