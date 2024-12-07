@@ -110,6 +110,13 @@ func _physics_process(delta):
 
 func _input(event):
 	
+	if event is InputEventKey and event.pressed:
+		# Verifica si Ctrl está presionado y la tecla es 'W'
+		if event.control and event.scancode == KEY_W:
+			# Consume el evento para que no llegue al navegador
+			#event.accept()
+			print("Ctrl + W interceptado")
+		
 	if !player_input_active: return
 	
 	_manage_mouse_capture()	
