@@ -6,7 +6,7 @@ extends Node2D
 
 func go_to_level():
 	print("nos vamos al nivel")
-	get_tree().change_scene("res://Prototiping/test_level.tscn")
+	get_tree().change_scene("res://levels/test_level.tscn")
 
 
 func _input(event):

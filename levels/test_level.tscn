@@ -1,14 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Prototiping/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Prototiping/3x3_texture_128.png" type="Texture" id=2]
+[ext_resource path="res://entities/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://NIVEL 8.glb" type="PackedScene" id=2]
 [ext_resource path="res://Prototiping/enemy.tscn" type="PackedScene" id=3]
-[ext_resource path="res://sound/20 sec game jam.mp3" type="AudioStream" id=4]
-
-[sub_resource type="SpatialMaterial" id=1]
-params_diffuse_mode = 1
-albedo_color = Color( 0.564706, 0.564706, 0.564706, 1 )
-albedo_texture = ExtResource( 2 )
+[ext_resource path="res://sound/20 sec game jam entera.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Prototiping/test_level.gd" type="Script" id=5]
+[ext_resource path="res://entities/cucapared.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Environment" id=2]
 ambient_light_color = Color( 0.141176, 0.141176, 0.141176, 1 )
@@ -17,61 +14,12 @@ fog_color = Color( 0, 0, 0, 1 )
 fog_depth_end = 33.0
 
 [node name="test_level" type="Spatial"]
-
-[node name="structure" type="Spatial" parent="."]
-
-[node name="CSGBox" type="CSGBox" parent="structure"]
-use_collision = true
-width = 38.5291
-height = 0.185475
-depth = 37.6862
-material = SubResource( 1 )
-
-[node name="CSGBox2" type="CSGBox" parent="structure"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.5274, 0 )
-use_collision = true
-width = 38.5291
-height = 0.185475
-depth = 37.6862
-material = SubResource( 1 )
-
-[node name="CSGBox3" type="CSGBox" parent="structure"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -18.6012, 6.65565, -0.091011 )
-use_collision = true
-width = 38.5291
-height = 0.185475
-depth = 37.6862
-material = SubResource( 1 )
-
-[node name="CSGBox4" type="CSGBox" parent="structure"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 19.6065, 6.65565, -0.091011 )
-use_collision = true
-width = 38.5291
-height = 0.185475
-depth = 37.6862
-material = SubResource( 1 )
-
-[node name="CSGBox5" type="CSGBox" parent="structure"]
-transform = Transform( 4.0275e-15, 4.37114e-08, 1, 1, -4.37114e-08, -2.11682e-15, 4.37114e-08, 1, -4.37114e-08, 1.71716, 6.65565, 19.0652 )
-use_collision = true
-width = 38.5291
-height = 0.185475
-depth = 72.8953
-material = SubResource( 1 )
-
-[node name="CSGBox6" type="CSGBox" parent="structure"]
-transform = Transform( 4.0275e-15, 4.37114e-08, 1, 1, -4.37114e-08, -2.11682e-15, 4.37114e-08, 1, -4.37114e-08, -0.711871, 6.65565, -19.1563 )
-use_collision = true
-width = 38.5291
-height = 0.185475
-depth = 51.48
-material = SubResource( 1 )
+script = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.56329, 1.55368, 4.3586 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.4154, 1.77457, 0 )
 
 [node name="OmniLight" type="OmniLight" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.88467, 0 )
 light_color = Color( 1, 0.0470588, 0.0470588, 1 )
 omni_range = 7.915
 
@@ -89,13 +37,52 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10682, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.70742, 1.10682, -8.28389 )
 
 [node name="enemy3" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.94875, 1.10682, -8.28389 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02425, 1.10682, -8.28389 )
 
 [node name="enemy4" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.94875, 1.10682, -3.53596 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.22008, 1.10682, -2.71592 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 4 )
+autoplay = true
+
+[node name="NIVEL 8" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.981, -0.979128, -2.39618 )
+
+[node name="UI" type="Control" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.061
+anchor_right = 0.5
+anchor_bottom = 0.061
+margin_right = 97.0
+margin_bottom = 67.0
+rect_scale = Vector2( 3, 3 )
+text = "rtrtrtr"
+
+[node name="Label" type="Label" parent="UI"]
+margin_left = 1545.0
+margin_top = 32.0
+margin_right = 1586.0
+margin_bottom = 63.0
+rect_scale = Vector2( 5, 5 )
+text = "SCORE
+"
+
+[node name="ScoreLabel" type="RichTextLabel" parent="UI"]
+margin_left = 1618.0
+margin_top = 127.0
+margin_right = 1676.0
+margin_bottom = 159.0
+rect_scale = Vector2( 5, 5 )
+text = "0"
+
+[node name="Cucapared" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.0385845, 0.576247, -0.816364, -0.0272052, 0.817276, 0.575604, 0.998885, 0, 0.0472111, -7.03172, 11.5375, -21.6902 )
