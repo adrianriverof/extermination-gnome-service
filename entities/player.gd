@@ -71,6 +71,10 @@ onready var animated_crosshair = $CanvasLayer/Position2D/AnimatedCrosshair
 const MAX_AMMUNITION = 6
 var ammunition = MAX_AMMUNITION
 
+const DISTANCIA_MELEE = 3
+const DISTANCIA_RANGE = 15
+const SPREAD_RANGE = 2
+const SPREAD_MELEE = 5
 
 
 func _ready():
@@ -240,10 +244,11 @@ func _shoot():
 			var raycast = $Head/Camera/RayCast
 			
 			
+			raycast.cast_to.z = -DISTANCIA_RANGE
 			for _n in range(6):
 				randomize()
 				#print("---", n)
-				var spread = 5
+				var spread = SPREAD_RANGE
 				
 				raycast.cast_to.x = rand_range(-spread, spread)
 				raycast.cast_to.y = rand_range(-spread, spread)
@@ -278,7 +283,7 @@ func _melee():
 		
 		if !weapon_sprite.playing or weapon_sprite.frame > repeat_frame:
 			
-			reload_ammo()
+			reload_ammo() # !!! en el futuro solo si mata enemigo
 			
 			weapon_sprite.animation = "bate"
 			weapon_sprite.frame = 0
@@ -286,11 +291,11 @@ func _melee():
 			
 			var raycast = $Head/Camera/RayCast
 			
-			
-			for _n in range(6):
+			raycast.cast_to.z = -DISTANCIA_MELEE
+			for _n in range(10):
 				randomize()
 				#print("---", n)
-				var spread = 5
+				var spread = SPREAD_MELEE
 				
 				raycast.cast_to.x = rand_range(-spread, spread)
 				raycast.cast_to.y = rand_range(-spread, spread)
