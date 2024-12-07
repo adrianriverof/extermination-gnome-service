@@ -94,10 +94,6 @@ animations = [ {
 [node name="Player" type="KinematicBody"]
 collision_layer = 2
 script = ExtResource( 1 )
-ACCEL_TYPE = {
-"air": 5,
-"default": 10
-}
 
 [node name="PlayerCollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
