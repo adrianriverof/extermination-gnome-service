@@ -65,8 +65,7 @@ var original_head_height = 0.5
 var lowered_head_height = -0.5
 
 onready var weapon_sprite = $CanvasLayer/Control/ShotgunShoot 
-enum weapon {SHOTGUN, BATE}
-var weapon_selected = weapon.BATE
+var repeat_frame = 9
 
 
 func _ready():
@@ -109,8 +108,16 @@ func _physics_process(delta):
 	_move(delta)
 	
 	_shoot()
+	_melee()
+	
+	_regresar_a_escopeta()
 	
 
+func _regresar_a_escopeta():
+	if weapon_sprite.frame == 10:
+		weapon_sprite.animation = "neworder"
+		weapon_sprite.playing = false
+	# añadir aquí bamboleo al poner y quitar arma?
 
 func _input(event):
 	
@@ -205,11 +212,13 @@ func _shoot():
 	
 	if !player_input_active: return
 	
+	
 	if Input.is_action_pressed("shoot"):
 		#spell_controller.cast()
 		#print("disparamos")
 		
-		if !weapon_sprite.playing or weapon_sprite.frame > 10:
+		if !weapon_sprite.playing or weapon_sprite.frame > repeat_frame:
+			weapon_sprite.animation = "neworder"
 			weapon_sprite.frame = 0
 			weapon_sprite.playing = true
 			
@@ -245,6 +254,55 @@ func _shoot():
 						pass
 				
 				spawn_impact_at(coll_point)
+
+func _melee():
+	if !player_input_active: return
+	
+	if Input.is_action_pressed("melee"):
+		
+		
+		if !weapon_sprite.playing or weapon_sprite.frame > repeat_frame:
+			weapon_sprite.animation = "bate"
+			weapon_sprite.frame = 0
+			weapon_sprite.playing = true
+			
+			var raycast = $Head/Camera/RayCast
+			
+			
+			for _n in range(6):
+				randomize()
+				#print("---", n)
+				var spread = 5
+				
+				raycast.cast_to.x = rand_range(-spread, spread)
+				raycast.cast_to.y = rand_range(-spread, spread)
+				#print(raycast.cast_to)
+				#print(rand_range(-spread, spread))
+				
+				raycast.force_raycast_update()
+				
+				var coll = raycast.get_collider()
+				var coll_point = raycast.get_collision_point()
+				#print("punto de colisión = ", coll_point)
+				
+				if raycast.is_colliding():
+					if coll.has_method("damage"):
+						coll.damage()
+						#spawn_impact_at(coll_point)
+					else:
+						#print("spawn impact")
+						#print(coll_point)
+						
+						earn_score(50)
+						
+						pass
+				
+				spawn_impact_at(coll_point)
+	
+
+
+
+
 
 func dash():
 	
