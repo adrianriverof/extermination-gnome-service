@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://entities/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/weapons/BATE/bat1.png0013.png" type="Texture" id=2]
@@ -56,6 +56,13 @@
 [ext_resource path="res://assets/weapons/RELOAD/0000.png0017.png" type="Texture" id=54]
 [ext_resource path="res://assets/weapons/RELOAD/0000.png0016.png" type="Texture" id=55]
 [ext_resource path="res://assets/weapons/BATE/bat1.png0014.png" type="Texture" id=56]
+[ext_resource path="res://assets/UI/balas/0 BALAS.png" type="Texture" id=57]
+[ext_resource path="res://assets/UI/balas/5 BALAS.png" type="Texture" id=58]
+[ext_resource path="res://assets/UI/balas/4 BALAS.png" type="Texture" id=59]
+[ext_resource path="res://assets/UI/balas/3 BALAS.png" type="Texture" id=60]
+[ext_resource path="res://assets/UI/balas/6 BALAS.png" type="Texture" id=61]
+[ext_resource path="res://assets/UI/balas/2 BALAS.png" type="Texture" id=62]
+[ext_resource path="res://assets/UI/balas/1 BALA.png" type="Texture" id=63]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -88,6 +95,14 @@ animations = [ {
 "frames": [ ExtResource( 38 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 51 ), ExtResource( 49 ), ExtResource( 35 ), ExtResource( 50 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 54 ), ExtResource( 28 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 48 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 32 ), ExtResource( 31 ) ],
 "loop": false,
 "name": "reload",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 57 ), ExtResource( 63 ), ExtResource( 62 ), ExtResource( 60 ), ExtResource( 59 ), ExtResource( 58 ), ExtResource( 61 ) ],
+"loop": false,
+"name": "default",
 "speed": 5.0
 } ]
 
@@ -161,8 +176,13 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 
 [node name="Crosshair" type="Sprite" parent="CanvasLayer/Position2D"]
+visible = false
 modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
 texture = ExtResource( 6 )
+
+[node name="AnimatedCrosshair" type="AnimatedSprite" parent="CanvasLayer/Position2D"]
+frames = SubResource( 5 )
+frame = 6
 
 [node name="Tween" type="Tween" parent="."]
 

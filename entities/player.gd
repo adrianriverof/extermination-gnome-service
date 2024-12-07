@@ -66,6 +66,11 @@ var lowered_head_height = -0.5
 
 onready var weapon_sprite = $CanvasLayer/Control/ShotgunShoot 
 var repeat_frame = 9
+onready var animated_crosshair = $CanvasLayer/Position2D/AnimatedCrosshair
+
+const MAX_AMMUNITION = 6
+var ammunition = MAX_AMMUNITION
+
 
 
 func _ready():
@@ -455,7 +460,21 @@ func earn_score(quantity):
 		level.add_score(quantity)
 
 
+## Ammo y tal, esto debería estar en su propia clase
 
+func _theres_ammo():
+	return ammunition > 0
 
+func waste_ammo():
+	if _theres_ammo():
+		ammunition = ammunition - 1
+
+func reload_ammo():
+	ammunition = MAX_AMMUNITION
+
+func sync_ammo():
+	animated_crosshair.frame = ammunition
+
+############
 
 

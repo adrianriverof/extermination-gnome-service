@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI/GnomeCam/GC 2.png" type="Texture" id=1]
+[ext_resource path="res://UI/GnomeCam/GC 3.png" type="Texture" id=2]
+[ext_resource path="res://UI/GnomeCam/GC 1.png" type="Texture" id=3]
+[ext_resource path="res://UI/GnomeCam/GC SHOT.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "IDDLE",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "SHOT",
+"speed": 5.0
+} ]
+
+[node name="GnomoCam" type="Node2D"]
+
+[node name="countdown" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 954, 550 )
+frames = SubResource( 1 )
+animation = "IDDLE"
+playing = true
+
+[node name="Game 1" type="AnimatedSprite" parent="."]
+position = Vector2( 1009, 940 )
+scale = Vector2( 0.422222, 0.422222 )
+frames = SubResource( 1 )
+animation = "SHOT"
+playing = true
+
+[node name="Game Shot" type="AnimatedSprite" parent="."]
+position = Vector2( 1009, 940 )
+scale = Vector2( 0.422222, 0.422222 )
+frames = SubResource( 1 )
+animation = "IDDLE"
+playing = true

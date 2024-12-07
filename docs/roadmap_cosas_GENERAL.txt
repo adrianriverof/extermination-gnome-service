@@ -11,7 +11,7 @@ Tareas:
 
 
 Armas
-- Melee (multiarmas, 2)
+- Ajustar melee (un raycast, cercano, partículas)
 - Ajustar escopeta (dispersión, daño)
 - elegir cuando recarga, cuando golpea con bate
 
