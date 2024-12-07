@@ -204,8 +204,8 @@ func _shoot():
 	if Input.is_action_pressed("shoot"):
 		#spell_controller.cast()
 		#print("disparamos")
-		var shotgun = $CanvasLayer/Control/shotgun_sprite 
-		if !shotgun.playing or shotgun.frame == 6:
+		var shotgun = $CanvasLayer/Control/ShotgunShoot 
+		if !shotgun.playing or shotgun.frame == 11:
 			shotgun.frame = 0
 			shotgun.playing = true
 			
