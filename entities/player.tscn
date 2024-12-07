@@ -187,7 +187,6 @@ modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
 texture = ExtResource( 6 )
 
 [node name="AnimatedCrosshair" type="AnimatedSprite" parent="CanvasLayer/Position2D"]
-modulate = Color( 0.741176, 0, 0, 1 )
 frames = SubResource( 5 )
 frame = 6
 

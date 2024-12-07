@@ -1,18 +1,19 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://entities/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://enviroments/test_enviroment.tres" type="Environment" id=2]
 [ext_resource path="res://Prototiping/enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sound/20 sec game jam entera.ogg" type="AudioStream" id=4]
-[ext_resource path="res://Prototiping/test_level.gd" type="Script" id=5]
+[ext_resource path="res://levels/level_1.gd" type="Script" id=5]
 [ext_resource path="res://entities/cucapared.tscn" type="PackedScene" id=6]
 [ext_resource path="res://entities/huevo.tscn" type="PackedScene" id=7]
 [ext_resource path="res://entities/nivel_decorado.tscn" type="PackedScene" id=8]
 
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 20.0955, 1, 16.2815 )
+
 [node name="test_level" type="Spatial"]
 script = ExtResource( 5 )
-reset_on_timeout = false
-total_time = 1
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.00441569, 0, -0.99999, 0, 1, 0, 0.99999, 0, 0.00441569, -43.3173, 4.47524, 0.217205 )
@@ -88,3 +89,11 @@ transform = Transform( 0.0385845, 0.576247, -0.816364, -0.0272052, 0.817276, 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 2 )
+
+[node name="Water" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Water"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -12.6909, 0 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Water" to="." method="_on_Water_body_entered"]

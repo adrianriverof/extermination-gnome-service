@@ -14,8 +14,10 @@ onready var score_view = $UI/ScoreLabel
 
 onready var results_menu = preload("res://scenes/results.tscn")
 
+onready var player = $Player
+
 func stop_player_control():
-	$Player.player_input_active = false
+	player.player_input_active = false
 
 func _ready():
 	get_tree().paused = false
@@ -46,10 +48,26 @@ func show_results():
 	add_child(results_menu.instance())
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	#$Results.visible = true
-	$Player.pause_mode = Node.PAUSE_MODE_STOP
+	player.pause_mode = Node.PAUSE_MODE_STOP
 	self.pause_mode = PAUSE_MODE_STOP
 	
 
 func add_score(points:int):
 	score += points
 
+
+
+
+
+
+
+func respawn_player():
+	player.velocity = Vector3.ZERO
+	player.translation = Vector3(-43.317, 4.475, 0.217)
+
+
+
+func _on_Water_body_entered(body):
+	print("cuerpo al agua")
+	if body.name == "Player":
+		respawn_player()

@@ -1,19 +1,26 @@
 
 
 
-Tareas:
-
+Level:
 - ajustar entorno del nivel
-
-- Partículas y juice
 - caer al iniciar
+- Al caer al agua reaparecer
+
+
+Sonido
+- disparo
+- salto
+- caida
+- dash
+- wallride
+- impactos
 
 
 
 Armas
-- Ajustar melee (un raycast, cercano, partículas)
-- Ajustar escopeta (dispersión, daño)
-- elegir cuando recarga, cuando golpea con bate
+- partículas distintas (disparo/melee)
+- agujero de bala
+- Partículas y juice
 
 
 Enemigos
@@ -34,6 +41,8 @@ Sistemas
 - menú opciones? 
 	- sensibilidad
 	- control de audio y música
+	- brillo
+	
 - Leaderboard
 
 
