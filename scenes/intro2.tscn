@@ -319,6 +319,20 @@ tracks/22/keys = {
 "update": 1,
 "values": [ false, true, false ]
 }
+tracks/23/type = "method"
+tracks/23/path = NodePath(".")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 17 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "go_to_menu"
+} ]
+}
 
 [sub_resource type="Animation" id=8]
 length = 0.001
@@ -427,6 +441,7 @@ scale = Vector2( 1.44467, 1.44467 )
 texture = ExtResource( 18 )
 
 [node name="F1" type="Sprite" parent="INTROPLAYER"]
+visible = false
 position = Vector2( 961, 540.25 )
 scale = Vector2( 1.44467, 1.44467 )
 texture = ExtResource( 15 )
@@ -435,7 +450,6 @@ texture = ExtResource( 15 )
 position = Vector2( 969, 538.5 )
 scale = Vector2( 1.444, 1.444 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="G3" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -443,7 +457,6 @@ visible = false
 position = Vector2( 947.667, 538 )
 scale = Vector2( 1.44533, 1.44533 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="g2" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -451,7 +464,6 @@ visible = false
 position = Vector2( 1000, 539.5 )
 scale = Vector2( 1.43067, 1.43067 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="G1" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -459,7 +471,6 @@ visible = false
 position = Vector2( 975, 546 )
 scale = Vector2( 1.43067, 1.43067 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="TC" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -480,7 +491,7 @@ frame = 2
 [node name="GnomoChung" type="AnimatedSprite" parent="INTROPLAYER"]
 position = Vector2( 960, 540 )
 frames = SubResource( 1 )
-frame = 22
+frame = 13
 playing = true
 
 [node name="Banda" type="Sprite" parent="INTROPLAYER"]
@@ -508,6 +519,7 @@ scale = Vector2( 1.432, 1.42667 )
 texture = ExtResource( 35 )
 
 [node name="TE" type="Sprite" parent="INTROPLAYER"]
+visible = false
 position = Vector2( 937, 553 )
 scale = Vector2( 1.43067, 1.43067 )
 texture = ExtResource( 36 )
@@ -523,3 +535,9 @@ text = "Press again to skip"
 [node name="fondo" type="Sprite" parent="."]
 scale = Vector2( 160.639, 127.091 )
 texture = ExtResource( 17 )
+
+[node name="SkipTextTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="SkipTextTimer" to="." method="_on_SkipTextTimer_timeout"]

@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="shooter20s"
-run/main_scene="res://scenes/intro.tscn"
+run/main_scene="res://scenes/intro2.tscn"
 config/icon="res://icon.png"
 
 [debug]
