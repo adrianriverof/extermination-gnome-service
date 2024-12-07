@@ -6,8 +6,9 @@ Tareas:
 - ajustar entorno del nivel
 
 - Partículas y juice
-- camara lenta al terminar
+- camara lenta al terminar*
 - caer al iniciar
+
 
 
 
@@ -39,15 +40,20 @@ Enemigos
 
 
 Sistemas
-- Menú principal y escenas
-- control de audio y música
+
+
 - Puntuación
 
+
+- menú opciones? 
+	- sensibilidad
+	- control de audio y música
+
 - Leaderboard
+
+
+- Menú principal y escenas*
 - sensibilidad*
-- menú opciones? (sensibilidad)
-
-
 
 
 

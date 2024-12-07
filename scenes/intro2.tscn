@@ -447,6 +447,7 @@ scale = Vector2( 1.44467, 1.44467 )
 texture = ExtResource( 15 )
 
 [node name="g4" type="AnimatedSprite" parent="INTROPLAYER"]
+visible = false
 position = Vector2( 969, 538.5 )
 scale = Vector2( 1.444, 1.444 )
 frames = SubResource( 6 )
@@ -468,7 +469,7 @@ playing = true
 
 [node name="G1" type="AnimatedSprite" parent="INTROPLAYER"]
 visible = false
-position = Vector2( 975, 546 )
+position = Vector2( 1025, 546 )
 scale = Vector2( 1.43067, 1.43067 )
 frames = SubResource( 5 )
 playing = true
@@ -489,9 +490,10 @@ frames = SubResource( 10 )
 frame = 2
 
 [node name="GnomoChung" type="AnimatedSprite" parent="INTROPLAYER"]
+visible = false
 position = Vector2( 960, 540 )
 frames = SubResource( 1 )
-frame = 13
+frame = 2
 playing = true
 
 [node name="Banda" type="Sprite" parent="INTROPLAYER"]
