@@ -218,11 +218,16 @@ func _shoot():
 	if !player_input_active: return
 	
 	
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("shoot") and _theres_ammo():
 		#spell_controller.cast()
 		#print("disparamos")
 		
+		
+		
 		if !weapon_sprite.playing or weapon_sprite.frame > repeat_frame:
+			
+			waste_ammo()
+			sync_ammo()
 			weapon_sprite.animation = "neworder"
 			weapon_sprite.frame = 0
 			weapon_sprite.playing = true
