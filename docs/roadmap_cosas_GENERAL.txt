@@ -3,8 +3,7 @@
 
 Level:
 - ajustar entorno del nivel
-- caer al iniciar
-- Al caer al agua reaparecer
+- montar interfaz
 
 
 Sonido
@@ -17,12 +16,6 @@ Sonido
 
 
 
-Armas
-- partículas distintas (disparo/melee)
-- agujero de bala
-- Partículas y juice
-
-
 Enemigos
 - Movimiento elaborado
 - aleatorizar inicio si no hay aggro
@@ -32,6 +25,7 @@ Enemigos
 		Animaciones
 		Movimiento (?)
 		Que te empuje
+
 
 
 
@@ -49,6 +43,14 @@ Sistemas
 
 
 PULIDO
+
+
+Armas
+- partículas distintas (disparo/melee)
+- agujero de bala
+- Partículas y juice
+
+
 
 - Wallrun que mantenga pegado mientras no apunto delante (posiblemente fuera de scope)
 

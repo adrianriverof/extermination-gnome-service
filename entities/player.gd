@@ -138,10 +138,12 @@ func _input(event):
 			#event.accept()
 			print("Ctrl + W interceptado")
 		
-	if !player_input_active: return
 	
-	_manage_mouse_capture()	
 	
+	_manage_mouse_capture()
+	
+	if !player_input_active or Input.mouse_mode != Input.MOUSE_MODE_CAPTURED: 
+		return
 	# Get mouse input for camera rotation
 	
 	if event is InputEventMouseMotion:

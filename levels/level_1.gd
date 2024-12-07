@@ -71,3 +71,8 @@ func _on_Water_body_entered(body):
 	print("cuerpo al agua")
 	if body.name == "Player":
 		respawn_player()
+	
+	# aquí podemos hacerles damages a los enemigos
+
+
+
