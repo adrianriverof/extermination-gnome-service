@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Prototiping/player.gd" type="Script" id=1]
 [ext_resource path="res://Prototiping/shotgun/shotgun_4.png" type="Texture" id=2]
@@ -20,48 +20,6 @@ animations = [ {
 "name": "default",
 "speed": 7.0
 } ]
-
-[sub_resource type="Animation" id=5]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Head/Camera:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=6]
-resource_name = "WallRight"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Head/Camera:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 15 ) ]
-}
 
 [node name="Player" type="KinematicBody"]
 collision_layer = 2
@@ -136,10 +94,6 @@ anchor_bottom = 0.5
 [node name="Crosshair" type="Sprite" parent="CanvasLayer/Position2D"]
 modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
 texture = ExtResource( 6 )
-
-[node name="WallAnimation" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 5 )
-anims/WallRight = SubResource( 6 )
 
 [node name="Tween" type="Tween" parent="."]
 

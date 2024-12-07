@@ -17,7 +17,7 @@ fog_depth_end = 33.0
 script = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.4154, 1.77457, 0 )
+transform = Transform( -0.267827, 0, -0.963467, 0, 1, 0, 0.963467, 0, -0.267827, -40.4154, 2.67337, 0 )
 
 [node name="OmniLight" type="OmniLight" parent="Player"]
 light_color = Color( 1, 0.0470588, 0.0470588, 1 )
