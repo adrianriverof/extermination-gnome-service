@@ -54,6 +54,7 @@ var movement = Vector3()
 onready var accel = ACCEL_TYPE["default"]
 onready var head = $Head
 onready var camera = $Head/Camera
+onready var raycast = $Head/Camera/RayCast
 
 onready var WallCastRight = $Laterals/WallCastRight
 onready var WallCastLeft = $Laterals/WallCastLeft
@@ -283,13 +284,13 @@ func _melee():
 		
 		if !weapon_sprite.playing or weapon_sprite.frame > repeat_frame:
 			
-			reload_ammo() # !!! en el futuro solo si mata enemigo
+			
 			
 			weapon_sprite.animation = "bate"
 			weapon_sprite.frame = 0
 			weapon_sprite.playing = true
 			
-			var raycast = $Head/Camera/RayCast
+			
 			
 			raycast.cast_to.z = -DISTANCIA_MELEE
 			for _n in range(10):
@@ -311,6 +312,8 @@ func _melee():
 				if raycast.is_colliding():
 					if coll.has_method("damage"):
 						coll.damage()
+						reload_ammo() 
+						
 						#spawn_impact_at(coll_point)
 					else:
 						#print("spawn impact")
