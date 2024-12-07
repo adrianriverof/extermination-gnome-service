@@ -1,13 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Prototiping/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://NIVEL 8.glb" type="PackedScene" id=2]
 [ext_resource path="res://Prototiping/enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sound/20 sec game jam entera.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Prototiping/test_level.gd" type="Script" id=5]
 [ext_resource path="res://entities/cucapared.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/huevo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/nivel_decorado.tscn" type="PackedScene" id=8]
 
-[sub_resource type="Environment" id=2]
+[sub_resource type="Environment" id=1]
 ambient_light_color = Color( 0.141176, 0.141176, 0.141176, 1 )
 fog_enabled = true
 fog_color = Color( 0, 0, 0, 1 )
@@ -15,6 +16,8 @@ fog_depth_end = 33.0
 
 [node name="test_level" type="Spatial"]
 script = ExtResource( 5 )
+reset_on_timeout = false
+total_time = 1
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4965, 1.05741, 0.357162 )
@@ -44,15 +47,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02425, 1.10682, -8.28389 )
 [node name="enemy4" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.22008, 1.10682, -2.71592 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 4 )
 
-[node name="NIVEL 8" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.981, -0.979128, -2.39618 )
+[node name="structure" type="Spatial" parent="."]
+
+[node name="structure" parent="structure" instance=ExtResource( 8 )]
+
+[node name="huevo" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.941, 0, 0, 0, 0.941, 0, 0, 0, 0.941, -6.82456, 27.1881, -7.05528 )
 
 [node name="UI" type="Control" parent="."]
 margin_right = 1920.0
@@ -87,3 +91,6 @@ text = "0"
 
 [node name="Cucapared" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.0385845, 0.576247, -0.816364, -0.0272052, 0.817276, 0.575604, 0.998885, 0, 0.0472111, -7.03172, 11.5375, -21.6902 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )

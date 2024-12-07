@@ -19,6 +19,7 @@ func stop_player_control():
 
 func _ready():
 	get_tree().paused = false
+	Engine.time_scale = 1
 func _physics_process(delta):
 	
 	
@@ -33,6 +34,7 @@ func _physics_process(delta):
 		if reset_on_timeout and !game_end:
 			game_end = true
 			show_results()
+			Engine.time_scale = 0.1
 
 
 
@@ -50,3 +52,12 @@ func show_results():
 
 func add_score(points:int):
 	score += points
+
+
+
+
+
+
+
+
+

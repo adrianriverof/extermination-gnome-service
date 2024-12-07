@@ -13,7 +13,7 @@ onready var level = get_parent()
 
 
 # Constant variables for Movement
-var SPEED = 30		
+var SPEED = 30
 
 export var Run_Speed = 15
 export var Wall_Speed = 20
@@ -148,7 +148,7 @@ func theres_wall_right():
 func theres_wall_left():
 	if WallCastLeft.is_colliding() and !is_on_floor():
 		
-		#print(WallCastLeft.get_collider().get_parent().name)
+		print(WallCastLeft.get_collider().get_parent().name)
 		
 		if (WallCastLeft.get_collider().get_parent().name == "structure") or (WallCastLeft.get_collider().get_parent().name == "prueba 8"):
 			return true 
@@ -387,8 +387,13 @@ func _on_Stats_died_signal():
 	queue_free()
 
 
+
 func earn_score(quantity):
 	if player_input_active:
 		level.add_score(quantity)
+
+
+
+
 
 
