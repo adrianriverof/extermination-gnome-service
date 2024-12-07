@@ -218,11 +218,16 @@ func _shoot():
 	if !player_input_active: return
 	
 	
-	if Input.is_action_pressed("shoot") and _theres_ammo():
+	if Input.is_action_just_pressed("shoot"):
 		#spell_controller.cast()
 		#print("disparamos")
 		
-		
+		if _theres_ammo():
+			pass
+		else: 
+			weapon_sprite.frame = 0
+			weapon_sprite.play("noammo")
+			return
 		
 		if !weapon_sprite.playing or weapon_sprite.frame > repeat_frame:
 			
@@ -268,10 +273,13 @@ func _shoot():
 func _melee():
 	if !player_input_active: return
 	
-	if Input.is_action_pressed("melee"):
+	if Input.is_action_just_pressed("melee"):
 		
 		
 		if !weapon_sprite.playing or weapon_sprite.frame > repeat_frame:
+			
+			reload_ammo()
+			
 			weapon_sprite.animation = "bate"
 			weapon_sprite.frame = 0
 			weapon_sprite.playing = true
@@ -471,11 +479,13 @@ func _theres_ammo():
 	return ammunition > 0
 
 func waste_ammo():
+	animated_crosshair.playing = false
 	if _theres_ammo():
 		ammunition = ammunition - 1
 
 func reload_ammo():
 	ammunition = MAX_AMMUNITION
+	animated_crosshair.play("default")
 
 func sync_ammo():
 	animated_crosshair.frame = ammunition

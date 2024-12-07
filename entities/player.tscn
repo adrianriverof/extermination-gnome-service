@@ -92,6 +92,11 @@ animations = [ {
 "name": "neworder",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 9 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "noammo",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 38 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 51 ), ExtResource( 49 ), ExtResource( 35 ), ExtResource( 50 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 54 ), ExtResource( 28 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 48 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 32 ), ExtResource( 31 ) ],
 "loop": false,
 "name": "reload",
@@ -164,8 +169,10 @@ rect_scale = Vector2( 2, 2 )
 position = Vector2( -480, -413 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 4 )
-animation = "neworder"
+animation = "noammo"
+frame = 11
 speed_scale = 3.0
+playing = true
 centered = false
 
 [node name="Position2D" type="Control" parent="CanvasLayer"]
