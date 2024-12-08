@@ -125,6 +125,7 @@ func test_segundos_totales_en_combo_acumula_segundos_en_combo():
 	sut.time_passed += 1
 	sut.matar_cuca()
 	sut.time_passed += 1
+	sut.matar_cuca() ##  !!! pero tiene que matar otra para que se updatee
 	
 	assert_eq(sut.segundos_combo_total, 3 )
 

@@ -17,6 +17,7 @@ var combo_time = 2
 
 var combo_level = 1  # de 1 a 5
 
+var segundos_combo_total = 0
 
 
 func get_score():
@@ -76,7 +77,17 @@ func puntos_cuca_segun_tiempo():
 	
 
 func update_last_time_killed():
+	
+	if (time_passed - last_kill_time) < combo_time:
+		# si se updatea pero no lo perdió, se añade el combo al total
+		# y se sube de nivel de combo tal vez
+		save_combo_time_to_total()
+	
 	last_kill_time = time_passed
+
+func save_combo_time_to_total():
+	segundos_combo_total += time_passed - last_kill_time
+	
 
 func combo():
 	return 3 * segundos_en_combo()
