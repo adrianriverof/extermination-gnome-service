@@ -13,7 +13,13 @@ var speed = 120.0
 export var target_to_follow : String = "Player"
 
 
+
 export var active = true
+export var chasing_player = true
+export var aggro_distance = 10
+export var unaggroable = true
+export var unaggro_distance = 15
+
 
 onready var player = level.get_node(target_to_follow)
 var destination = Vector3.ZERO
@@ -42,25 +48,43 @@ func _physics_process(delta):
 	
 	if affected_by_gravity: _manage_gravity(delta)
 	
+	
 	if active:
-		$cucaman_model/AnimationPlayer.play("Running3")
-		var direction = (destination - global_transform.origin).normalized()
 		var distance_to_target = global_transform.origin.distance_to(destination)
-
-		if distance_to_target > 1:
-			direction.y *= 0
-			var motion = direction * speed * delta
-			self.look_at(Vector3(destination.x, self.translation.y, destination.z), Vector3.UP)
-			self.rotation.x= 0
+		if chasing_player:
+			_chase_player(delta)
 			
-			
-			motion = move_and_slide(motion + gravity_vec)
-	else:
+			if unaggroable and distance_to_target > unaggro_distance:
+				chasing_player = false
+				
+		elif distance_to_target < aggro_distance:
+			chasing_player = true
+		else:
+			_stay_iddle()
 		
-		move_and_slide(gravity_vec)
-		$cucaman_model/AnimationPlayer.play("iddle")
-		#print("not moving")
+		
+	else:
+		_stay_iddle()
+		
 
+func _stay_iddle():
+	move_and_slide(gravity_vec)
+	$cucaman_model/AnimationPlayer.play("iddle")
+	#print("not moving")
+
+func _chase_player(delta):
+	$cucaman_model/AnimationPlayer.play("Running3")
+	var direction = (destination - global_transform.origin).normalized()
+	var distance_to_target = global_transform.origin.distance_to(destination)
+
+	if distance_to_target > 1:
+		direction.y *= 0
+		var motion = direction * speed * delta
+		self.look_at(Vector3(destination.x, self.translation.y, destination.z), Vector3.UP)
+		self.rotation.x= 0
+		
+		
+		motion = move_and_slide(motion + gravity_vec)
 
 func _manage_gravity(delta):
 	
