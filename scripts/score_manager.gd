@@ -20,7 +20,23 @@ var combo_level = 0  # de 0 a 5
 var segundos_combo_total = 0
 
 
+var kills_durante_combo = 0
 
+##### Requisitos niveles de combo ###############
+var required_time_combo_1 = 0
+var required_time_combo_2 = 1
+var required_time_combo_3 = 4
+var required_time_combo_4 = 6
+var required_time_combo_5 = 8
+
+
+var required_kills_combo_1 = 0
+var required_kills_combo_2 = 2
+var required_kills_combo_3 = 4
+var required_kills_combo_4 = 6
+var required_kills_combo_5 = 10
+
+##################################################
 
 func get_score():
 	return score
@@ -44,17 +60,25 @@ func decrease_combo_level():
 
 
 func calculate_combo_level(time_in_combo: float) -> int:
-	print(time_in_combo)
-	if time_in_combo < 2.0:
+	#print(time_in_combo)
+	#print(required_kills_combo_2)
+	#print(kills_durante_combo < required_kills_combo_2)
+	
+	if time_in_combo < required_time_combo_2 or kills_durante_combo < required_kills_combo_2:
 		return 1
-	elif time_in_combo < 4.0:
+	
+	elif time_in_combo < required_time_combo_3 or kills_durante_combo < required_kills_combo_3:
 		return 2
-	elif time_in_combo < 6.0:
+	
+	elif time_in_combo < required_time_combo_4 or kills_durante_combo < required_kills_combo_4:
 		return 3
-	elif time_in_combo < 8.0:
+	
+	elif time_in_combo < required_time_combo_5 or kills_durante_combo < required_kills_combo_5:
 		return 4
-	elif time_in_combo < 10.0:
+	
+	elif time_in_combo < 20.0:
 		return 5
+	
 	else:
 		return 5
 
@@ -62,7 +86,9 @@ func select_combo_level_based_on_time():
 	if in_combo():
 		combo_level = calculate_combo_level(time_passed - first_killtime_in_spree)
 		return combo_level
-	else: return 0
+	else: 
+		lose_combo()
+		return combo_level
 
 func calculate_time(delta):
 	time_passed += delta
@@ -80,6 +106,7 @@ func matar_cuca(extra_base = 0, extra_combo = 0):
 		(multip_cuca_distancia + combo()+ extra_combo) 
 		)
 	update_last_time_killed()
+	kills_durante_combo += 1
 
 
 func matar_cuca_wallriding():
@@ -104,7 +131,7 @@ func puntos_cuca_segun_tiempo():
 
 func update_last_time_killed():
 	
-	print("se updatea")
+	#print("se updatea")
 	if in_combo():
 		# si se updatea pero no lo perdió, se añade el combo al total
 		# y se sube de nivel de combo tal vez
@@ -121,6 +148,11 @@ func update_last_time_killed():
 	last_kill_time = time_passed
 	#print("time passed: ", time_passed)
 	#print("Last Kill Time: ", last_kill_time)
+
+func lose_combo():
+	kills_durante_combo = 0
+	reset_combo_level()
+	
 
 
 
@@ -144,7 +176,7 @@ func in_combo():
 
 func update_combo_level_based_on_combo():
 	if !in_combo():
-		reset_combo_level()
+		lose_combo()
 
 
 func segundos_en_combo():

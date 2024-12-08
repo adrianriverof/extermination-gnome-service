@@ -63,7 +63,6 @@ func _show_combo_level():
 	
 	var previous_combo_level = combo_indicator.frame
 	combo_indicator.frame = score_manager.select_combo_level_based_on_time()
-	#$UI/ComboIndicator.frame = score_manager.get_combo_level() - 1
 	
 	if combo_indicator.frame != previous_combo_level:
 		combo_indicator.get_node("ShakeTween").start()
