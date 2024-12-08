@@ -5,6 +5,7 @@ Level:
 - ajustar entorno del nivel (luces?)
 - montar interfaz
 - El huevo
+- plataforma doblada que no se puede caminar por ella
 
 
 
