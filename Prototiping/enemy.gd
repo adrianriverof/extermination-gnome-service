@@ -1,7 +1,8 @@
 extends KinematicBody
 
 
-onready var level = get_parent()
+# ojo deben estar dentro de un nodo en la escena principal
+onready var level = get_parent().get_parent()
 
 export var affected_by_gravity = true
 
@@ -10,7 +11,9 @@ var GRAVITY = 10
 var speed = 120.0
 
 export var target_to_follow : String = "Player"
-var moving = true
+
+
+export var active = true
 
 onready var player = level.get_node(target_to_follow)
 var destination = Vector3.ZERO
@@ -31,7 +34,7 @@ func damage():
 
 func _physics_process(delta):
 	
-	$cucaman_model/AnimationPlayer.play("Running3")
+	
 	
 	destination = player.translation
 	#print(destination)
@@ -39,8 +42,8 @@ func _physics_process(delta):
 	
 	if affected_by_gravity: _manage_gravity(delta)
 	
-	if moving:
-		
+	if active:
+		$cucaman_model/AnimationPlayer.play("Running3")
 		var direction = (destination - global_transform.origin).normalized()
 		var distance_to_target = global_transform.origin.distance_to(destination)
 
@@ -53,8 +56,10 @@ func _physics_process(delta):
 			
 			motion = move_and_slide(motion + gravity_vec)
 	else:
-		#pass
-		print("not moving")
+		
+		move_and_slide(gravity_vec)
+		$cucaman_model/AnimationPlayer.play("iddle")
+		#print("not moving")
 
 
 func _manage_gravity(delta):

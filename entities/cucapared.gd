@@ -1,7 +1,9 @@
 extends KinematicBody
 
+onready var level = get_parent().get_parent()
+
 func damage():
 	#print("...enemy damaged")
-	get_parent().add_score(100)
+	level.add_score(100)
 	queue_free()
 
