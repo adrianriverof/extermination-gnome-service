@@ -72,10 +72,12 @@ func segundos_en_combo():
 
 
 func golpear_huevo():
-	score *= 3
+	if time_passed >= 19.0:
+		score *= 6
+	else:
+		score *= 3
 
-func golpear_huevo_ultimo_segundo():
-	score *= 6
+
 
 
 
