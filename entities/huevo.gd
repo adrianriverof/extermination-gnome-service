@@ -14,7 +14,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	play_normal_animation()
 
 func damage():
-	$DamageCooldown.start()
+	
+	
 	if !damaged:
 		play_hitted_animation()
 		damaged = true
@@ -23,8 +24,11 @@ func damage():
 		
 	elif $DamageCooldown.is_stopped():
 		# dar puntos por golpear
+		print("golpeado")
+		play_hitted_animation()
 		pass
 	
+	$DamageCooldown.start()
 
 
 
