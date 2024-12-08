@@ -91,7 +91,7 @@ func update_last_time_killed():
 	
 
 func combo_time_in_spree():
-	return (time_passed-first_killtime_in_spree)
+	return (time_passed - first_killtime_in_spree)
 
 func save_combo_time_to_total():
 	segundos_combo_total += time_passed - last_kill_time
