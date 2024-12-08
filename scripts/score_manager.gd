@@ -16,11 +16,15 @@ var time_passed = 0
 var combo_time = 2
 
 
+
+
 func get_score():
 	return score
 
 func set_score(value):
 	score = value
+
+
 
 func _calculate_time(delta):
 	time_passed += delta
