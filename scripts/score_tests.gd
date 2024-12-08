@@ -156,7 +156,18 @@ func test_cuando_puntua_combo_utiliza_acumulado_racha():
 	
 	assert_eq(sut.combo(), (3*3) )
 
-
+func test_cuando_puntua_combo_utiliza_acumulado_racha2():
+	var sut = ScoreManager.new()
+	
+	sut.time_passed = 0
+	sut.matar_cuca()
+	sut.time_passed += 1
+	sut.matar_cuca()
+	sut.time_passed += 1
+	
+	# llevamos 2 segundos en combo
+	
+	assert_eq(sut.combo(), (3*2) )
 
 
 
