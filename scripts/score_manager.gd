@@ -78,7 +78,7 @@ func puntos_cuca_segun_tiempo():
 
 func update_last_time_killed():
 	
-	if (time_passed - last_kill_time) < combo_time:
+	if in_combo():
 		# si se updatea pero no lo perdió, se añade el combo al total
 		# y se sube de nivel de combo tal vez
 		save_combo_time_to_total()
