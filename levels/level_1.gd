@@ -46,7 +46,10 @@ func _ready():
 
 func _physics_process(delta):
 	
+	
+	
 	_show_score()
+	_show_combo_level()
 	
 	_pass_time(delta)
 	
@@ -55,6 +58,9 @@ func _physics_process(delta):
 	_end_when_timeout()
 
 
+func _show_combo_level():
+	score_manager.update_combo_level_based_on_combo()
+	$UI/ComboIndicator.frame = score_manager.get_combo_level() - 1
 
 
 func _pass_time(delta):

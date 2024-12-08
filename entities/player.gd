@@ -278,6 +278,7 @@ func _shoot():
 						#print("spawn impact")
 						#print(coll_point)
 						
+						# ganar puntos por impactar en pared
 						earn_score(50)
 						
 						pass
@@ -334,6 +335,7 @@ func _melee():
 						#print("spawn impact")
 						#print(coll_point)
 						
+						# ganar puntos por impactar en pared
 						earn_score(50)
 						
 						pass
@@ -347,6 +349,7 @@ func _melee():
 
 func dash():
 	
+	# ganar puntos dash
 	earn_score(143)
 	if is_dashing:
 		return # Evita múltiples dashes simultáneos
@@ -418,12 +421,15 @@ func _manage_jump():
 		jump()
 		
 	if Input.is_action_just_pressed("jump") or buffer_active():
+		
+		# ganar puntos por intentar saltar sin más
 		earn_score(20)
 		if is_on_floor():
 			first_jump_charged = false
 			jump()
 		elif is_wallruning():
 			
+			# ganar puntos por wallriding
 			earn_score(123)
 			
 			var walljumpdirection = 0
@@ -436,6 +442,7 @@ func _manage_jump():
 			direction = Vector3(walljumpdirection, 0, 0).rotated(Vector3.UP, global_transform.basis.get_euler().y).normalized()
 			SPEED = 200
 			
+			# ganar puntos por wallriding otra vez?
 			earn_score(37)
 			
 			first_jump_charged = false
@@ -469,9 +476,11 @@ func _manage_dash():
 func _manage_tilting():
 	if theres_wall_right():
 		tilt_camera(30) # Inclinación a la derecha
+		# ganar puntos por walriding por tiempo
 		earn_score(1)
 	elif theres_wall_left():
 		tilt_camera(-30) # Inclinación a la izquierda
+		# ganar puntos por tiempo waliriding
 		earn_score(1)
 	else:
 		tilt_camera(0) # Regresa a posición neutra

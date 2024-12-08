@@ -16,7 +16,7 @@
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 9 ) ],
+"frames": [ null, ExtResource( 13 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -99,7 +99,7 @@ margin_bottom = 276.0
 rect_scale = Vector2( 5, 5 )
 text = "0"
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="UI"]
+[node name="ComboIndicator" type="AnimatedSprite" parent="UI"]
 frames = SubResource( 2 )
 centered = false
 
