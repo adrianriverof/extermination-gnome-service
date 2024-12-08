@@ -26,6 +26,9 @@ func get_score():
 func set_score(value):
 	score = value
 
+func get_combo_level():
+	update_combo_level_based_on_combo()
+	return combo_level
 func reset_combo_level():
 	combo_level = 1
 func set_combo_level(value):
@@ -82,13 +85,15 @@ func update_last_time_killed():
 		# si se updatea pero no lo perdió, se añade el combo al total
 		# y se sube de nivel de combo tal vez
 		save_combo_time_to_total()
+		increase_combo_level()
 	else: # se perdió el combo
 		# seleccionamos nueva primera kill
 		first_killtime_in_spree = time_passed
+		reset_combo_level()
 	
 	last_kill_time = time_passed
-	
-	
+
+
 
 func combo_time_in_spree():
 	return (time_passed - first_killtime_in_spree)
@@ -108,10 +113,16 @@ func in_combo():
 	else:
 		return false
 
+func update_combo_level_based_on_combo():
+	if !in_combo():
+		reset_combo_level()
+
+
 func segundos_en_combo():
 	if in_combo():
 		return time_passed - last_kill_time
 	return 0
+	
 
 
 func golpear_huevo():

@@ -186,6 +186,55 @@ func test_combo_utiliza_la_ultwima_racha_no_acumulado_total():
 	sut.time_passed += 1
 	# aquí llevamos 1s en racha
 	
-	
 	assert_eq(sut.combo(), (3*1) )
+
+func test_combo_no_suma_nada_si_no_esta_en_racha():
+	var sut = ScoreManager.new()
+	
+	sut.time_passed = 0
+	sut.matar_cuca()
+	sut.time_passed += 1
+	sut.matar_cuca()
+	sut.time_passed += 1000
+	sut.matar_cuca()
+	
+	assert_eq(sut.combo(), (0) )
+
+
+func test_combo_level_increases_when_killing_in_combo_2():
+	var sut = ScoreManager.new()
+	
+	sut.time_passed = 0
+	sut.matar_cuca()
+	sut.time_passed += 1
+	
+	assert_eq(sut.get_combo_level(), (2) )
+
+func test_combo_level_increases_when_killing_in_combo_3():
+	var sut = ScoreManager.new()
+	
+	sut.time_passed = 0
+	sut.matar_cuca()
+	sut.time_passed += 1
+	sut.matar_cuca()
+	
+	assert_eq(sut.get_combo_level(), (3) )
+
+func test_combo_level_reset_when_loses_combo():
+	var sut = ScoreManager.new()
+	
+	sut.time_passed = 0
+	sut.matar_cuca()
+	sut.time_passed += 1
+	sut.matar_cuca()
+	sut.time_passed += 3000
+	
+	assert_eq(sut.get_combo_level(),(1))
+
+
+
+
+
+
+
 
