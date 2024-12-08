@@ -101,12 +101,20 @@ func add_score(points:int):
 
 
 func matar_cuca(extra_base = 0, extra_combo = 0):
+	
+	print(puntos_cuca_segun_tiempo())
+	print(extra_base)
+	print(multip_cuca_distancia)
+	print("combo:", combo())
+	print(extra_combo)
+	
 	add_score(
 		(puntos_cuca_segun_tiempo() + extra_base) * 
 		(multip_cuca_distancia + combo()+ extra_combo) 
 		)
 	update_last_time_killed()
 	kills_durante_combo += 1
+	
 
 
 func matar_cuca_wallriding():
@@ -157,7 +165,10 @@ func lose_combo():
 
 
 func combo_time_in_spree():
-	return (time_passed - first_killtime_in_spree)
+	if in_combo():
+		return (time_passed - first_killtime_in_spree)
+	else:
+		return 0
 
 func save_combo_time_to_total():
 	segundos_combo_total += time_passed - last_kill_time

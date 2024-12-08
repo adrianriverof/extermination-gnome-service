@@ -4,7 +4,7 @@
 Level:
 - ajustar entorno del nivel (luces?)
 - montar interfaz
-- El huevo
+- El huevo: puntuación
 - plataforma doblada que no se puede caminar por ella
 
 

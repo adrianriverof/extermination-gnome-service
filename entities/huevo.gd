@@ -1,7 +1,7 @@
 extends Spatial
 
 
-
+onready var level = get_parent()
 
 var damaged = false
 
@@ -18,6 +18,9 @@ func damage():
 	if !damaged:
 		play_hitted_animation()
 		damaged = true
+		
+		level.score_manager.golpear_huevo()
+		
 	elif $DamageCooldown.is_stopped():
 		# dar puntos por golpear
 		pass
