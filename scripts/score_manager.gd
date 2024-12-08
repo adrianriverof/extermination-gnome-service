@@ -41,7 +41,23 @@ func decrease_combo_level():
 		combo_level -= 1
 
 
+func calculate_combo_level(time_in_combo: float) -> int:
+	if time_in_combo < 1.0:
+		return 1
+	elif time_in_combo < 3.0:
+		return 2
+	elif time_in_combo < 5.0:
+		return 3
+	elif time_in_combo < 10.0:
+		return 4
+	elif time_in_combo < 15.0:
+		return 5
+	else:
+		return 0
 
+func select_combo_level_based_on_time():
+	combo_level = calculate_combo_level(time_passed - first_killtime_in_spree)
+	return combo_level
 
 func _calculate_time(delta):
 	time_passed += delta
