@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://UI/GnomeCam/GC 2.png" type="Texture" id=1]
-[ext_resource path="res://UI/GnomeCam/GC 3.png" type="Texture" id=2]
-[ext_resource path="res://UI/GnomeCam/GC 1.png" type="Texture" id=3]
-[ext_resource path="res://UI/GnomeCam/GC SHOT.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/GnomeCam/GC 2.png" type="Texture" id=1]
+[ext_resource path="res://assets/UI/GnomeCam/GC 3.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI/GnomeCam/GC 1.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/GnomeCam/GC SHOT.png" type="Texture" id=4]
+[ext_resource path="res://scenes/GNOMOCAM.gd" type="Script" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -13,30 +14,39 @@ animations = [ {
 "speed": 6.0
 }, {
 "frames": [ ExtResource( 4 ) ],
-"loop": true,
+"loop": false,
 "name": "SHOT",
 "speed": 5.0
 } ]
 
-[node name="GnomoCam" type="Node2D"]
+[node name="GnomoCam" type="Control"]
+script = ExtResource( 5 )
 
 [node name="countdown" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 954, 550 )
 frames = SubResource( 1 )
 animation = "IDDLE"
+frame = 2
 playing = true
 
-[node name="Game 1" type="AnimatedSprite" parent="."]
+[node name="Shot" type="AnimatedSprite" parent="."]
 position = Vector2( 1009, 940 )
 scale = Vector2( 0.422222, 0.422222 )
 frames = SubResource( 1 )
 animation = "SHOT"
 playing = true
 
-[node name="Game Shot" type="AnimatedSprite" parent="."]
+[node name="Idle" type="AnimatedSprite" parent="."]
 position = Vector2( 1009, 940 )
 scale = Vector2( 0.422222, 0.422222 )
 frames = SubResource( 1 )
 animation = "IDDLE"
+frame = 3
 playing = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -241,6 +241,7 @@ func _shoot():
 		
 		if !weapon_sprite.playing or weapon_sprite.frame > repeat_frame:
 			
+			gnomecam_shoot()
 			waste_ammo()
 			sync_ammo()
 			weapon_sprite.animation = "neworder"
@@ -280,6 +281,9 @@ func _shoot():
 						pass
 				
 				spawn_impact_at(coll_point)
+
+func gnomecam_shoot():
+	$CanvasLayer/GnomoCam.shoot()
 
 func _melee():
 	if !player_input_active: return
