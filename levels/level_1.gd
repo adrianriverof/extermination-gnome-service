@@ -99,6 +99,8 @@ func add_score(points:int):
 func respawn_player():
 	player.velocity = Vector3.ZERO
 	player.translation = Vector3(-43.317, 4.475, 0.217)
+	player.rotation_degrees = Vector3(0,-89.747,0)
+	player.head.rotation_degrees = Vector3.ZERO
 
 
 
