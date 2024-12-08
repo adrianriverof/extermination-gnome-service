@@ -8,7 +8,7 @@ var multip_cuca_distancia = 2
 var multip_cuca_melee = 4
 
 var last_kill_time = 0.0
-
+var first_killtime_in_spree = 0.0
 
 var score = 0
 
@@ -82,15 +82,23 @@ func update_last_time_killed():
 		# si se updatea pero no lo perdió, se añade el combo al total
 		# y se sube de nivel de combo tal vez
 		save_combo_time_to_total()
+	else: # se perdió el combo
+		# seleccionamos nueva primera kill
+		first_killtime_in_spree = time_passed
 	
 	last_kill_time = time_passed
+	
+	
+
+func combo_time_in_spree():
+	return (time_passed-first_killtime_in_spree)
 
 func save_combo_time_to_total():
 	segundos_combo_total += time_passed - last_kill_time
 	
 
 func combo():
-	return 3 * segundos_en_combo()
+	return 3 * combo_time_in_spree()
 
 
 func in_combo():
