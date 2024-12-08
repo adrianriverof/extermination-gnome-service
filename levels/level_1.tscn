@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://entities/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://enviroments/test_enviroment.tres" type="Environment" id=2]
@@ -8,6 +8,19 @@
 [ext_resource path="res://entities/cucapared.tscn" type="PackedScene" id=6]
 [ext_resource path="res://entities/huevo.tscn" type="PackedScene" id=7]
 [ext_resource path="res://entities/nivel_decorado.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/UI/comboindicators/5 Gnomemageddon.png" type="Texture" id=9]
+[ext_resource path="res://assets/UI/comboindicators/3 Gnomination.png" type="Texture" id=10]
+[ext_resource path="res://assets/UI/comboindicators/2 Gnometastic.png" type="Texture" id=11]
+[ext_resource path="res://assets/UI/comboindicators/4 Gnomepocalypse.png" type="Texture" id=12]
+[ext_resource path="res://assets/UI/comboindicators/1 Gnoming.png" type="Texture" id=13]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 20.0955, 1, 16.2815 )
@@ -70,21 +83,25 @@ rect_scale = Vector2( 3, 3 )
 text = "rtrtrtr"
 
 [node name="Label" type="Label" parent="UI"]
-margin_left = 1545.0
-margin_top = 32.0
-margin_right = 1586.0
-margin_bottom = 63.0
+margin_left = 1483.0
+margin_top = 239.0
+margin_right = 1524.0
+margin_bottom = 270.0
 rect_scale = Vector2( 5, 5 )
 text = "SCORE
 "
 
 [node name="ScoreLabel" type="RichTextLabel" parent="UI"]
-margin_left = 1618.0
-margin_top = 127.0
-margin_right = 1676.0
-margin_bottom = 159.0
+margin_left = 1720.0
+margin_top = 244.0
+margin_right = 1778.0
+margin_bottom = 276.0
 rect_scale = Vector2( 5, 5 )
 text = "0"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="UI"]
+frames = SubResource( 2 )
+centered = false
 
 [node name="Cucapared" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.0385845, 0.576247, -0.816364, -0.0272052, 0.817276, 0.575604, 0.998885, 0, 0.0472111, -7.03172, 11.5375, -21.6902 )
