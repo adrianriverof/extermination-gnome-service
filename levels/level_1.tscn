@@ -131,12 +131,12 @@ transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -12.6909, 0 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Water"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.467, -11.842, -11.2466 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 99.6521, -11.842, -11.2466 )
 material_override = SubResource( 4 )
 mesh = SubResource( 3 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="Water"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -94.7549, -11.842, -11.5739 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93.6277, -11.842, -11.5739 )
 material_override = SubResource( 4 )
 mesh = SubResource( 3 )
 
@@ -146,27 +146,27 @@ material_override = SubResource( 4 )
 mesh = SubResource( 3 )
 
 [node name="MeshInstance4" type="MeshInstance" parent="Water"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0809, -11.842, 89.6135 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0809, -11.842, 78.9444 )
 material_override = SubResource( 4 )
 mesh = SubResource( 3 )
 
 [node name="MeshInstance5" type="MeshInstance" parent="Water"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.316, -11.842, 89.6135 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 94.7302, -11.842, 79.9725 )
 material_override = SubResource( 4 )
 mesh = SubResource( 3 )
 
 [node name="MeshInstance6" type="MeshInstance" parent="Water"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.316, -11.842, -105.328 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 95.0463, -11.842, -99.3766 )
 material_override = SubResource( 4 )
 mesh = SubResource( 3 )
 
 [node name="MeshInstance7" type="MeshInstance" parent="Water"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36464, -11.842, -105.328 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36464, -11.842, -100.948 )
 material_override = SubResource( 4 )
 mesh = SubResource( 3 )
 
 [node name="MeshInstance8" type="MeshInstance" parent="Water"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -95.1202, -11.842, -105.328 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91.9236, -11.842, -102.143 )
 material_override = SubResource( 4 )
 mesh = SubResource( 3 )
 
