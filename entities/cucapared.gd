@@ -2,8 +2,12 @@ extends KinematicBody
 
 onready var level = get_parent().get_parent()
 
+
 onready var idle_anim_time = 3
 onready var idle_anim_random_thereshold = 1
+
+export var lanza_al_jugador = true
+
 
 func _ready():
 	efectuar_animacion_al_azar()
@@ -13,6 +17,7 @@ func damage():
 	#print("...enemy damaged")
 	level.add_score(100)
 	queue_free()
+
 
 
 
@@ -46,3 +51,34 @@ func efectuar_animacion_al_azar():
 	
 	
 	
+
+
+func _on_Area_body_entered(body):
+	if body.name == "Player" and lanza_al_jugador:
+#
+#		var local_push_direction = Vector3.RIGHT
+#		var global_push_direction = global_transform.basis.xform(local_push_direction).normalized()
+#
+		var action_event_press = InputEventAction.new()
+		action_event_press.action = "jump"  # Especifica la acción "jump"
+		action_event_press.pressed = true
+		Input.parse_input_event(action_event_press)
+
+		# Esperar un pequeño momento antes de simular que se suelta la acción
+		yield(get_tree().create_timer(0.1), "timeout")  # Puedes ajustar el tiempo si es necesario
+
+		# Crear el evento de acción liberada para "jump"
+		var action_event_release = InputEventAction.new()
+		action_event_release.action = "jump"  # Especifica la acción "jump"
+		action_event_release.pressed = false
+		Input.parse_input_event(action_event_release)
+
+		
+		
+
+
+
+
+
+
+

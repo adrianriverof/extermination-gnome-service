@@ -171,7 +171,7 @@ func theres_wall_right():
 func theres_wall_left():
 	if WallCastLeft.is_colliding() and !is_on_floor():
 		
-		print(WallCastLeft.get_collider().get_parent().name)
+		#print(WallCastLeft.get_collider().get_parent().name)
 		
 		if (WallCastLeft.get_collider().get_parent().name == "structure") or (WallCastLeft.get_collider().get_parent().name == "prueba 8"):
 			return true 
@@ -467,6 +467,14 @@ func jump():
 	snap = Vector3.ZERO
 	gravity_vec = Vector3.UP * JUMP
 
+func lateral_jump():
+	double_jump_charged = true
+	snap = Vector3.ZERO
+	gravity_vec = Vector3.LEFT * JUMP
+
+
+
+
 func _manage_dash():
 	if (Input.is_action_pressed("dash") or dashbuffer_active()) \
 	and $DashCooldownTimer.is_stopped() \
@@ -540,7 +548,19 @@ func _on_ReloadStartTimer_timeout():
 	weapon_sprite.animation = "reload"
 	weapon_sprite.playing = true
 
-
+func cucapared_knockback(knock_direction):
+	
+	print("knockback")
+	
+	
+	#direction = knock_direction
+	
+	move_and_slide(knock_direction, Vector3.UP)
+	SPEED = 300
+	
+	
+	
+	
 
 
 

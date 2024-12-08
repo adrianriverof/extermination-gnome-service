@@ -58,6 +58,12 @@ transform = Transform( 0.11744, -0.569217, 0.813756, -0.0272052, 0.817276, 0.575
 [node name="Cucapared2" parent="enemies" instance=ExtResource( 6 )]
 transform = Transform( -0.877883, 0.255868, -0.404788, -0.0503368, 0.791301, 0.609351, 0.476223, 0.555315, -0.681789, -27.6905, 8.51826, -2.50584 )
 
+[node name="Cucapared3" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( -0.988021, 0.149725, 0.0373687, 0.149618, 0.988728, -0.00565883, -0.0377948, 0, -0.999285, -6.203, 8.51826, 27.6702 )
+
+[node name="Cucapared4" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( 0.00441569, 0, -0.99999, 0, 1, 0, 0.99999, 0, 0.00441569, -33.5478, 1.0738, 0.217205 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.00441569, 0, -0.99999, 0, 1, 0, 0.99999, 0, 0.00441569, -43.3173, 4.47524, 0.217205 )
 

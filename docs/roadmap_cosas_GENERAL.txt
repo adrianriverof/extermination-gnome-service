@@ -23,7 +23,6 @@ Enemigos
 - conexión con puntuación
 
 - Enemigos de las paredes
-		Animaciones
 		Movimiento (?)
 		Que te empuje
 
