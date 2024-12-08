@@ -38,6 +38,7 @@ func decrease_combo_level():
 
 
 
+
 func _calculate_time(delta):
 	time_passed += delta
 

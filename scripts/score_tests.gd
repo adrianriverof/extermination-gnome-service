@@ -100,6 +100,19 @@ func test_segundos_en_combo_son_0_si_lo_perdemos():
 
 #func test_matar_cuca_
 
+func test_segundos_en_combo_no_acumula_tiempo():
+	
+	var sut = ScoreManager.new()
+	
+	sut.time_passed = 0
+	sut.matar_cuca()
+	sut.time_passed += 1
+	sut.matar_cuca()
+	sut.time_passed += 1
+	sut.matar_cuca()
+	sut.time_passed += 1
+	
+	assert_eq(sut.segundos_en_combo(), 1 )
 
 
 
