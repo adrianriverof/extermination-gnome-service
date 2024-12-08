@@ -6,7 +6,9 @@ Level:
 - montar interfaz
 - El huevo
 - plataforma doblada que no se puede caminar por ella
-
+- cambiar el combo para que suba no con kills:
+		- con tiempo en combo
+		- con puntos
 
 
 

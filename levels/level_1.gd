@@ -9,6 +9,14 @@ onready var time_view = $UI/RichTextLabel
 var game_end = false
 
 
+#var domain: CookieClicker
+#var presenter: EarnCookie
+var score_manager: Scoremanager
+
+
+
+
+
 var score = 0
 onready var score_view = $UI/ScoreLabel
 
@@ -21,11 +29,21 @@ func stop_player_control():
 
 func _ready():
 	
+	score_manager = Scoremanager.new()
+	
+	
+#	domain = CookieClicker.new()
+#	presenter = EarnCookie.new()
+#	presenter.EarnCookie(domain, self)
+	
+	
 	if enable_music:
 		$AudioStreamPlayer.play()
 	
 	get_tree().paused = false
 	Engine.time_scale = 1
+
+
 func _physics_process(delta):
 	
 	_show_score()
@@ -43,7 +61,10 @@ func _pass_time(delta):
 	total_time -= delta
 
 func _show_score():
-	score_view.text = str(score)
+	
+	#score_view.text = str(score)
+	score_view.text = str(score_manager.get_score())
+	
 func _show_time():
 	time_view.text = str("%2.2f" % total_time)
 func _end_when_timeout():
