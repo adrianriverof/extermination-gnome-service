@@ -231,7 +231,15 @@ func test_combo_level_reset_when_loses_combo():
 	
 	assert_eq(sut.get_combo_level(),(1))
 
-
+func test_when_cuca_killed_that_time_is_lastime_killed():
+	var sut = ScoreManager.new()
+	
+	sut.time_passed = 15
+	sut.matar_cuca()
+	sut.time_passed += 1
+	
+	assert_eq(sut.last_kill_time,(15))
+	
 
 
 

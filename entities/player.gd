@@ -226,10 +226,14 @@ func noammo_animation():
 
 func _shoot():
 	
+	
+	
 	if !player_input_active: return
 	
 	
 	if Input.is_action_just_pressed("shoot"):
+		
+		level.score_manager.matar_cuca()
 		$CanvasLayer/Position2D/AnimatedCrosshair/ShakeTween.start()
 		#$CanvasLayer/Position2D/Crosshair/ShakeTween.start()
 		#spell_controller.cast()
