@@ -46,7 +46,8 @@ func _physics_process(delta):
 	#print(destination)
 	
 	
-	if affected_by_gravity: _manage_gravity(delta)
+	if affected_by_gravity: 
+		_manage_gravity(delta)
 	
 	
 	if active:
@@ -68,7 +69,7 @@ func _physics_process(delta):
 		
 
 func _stay_iddle():
-	move_and_slide(gravity_vec)
+	move_and_slide(gravity_vec, Vector3.UP)
 	$cucaman_model/AnimationPlayer.play("iddle")
 	#print("not moving")
 
@@ -84,7 +85,7 @@ func _chase_player(delta):
 		self.rotation.x= 0
 		
 		
-		motion = move_and_slide(motion + gravity_vec)
+		motion = move_and_slide(motion + gravity_vec, Vector3.UP)
 
 func _manage_gravity(delta):
 	
@@ -93,5 +94,5 @@ func _manage_gravity(delta):
 	else:
 		gravity_vec += Vector3.DOWN * GRAVITY * delta
 	
-	
+
 	

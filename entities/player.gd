@@ -218,7 +218,8 @@ func _move(delta):
 		SPEED = Run_Speed #10
 		
 	# warning-ignore:return_value_discarded
-	move_and_slide_with_snap(movement, snap, Vector3.UP)
+	move_and_slide_with_snap(movement, snap, Vector3.UP, false, 4, deg2rad(60))
+	#move_and_slide(motion, Vector3.UP, true, 4, deg2rad(45))
 
 func noammo_animation():
 	weapon_sprite.frame = 0
