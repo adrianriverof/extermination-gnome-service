@@ -4,8 +4,7 @@
 Level:
 - ajustar entorno del nivel (luces?)
 - montar interfaz
-- El huevo: puntuación
-- plataforma doblada que no se puede caminar por ella
+- resultados
 
 
 
@@ -23,6 +22,7 @@ Enemigos
 - Movimiento elaborado
 - aleatorizar inicio si no hay aggro
 - Aggro?
+- conexión con puntuación
 
 - Enemigos de las paredes
 		Animaciones
@@ -33,19 +33,26 @@ Enemigos
 
 Sistemas
 
-- Puntuación (conexión con interfaz)
+- Puntuación:
+	- indicar multip, si eso.
+	- mostrar últimas cosas: cucakill, wallride, doblekill...
+
+
 - menú opciones? 
 	- sensibilidad
 	- control de audio y música
 	- brillo
-	
-- Leaderboard
+
 
 
 
 
 PULIDO
 
+
+- Leaderboard
+
+- plataforma doblada que no se puede caminar por ella
 
 Armas
 - partículas distintas (disparo/melee)

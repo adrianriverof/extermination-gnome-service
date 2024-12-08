@@ -1,32 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Prototiping/cucaman 2.glb" type="PackedScene" id=1]
 [ext_resource path="res://Prototiping/enemy.gd" type="Script" id=2]
-[ext_resource path="res://Prototiping/cucaman_model.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/cucaman animated.tscn" type="PackedScene" id=4]
 [ext_resource path="res://models/cucaman_model_v5.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.570315
 
-[node name="enemy" type="KinematicBody"]
+[node name="cucaman" type="KinematicBody"]
 script = ExtResource( 2 )
-
-[node name="cucaman 3" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.201961, -0.976206, 1.75584 )
-visible = false
-
-[node name="cucaman 2" parent="." instance=ExtResource( 1 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.201961, -0.976206, 1.75584 )
-visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.105596, 0 )
 shape = SubResource( 1 )
-
-[node name="CucamanAnimated" parent="." instance=ExtResource( 4 )]
-transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0351178, 0.0749956, -0.0464623 )
-visible = false
 
 [node name="cucaman_model" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37, 0 )
