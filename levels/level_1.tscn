@@ -67,7 +67,7 @@ stream = ExtResource( 4 )
 [node name="structure" parent="structure" instance=ExtResource( 8 )]
 
 [node name="huevo" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.941, 0, 0, 0, 0.941, 0, 0, 0, 0.941, -6.82456, 27.1881, -7.05528 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.16753, 28.9457, -5.68392 )
 
 [node name="UI" type="Control" parent="."]
 margin_right = 1920.0
