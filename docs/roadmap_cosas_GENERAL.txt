@@ -2,8 +2,11 @@
 
 
 Level:
-- ajustar entorno del nivel
+- ajustar entorno del nivel (luces?)
 - montar interfaz
+- El huevo
+
+
 
 
 Sonido
@@ -25,7 +28,6 @@ Enemigos
 		Animaciones
 		Movimiento (?)
 		Que te empuje
-
 
 
 

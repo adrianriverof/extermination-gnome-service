@@ -1,26 +1,29 @@
-extends Node2D
+extends Control
 
 
 
-
-
+var level_path = "res://levels/level_1.tscn"
+var menu_path = "res://scenes/main_menu.tscn"
 
 func _ready():
 	
-	#get_tree().paused = true
+	Engine.time_scale = 0.5
 	get_parent().stop_player_control()
 	
+
+func _physics_process(delta):
+	Engine.time_scale -= delta
 
 func go_to_menu():
 	print("nos vamos al menú")
 	get_tree().paused = false
-	get_tree().change_scene("res://scenes/main_menu.tscn")
+	get_tree().change_scene(menu_path)
 
 
 func go_to_level():
 	print("nos vamos al nivel")
 	get_tree().paused = false
-	get_tree().change_scene("res://levels/test_level.tscn")
+	get_tree().change_scene(level_path)
 
 
 

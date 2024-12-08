@@ -36,7 +36,7 @@ func _physics_process(delta):
 		if reset_on_timeout and !game_end:
 			game_end = true
 			show_results()
-			Engine.time_scale = 0.1
+			#Engine.time_scale = 0.1
 
 
 
