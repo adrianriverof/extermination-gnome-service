@@ -24,7 +24,8 @@ Enemigos
 
 - Enemigos de las paredes
 		Movimiento (?)
-		Que te empuje
+
+
 
 
 

@@ -7,10 +7,16 @@ onready var idle_anim_time = 3
 onready var idle_anim_random_thereshold = 1
 
 export var lanza_al_jugador = true
-
+export var camina = false
 
 func _ready():
-	efectuar_animacion_al_azar()
+	if camina:
+		animacion_caminar()
+	else:
+		efectuar_animacion_al_azar()
+	
+	
+	
 
 
 func damage():
@@ -31,7 +37,15 @@ func atoeurtneoru():
 
 
 
+func animacion_caminar():
+	print("timeout")
+	$Timer.stop()
+	$CUCAPARED/AnimationPlayer.play("CUP WALKING")
+	
+	#animacion_caminar()
+
 func _on_Timer_timeout():
+	#print("timeout")
 	efectuar_animacion_al_azar()
 
 
@@ -49,8 +63,8 @@ func efectuar_animacion_al_azar():
 	
 	$Timer.start(idle_anim_time + (randi() % idle_anim_random_thereshold))
 	
-	
-	
+
+
 
 
 func _on_Area_body_entered(body):
@@ -82,3 +96,9 @@ func _on_Area_body_entered(body):
 
 
 
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	print("repeat")
+	if anim_name == "CUP WALKING":
+		$CUCAPARED/AnimationPlayer.play("CUP WALKING")
