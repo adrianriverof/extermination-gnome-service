@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://entities/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://enviroments/test_enviroment.tres" type="Environment" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/UI/comboindicators/2 Gnometastic.png" type="Texture" id=11]
 [ext_resource path="res://assets/UI/comboindicators/4 Gnomepocalypse.png" type="Texture" id=12]
 [ext_resource path="res://assets/UI/comboindicators/1 Gnoming.png" type="Texture" id=13]
+[ext_resource path="res://shaketween/ShakeTween.tscn" type="PackedScene" id=14]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -102,6 +103,11 @@ text = "0"
 [node name="ComboIndicator" type="AnimatedSprite" parent="UI"]
 frames = SubResource( 2 )
 centered = false
+
+[node name="ShakeTween" parent="UI/ComboIndicator" instance=ExtResource( 14 )]
+x_max = 50
+y_max = 10
+STOP_THRESHOLD = 0.1
 
 [node name="Cucapared" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.0385845, 0.576247, -0.816364, -0.0272052, 0.817276, 0.575604, 0.998885, 0, 0.0472111, -7.03172, 11.5375, -21.6902 )

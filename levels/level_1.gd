@@ -18,6 +18,7 @@ var score_manager: Scoremanager
 
 
 var score = 0
+onready var combo_indicator = $UI/ComboIndicator
 onready var score_view = $UI/ScoreLabel
 
 onready var results_menu = preload("res://scenes/results.tscn")
@@ -59,8 +60,13 @@ func _physics_process(delta):
 
 
 func _show_combo_level():
-	$UI/ComboIndicator.frame = score_manager.select_combo_level_based_on_time()
+	
+	var previous_combo_level = combo_indicator.frame
+	combo_indicator.frame = score_manager.select_combo_level_based_on_time()
 	#$UI/ComboIndicator.frame = score_manager.get_combo_level() - 1
+	
+	if combo_indicator.frame != previous_combo_level:
+		combo_indicator.get_node("ShakeTween").start()
 
 
 func _pass_time(delta):
