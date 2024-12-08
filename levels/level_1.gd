@@ -2,15 +2,15 @@ extends Spatial
 
 
 export var reset_on_timeout = true
-
 export var total_time = 20
+export var enable_music = true
+
 onready var time_view = $UI/RichTextLabel
 var game_end = false
 
 
 var score = 0
 onready var score_view = $UI/ScoreLabel
-
 
 onready var results_menu = preload("res://scenes/results.tscn")
 
@@ -20,6 +20,10 @@ func stop_player_control():
 	player.player_input_active = false
 
 func _ready():
+	
+	if enable_music:
+		$AudioStreamPlayer.play()
+	
 	get_tree().paused = false
 	Engine.time_scale = 1
 func _physics_process(delta):
