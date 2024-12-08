@@ -7,17 +7,19 @@ var puntos_por_cuca = 100
 var multip_cuca_distancia = 2
 var multip_cuca_melee = 4
 
-var last_kill_time = 0.0
-var first_killtime_in_spree = 0.0
+export var last_kill_time = -100.0
+var first_killtime_in_spree = -100.0
 
 var score = 0
 
 var time_passed = 0
-var combo_time = 2
+var combo_time = 3
 
-var combo_level = 1  # de 1 a 5
+var combo_level = 0  # de 0 a 5
 
 var segundos_combo_total = 0
+
+
 
 
 func get_score():
@@ -30,37 +32,42 @@ func get_combo_level():
 	update_combo_level_based_on_combo()
 	return combo_level
 func reset_combo_level():
-	combo_level = 1
+	combo_level = 0
 func set_combo_level(value):
 	combo_level = value
 func increase_combo_level():
 	if combo_level < 5:
 		combo_level += 1
 func decrease_combo_level():
-	if combo_level > 1:
+	if combo_level > 0:
 		combo_level -= 1
 
 
 func calculate_combo_level(time_in_combo: float) -> int:
-	if time_in_combo < 1.0:
+	print(time_in_combo)
+	if time_in_combo < 2.0:
 		return 1
-	elif time_in_combo < 3.0:
+	elif time_in_combo < 4.0:
 		return 2
-	elif time_in_combo < 5.0:
+	elif time_in_combo < 6.0:
 		return 3
-	elif time_in_combo < 10.0:
+	elif time_in_combo < 8.0:
 		return 4
-	elif time_in_combo < 15.0:
+	elif time_in_combo < 10.0:
 		return 5
 	else:
-		return 0
+		return 5
 
 func select_combo_level_based_on_time():
-	combo_level = calculate_combo_level(time_passed - first_killtime_in_spree)
-	return combo_level
+	if in_combo():
+		combo_level = calculate_combo_level(time_passed - first_killtime_in_spree)
+		return combo_level
+	else: return 0
 
-func _calculate_time(delta):
+func calculate_time(delta):
 	time_passed += delta
+	#print(time_passed)
+	#print(combo_level)
 
 func add_score(points:int):
 	score += points
@@ -97,17 +104,23 @@ func puntos_cuca_segun_tiempo():
 
 func update_last_time_killed():
 	
+	print("se updatea")
 	if in_combo():
 		# si se updatea pero no lo perdió, se añade el combo al total
 		# y se sube de nivel de combo tal vez
 		save_combo_time_to_total()
 		increase_combo_level()
-	else: # se perdió el combo
+	else: #no estabas en combo, entonces consigues el primer nivel
+		
 		# seleccionamos nueva primera kill
 		first_killtime_in_spree = time_passed
-		reset_combo_level()
+		
+		# primer nivel de combo (el 0 es )
+		set_combo_level(2)
 	
 	last_kill_time = time_passed
+	#print("time passed: ", time_passed)
+	#print("Last Kill Time: ", last_kill_time)
 
 
 

@@ -46,7 +46,7 @@ func _ready():
 
 func _physics_process(delta):
 	
-	
+	score_manager.calculate_time(delta)
 	
 	_show_score()
 	_show_combo_level()
@@ -59,7 +59,7 @@ func _physics_process(delta):
 
 
 func _show_combo_level():
-	$UI/ComboIndicator.frame = score_manager.select_combo_level_based_on_time() - 1
+	$UI/ComboIndicator.frame = score_manager.select_combo_level_based_on_time()
 	#$UI/ComboIndicator.frame = score_manager.get_combo_level() - 1
 
 
