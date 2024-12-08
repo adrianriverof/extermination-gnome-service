@@ -129,3 +129,33 @@ func test_segundos_totales_en_combo_acumula_segundos_en_combo():
 	
 	assert_eq(sut.segundos_combo_total, 3 )
 
+func OFFtest_combo_time_total_guarda_el_tiempo_incluyendo_los_ultimos_segundos():
+	var sut = ScoreManager.new()
+	
+	sut.time_passed = 0
+	sut.matar_cuca()
+	sut.time_passed += 1
+	sut.matar_cuca()
+	sut.time_passed += 1
+	sut.matar_cuca()
+	sut.time_passed += 3
+	
+	assert_eq(sut.segundos_combo_total, (2+sut.combo_time) )
+
+func test_cuando_puntua_combo_utiliza_acumulado_racha():
+	var sut = ScoreManager.new()
+	
+	sut.time_passed = 0
+	sut.matar_cuca()
+	sut.time_passed += 1
+	sut.matar_cuca()
+	sut.time_passed += 1
+	sut.matar_cuca()
+	sut.time_passed += 1
+	# llevamos 3 segundos en combo
+	
+	assert_eq(sut.combo(), (3*3) )
+
+
+
+
