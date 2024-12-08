@@ -19,9 +19,7 @@ Sonido
 
 
 Enemigos
-- Movimiento elaborado
-- aleatorizar inicio si no hay aggro
-- Aggro?
+- salto?
 - conexión con puntuación
 
 - Enemigos de las paredes
