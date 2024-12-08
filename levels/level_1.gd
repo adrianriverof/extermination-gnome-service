@@ -35,7 +35,9 @@ func _physics_process(delta):
 	_show_time()
 	
 	_end_when_timeout()
-	
+
+
+
 
 func _pass_time(delta):
 	total_time -= delta

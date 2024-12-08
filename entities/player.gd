@@ -124,7 +124,7 @@ func _physics_process(delta):
 	
 
 func _regresar_a_escopeta():
-	if weapon_sprite.frame == 10:
+	if weapon_sprite.frame == 10 and !weapon_sprite.animation == "reload":
 		weapon_sprite.animation = "neworder"
 		weapon_sprite.playing = false
 	# añadir aquí bamboleo al poner y quitar arma?
@@ -220,6 +220,10 @@ func _move(delta):
 	# warning-ignore:return_value_discarded
 	move_and_slide_with_snap(movement, snap, Vector3.UP)
 
+func noammo_animation():
+	weapon_sprite.frame = 0
+	weapon_sprite.play("noammo")
+
 func _shoot():
 	
 	if !player_input_active: return
@@ -231,12 +235,10 @@ func _shoot():
 		#spell_controller.cast()
 		#print("disparamos")
 		
-		if _theres_ammo():
-			pass
-		else: 
-			weapon_sprite.frame = 0
-			weapon_sprite.play("noammo")
-			
+		
+		# skip and play anim when no ammo
+		if !_theres_ammo():
+			noammo_animation()
 			return
 		
 		if !weapon_sprite.playing or weapon_sprite.frame > repeat_frame:
@@ -501,17 +503,31 @@ func _theres_ammo():
 
 func waste_ammo():
 	animated_crosshair.playing = false
-	if _theres_ammo():
+	if _theres_ammo() and not is_wallruning():
 		ammunition = ammunition - 1
 
 func reload_ammo():
+	if ammunition == MAX_AMMUNITION: return
 	ammunition = MAX_AMMUNITION
 	animated_crosshair.play("default")
+	$ReloadStartTimer.start()
 
 func sync_ammo():
 	
 	animated_crosshair.frame = ammunition
 
 ############
+
+
+
+
+func _on_ReloadStartTimer_timeout():
+	weapon_sprite.frame = 0
+	weapon_sprite.animation = "reload"
+	weapon_sprite.playing = true
+
+
+
+
 
 

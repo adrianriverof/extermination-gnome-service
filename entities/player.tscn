@@ -171,10 +171,8 @@ rect_scale = Vector2( 2, 2 )
 position = Vector2( -480, -413 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 4 )
-animation = "noammo"
 frame = 11
 speed_scale = 3.0
-playing = true
 centered = false
 
 [node name="Position2D" type="Control" parent="CanvasLayer"]
@@ -213,3 +211,9 @@ one_shot = true
 [node name="DashBufferTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="ReloadStartTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="ReloadStartTimer" to="." method="_on_ReloadStartTimer_timeout"]
