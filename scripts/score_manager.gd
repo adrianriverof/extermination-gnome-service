@@ -15,6 +15,7 @@ var score = 0
 var time_passed = 0
 var combo_time = 2
 
+var combo_level = 1  # de 1 a 5
 
 
 
@@ -23,6 +24,17 @@ func get_score():
 
 func set_score(value):
 	score = value
+
+func reset_combo_level():
+	combo_level = 1
+func set_combo_level(value):
+	combo_level = value
+func increase_combo_level():
+	if combo_level < 5:
+		combo_level += 1
+func decrease_combo_level():
+	if combo_level > 1:
+		combo_level -= 1
 
 
 
