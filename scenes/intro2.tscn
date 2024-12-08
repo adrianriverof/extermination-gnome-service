@@ -451,7 +451,6 @@ visible = false
 position = Vector2( 969, 538.5 )
 scale = Vector2( 1.444, 1.444 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="G3" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -459,7 +458,6 @@ visible = false
 position = Vector2( 947.667, 538 )
 scale = Vector2( 1.44533, 1.44533 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="g2" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -467,7 +465,6 @@ visible = false
 position = Vector2( 1000, 539.5 )
 scale = Vector2( 1.43067, 1.43067 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="G1" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -475,7 +472,6 @@ visible = false
 position = Vector2( 1025, 546 )
 scale = Vector2( 1.43067, 1.43067 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="TC" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -497,7 +493,7 @@ frame = 2
 visible = false
 position = Vector2( 960, 540 )
 frames = SubResource( 1 )
-frame = 21
+frame = 18
 playing = true
 
 [node name="Banda" type="Sprite" parent="INTROPLAYER"]
@@ -531,19 +527,23 @@ scale = Vector2( 1.43067, 1.43067 )
 texture = ExtResource( 36 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="INTROPLAYER"]
-margin_left = 1699.0
-margin_top = 874.0
-margin_right = 1913.0
-margin_bottom = 1077.0
+margin_left = 1735.0
+margin_top = 959.0
+margin_right = 1949.0
+margin_bottom = 1162.0
 custom_fonts/normal_font = SubResource( 11 )
-text = "Press again to skip"
+text = "Skip"
 
 [node name="fondo" type="Sprite" parent="."]
 scale = Vector2( 160.639, 127.091 )
 texture = ExtResource( 17 )
 
 [node name="SkipTextTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 0.5
+one_shot = true
+
+[node name="PassTimer" type="Timer" parent="."]
 one_shot = true
 
 [connection signal="timeout" from="SkipTextTimer" to="." method="_on_SkipTextTimer_timeout"]
+[connection signal="timeout" from="PassTimer" to="." method="_on_PassTimer_timeout"]

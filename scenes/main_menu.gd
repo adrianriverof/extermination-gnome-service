@@ -1,13 +1,11 @@
 extends Node2D
 
 
-
-export var level: String
-export var levelscene: PackedScene
+onready var levelscene = ("res://levels/level_1.tscn")
 
 func go_to_level():
 	print("nos vamos al nivel")
-	get_tree().change_scene(levelscene.resource_path)
+	get_tree().change_scene(levelscene)
 
 
 func _input(event):

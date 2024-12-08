@@ -2,8 +2,8 @@ extends Control
 
 
 
-var level_path = "res://levels/level_1.tscn"
-var menu_path = "res://scenes/main_menu.tscn"
+onready var levelscene = ("res://levels/level_1.tscn")
+onready var menuscene = ("res://scenes/main_menu.tscn")
 
 func _ready():
 	
@@ -17,13 +17,13 @@ func _physics_process(delta):
 func go_to_menu():
 	print("nos vamos al menú")
 	get_tree().paused = false
-	get_tree().change_scene(menu_path)
+	get_tree().change_scene(menuscene)
 
 
 func go_to_level():
 	print("nos vamos al nivel")
 	get_tree().paused = false
-	get_tree().change_scene(level_path)
+	get_tree().change_scene(levelscene)
 
 
 

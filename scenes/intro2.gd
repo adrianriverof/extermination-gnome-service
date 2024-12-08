@@ -16,10 +16,16 @@ func _input(event):
 	if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_cancel"):
 		if skiplabel.visible == false:
 			skiplabel.visible = true
-			skiptimer.start()
-		else:
-			go_to_menu()
-
+			
+		$PassTimer.start()
+	
+	if Input.is_action_just_released("ui_accept") or Input.is_action_just_released("ui_cancel"):
+		$PassTimer.stop()
+		skiptimer.start()
 
 func _on_SkipTextTimer_timeout():
 	skiplabel.visible = false
+
+
+func _on_PassTimer_timeout():
+	go_to_menu()
