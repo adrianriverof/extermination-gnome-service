@@ -1,6 +1,8 @@
 extends KinematicBody
 
 
+onready var level = get_parent()
+
 export var affected_by_gravity = true
 
 var gravity_vec = Vector3.ZERO
@@ -10,13 +12,13 @@ var speed = 120.0
 export var target_to_follow : String = "Player"
 var moving = true
 
-onready var player = get_parent().get_node(target_to_follow)
+onready var player = level.get_node(target_to_follow)
 var destination = Vector3.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if player == null:
-		player = get_parent().get_node(target_to_follow)
+		player = level.get_node(target_to_follow)
 	
 	speed = 300
 	
@@ -24,7 +26,7 @@ func _ready():
 	
 func damage():
 	#print("...enemy damaged")
-	get_parent().score_manager.matar_cuca()
+	level.score_manager.matar_cuca()
 	queue_free()
 
 func _physics_process(delta):
