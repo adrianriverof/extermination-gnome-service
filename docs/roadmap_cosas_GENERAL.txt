@@ -3,9 +3,6 @@
 
 Level:
 - ajustar entorno del nivel (luces?)
-- montar interfaz
-- resultados
-
 
 
 Sonido
@@ -19,22 +16,20 @@ Sonido
 
 
 Enemigos
-- salto?
+- headshot detection
 - conexión con puntuación
-
-- Enemigos de las paredes
-		Movimiento (?)
-
-
-
+	necesito que avisen cuando mueren. No obstante el propio manager debe saber si el jugador está en el aire y esas cosas
+- salto?
 
 
 Sistemas
 
-- Puntuación:
+- Puntuación e interfaz:
+	- resultados
 	- indicar multip, si eso.
 	- mostrar últimas cosas: cucakill, wallride, doblekill...
-
+- Menú inicio:
+	- interactuables (sencillo)
 
 - menú opciones? 
 	- sensibilidad
@@ -43,10 +38,7 @@ Sistemas
 
 
 
-
-
 PULIDO
-
 
 - Leaderboard
 
@@ -61,6 +53,6 @@ Armas
 
 - Wallrun que mantenga pegado mientras no apunto delante (posiblemente fuera de scope)
 
-
+- movimiento en enemigos de las paredes (un poquillo aunque sea, que caminen un poquillo ahí por la pared)
 
 
