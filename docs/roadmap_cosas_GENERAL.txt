@@ -1,9 +1,8 @@
 
 
+
 Bug:
 - Desajuste de audio en la primera partida. Asegurarse de que se inicia al pulsar/caer/cuando todo esté ready
-
-
 
 
 
@@ -39,6 +38,9 @@ Sistemas
 	- brillo
 
 
+
+- Terminar de testear iluminación con distintas pantallas.
+		Crear opciones para ajustarlo si necesario
 
 PULIDO
 
