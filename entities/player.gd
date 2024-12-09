@@ -264,8 +264,12 @@ func _shoot():
 				#print("---", n)
 				var spread = SPREAD_RANGE
 				
-				raycast.cast_to.x = rand_range(-spread, spread)
-				raycast.cast_to.y = rand_range(-spread, spread)
+				if _n > 1:
+					raycast.cast_to.x = rand_range(-spread, spread)
+					raycast.cast_to.y = rand_range(-spread, spread)
+				else:
+					raycast.cast_to.x = 0
+					raycast.cast_to.y = 0
 				#print(raycast.cast_to)
 				#print(rand_range(-spread, spread))
 				

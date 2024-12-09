@@ -451,7 +451,6 @@ visible = false
 position = Vector2( 969, 538.5 )
 scale = Vector2( 1.444, 1.444 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="G3" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -459,7 +458,6 @@ visible = false
 position = Vector2( 947.667, 538 )
 scale = Vector2( 1.44533, 1.44533 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="g2" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -467,7 +465,6 @@ visible = false
 position = Vector2( 1000, 539.5 )
 scale = Vector2( 1.43067, 1.43067 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="G1" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -475,7 +472,6 @@ visible = false
 position = Vector2( 1025, 546 )
 scale = Vector2( 1.43067, 1.43067 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="TC" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -497,7 +493,7 @@ frame = 2
 visible = false
 position = Vector2( 960, 540 )
 frames = SubResource( 1 )
-frame = 11
+frame = 17
 playing = true
 
 [node name="Banda" type="Sprite" parent="INTROPLAYER"]

@@ -1,5 +1,8 @@
 
 
+Bug:
+- Desajuste de audio en la primera partida. Asegurarse de que se inicia al pulsar/caer/cuando todo esté ready
+
 
 Level:
 - ajustar entorno del nivel (luces?)
@@ -16,7 +19,8 @@ Sonido
 
 
 Enemigos
-- headshot detection
+- headshot detection (hacer el primer tiro totalmente recto también)
+
 - conexión con puntuación
 	necesito que avisen cuando mueren. No obstante el propio manager debe saber si el jugador está en el aire y esas cosas
 - salto?
@@ -41,8 +45,6 @@ Sistemas
 PULIDO
 
 - Leaderboard
-
-- plataforma doblada que no se puede caminar por ella
 
 Armas
 - partículas distintas (disparo/melee)
