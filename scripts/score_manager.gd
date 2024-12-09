@@ -188,7 +188,10 @@ func lose_combo():
 func update_max_combo():
 	#print("se nos pide updatear max combo")
 	
+	#print("alksjfdkdjf")
+	#print("max combo = ", max_combo_time)
 	if max_combo_time >= 100:
+		#print("alksjfdkdjf")
 		max_combo_time = 0
 	
 	max_combo_time = max((time_passed - first_killtime_in_spree), max_combo_time)

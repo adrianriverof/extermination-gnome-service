@@ -116,6 +116,10 @@ animations = [ {
 [node name="Player" type="KinematicBody"]
 collision_layer = 2
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 540.0 ],
+"_edit_vertical_guides_": [ 960.0 ]
+}
 reload_animation_active = false
 
 [node name="PlayerCollisionShape" type="CollisionShape" parent="."]
@@ -199,6 +203,10 @@ r_max = 10
 STOP_THRESHOLD = 0.1
 
 [node name="GnomoCam" parent="CanvasLayer" instance=ExtResource( 65 )]
+margin_left = -56.0
+margin_top = -13.0
+margin_right = -56.0
+margin_bottom = -13.0
 
 [node name="Tween" type="Tween" parent="."]
 
