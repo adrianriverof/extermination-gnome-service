@@ -278,13 +278,22 @@ func _shoot():
 				
 				raycast.force_raycast_update()
 				
+				
 				var coll = raycast.get_collider()
 				var coll_point = raycast.get_collision_point()
 				#print("punto de colisión = ", coll_point)
 				
 				if raycast.is_colliding():
+					spawn_impact_at(coll_point)
+					
+					print(coll.name)
+					
 					if coll.has_method("damage"):
+						#print(coll.name)
 						coll.damage()
+						
+						
+						
 						#spawn_impact_at(coll_point)
 					else:
 						#print("spawn impact")
@@ -294,8 +303,8 @@ func _shoot():
 						earn_score(50)
 						
 						pass
-				
-				spawn_impact_at(coll_point)
+						
+					
 
 func gnomecam_shoot():
 	$CanvasLayer/GnomoCam.shoot()
@@ -352,7 +361,7 @@ func _melee():
 						
 						pass
 				
-				spawn_impact_at(coll_point)
+					spawn_impact_at(coll_point)
 	
 
 

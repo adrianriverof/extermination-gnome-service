@@ -38,7 +38,7 @@ func atoeurtneoru():
 
 
 func animacion_caminar():
-	print("timeout")
+	#print("timeout")
 	$Timer.stop()
 	$CUCAPARED/AnimationPlayer.play("CUP WALKING")
 	
@@ -99,6 +99,9 @@ func _on_Area_body_entered(body):
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	print("repeat")
+	#print("repeat")
 	if anim_name == "CUP WALKING":
 		$CUCAPARED/AnimationPlayer.play("CUP WALKING")
+
+
+

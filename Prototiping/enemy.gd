@@ -38,6 +38,8 @@ func damage():
 	level.score_manager.matar_cuca()
 	queue_free()
 
+
+
 func _physics_process(delta):
 	
 	

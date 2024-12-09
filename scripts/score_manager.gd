@@ -102,11 +102,11 @@ func add_score(points:int):
 
 func matar_cuca(extra_base = 0, extra_combo = 0):
 	
-	print(puntos_cuca_segun_tiempo())
-	print(extra_base)
-	print(multip_cuca_distancia)
-	print("combo:", combo())
-	print(extra_combo)
+#	print(puntos_cuca_segun_tiempo())
+#	print(extra_base)
+#	print(multip_cuca_distancia)
+#	print("combo:", combo())
+#	print(extra_combo)
 	
 	add_score(
 		(puntos_cuca_segun_tiempo() + extra_base) * 

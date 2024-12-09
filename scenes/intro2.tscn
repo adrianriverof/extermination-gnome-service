@@ -493,7 +493,7 @@ frame = 2
 visible = false
 position = Vector2( 960, 540 )
 frames = SubResource( 1 )
-frame = 17
+frame = 14
 playing = true
 
 [node name="Banda" type="Sprite" parent="INTROPLAYER"]
