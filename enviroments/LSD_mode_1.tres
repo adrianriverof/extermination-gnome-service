@@ -4,7 +4,10 @@
 background_mode = 1
 background_energy = 0.0
 ambient_light_color = Color( 0.141176, 0.141176, 0.141176, 1 )
-ambient_light_energy = 2.0
 fog_enabled = true
 fog_color = Color( 0, 0, 0, 1 )
-fog_depth_end = 40.0
+fog_depth_end = 33.0
+adjustment_enabled = true
+adjustment_brightness = 4.38
+adjustment_contrast = 1.34
+adjustment_saturation = 8.0

@@ -4,8 +4,7 @@ Bug:
 - Desajuste de audio en la primera partida. Asegurarse de que se inicia al pulsar/caer/cuando todo esté ready
 
 
-Level:
-- ajustar entorno del nivel (luces?)
+
 
 
 Sonido
@@ -19,7 +18,6 @@ Sonido
 
 
 Enemigos
-- headshot detection (hacer el primer tiro totalmente recto también)
 
 - conexión con puntuación
 	necesito que avisen cuando mueren. No obstante el propio manager debe saber si el jugador está en el aire y esas cosas
@@ -46,6 +44,8 @@ PULIDO
 
 - Leaderboard
 
+- headshot detection 
+
 Armas
 - partículas distintas (disparo/melee)
 - agujero de bala
@@ -56,5 +56,17 @@ Armas
 - Wallrun que mantenga pegado mientras no apunto delante (posiblemente fuera de scope)
 
 - movimiento en enemigos de las paredes (un poquillo aunque sea, que caminen un poquillo ahí por la pared)
+
+
+ILUMINACION Y ENTORNO:
+
+
+Clave para más visibilidad: 
+
+- Depth end fog: 30-50
+- Ambient Light: Energy 2
+- Brightness 1-2
+- Saturation 2-3
+
 
 
