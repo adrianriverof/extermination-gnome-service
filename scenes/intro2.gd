@@ -13,7 +13,7 @@ func go_to_menu():
 
 
 func _input(event):
-	if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("shoot") or Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_cancel"):
 		if skiplabel.visible == false:
 			skiplabel.visible = true
 			
@@ -29,3 +29,11 @@ func _on_SkipTextTimer_timeout():
 
 func _on_PassTimer_timeout():
 	go_to_menu()
+
+
+func _on_Button_button_down():
+	go_to_menu()
+
+
+
+

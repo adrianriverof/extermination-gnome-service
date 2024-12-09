@@ -4,7 +4,7 @@ extends CanvasLayer
 var yes = 0
 var no = 1
 
-onready var levelscene = ("res://levels/level_1.tscn")
+onready var levelscene = ("res://levels/level_2.tscn")
 onready var menuscene = ("res://scenes/main_menu.tscn")
 
 onready var level = get_parent()

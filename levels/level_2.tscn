@@ -53,9 +53,6 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 540.0 ],
 "_edit_vertical_guides_": [ 960.0 ]
 }
-reset_on_timeout = false
-total_time = 50
-enable_music = false
 
 [node name="enemies" type="Spatial" parent="."]
 

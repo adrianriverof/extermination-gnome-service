@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://scenes/iNTRO/Splashing Around.mp3" type="AudioStream" id=1]
 [ext_resource path="res://scenes/iNTRO/GNOMOCHUNG/1G.png0007.png" type="Texture" id=2]
@@ -409,6 +409,8 @@ animations = [ {
 size = 62
 font_data = ExtResource( 38 )
 
+[sub_resource type="StyleBoxEmpty" id=12]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 37 )
 
@@ -451,6 +453,7 @@ visible = false
 position = Vector2( 969, 538.5 )
 scale = Vector2( 1.444, 1.444 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="G3" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -458,6 +461,7 @@ visible = false
 position = Vector2( 947.667, 538 )
 scale = Vector2( 1.44533, 1.44533 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="g2" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -465,6 +469,7 @@ visible = false
 position = Vector2( 1000, 539.5 )
 scale = Vector2( 1.43067, 1.43067 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="G1" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -472,6 +477,7 @@ visible = false
 position = Vector2( 1025, 546 )
 scale = Vector2( 1.43067, 1.43067 )
 frames = SubResource( 5 )
+frame = 1
 playing = true
 
 [node name="TC" type="AnimatedSprite" parent="INTROPLAYER"]
@@ -545,5 +551,14 @@ one_shot = true
 [node name="PassTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Button" type="Button" parent="."]
+margin_left = 1676.0
+margin_top = 908.0
+margin_right = 1900.0
+margin_bottom = 1083.0
+custom_styles/focus = SubResource( 12 )
+flat = true
+
 [connection signal="timeout" from="SkipTextTimer" to="." method="_on_SkipTextTimer_timeout"]
 [connection signal="timeout" from="PassTimer" to="." method="_on_PassTimer_timeout"]
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
