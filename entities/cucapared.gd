@@ -68,11 +68,12 @@ func efectuar_animacion_al_azar():
 
 
 func _on_Area_body_entered(body):
-	if body.name == "Player" and lanza_al_jugador:
+	if body.name == "Player" and lanza_al_jugador and not body.is_on_floor():
 #
 #		var local_push_direction = Vector3.RIGHT
 #		var global_push_direction = global_transform.basis.xform(local_push_direction).normalized()
 #
+		
 		var action_event_press = InputEventAction.new()
 		action_event_press.action = "jump"  # Especifica la acción "jump"
 		action_event_press.pressed = true
