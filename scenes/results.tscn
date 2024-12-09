@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/results.gd" type="Script" id=1]
 [ext_resource path="res://assets/UI/FinalScore/Banner.png" type="Texture" id=2]
 [ext_resource path="res://assets/UI/FinalScore/Final Score.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/FinalScore/Yes Texture.png" type="Texture" id=4]
 [ext_resource path="res://assets/UI/FinalScore/play again return to menu.png" type="Texture" id=5]
 [ext_resource path="res://assets/UI/FinalScore/Checklist.png" type="Texture" id=6]
 [ext_resource path="res://assets/UI/FinalScore/square.png" type="Texture" id=7]
+[ext_resource path="res://assets/UI/FinalScore/No Texture.png" type="Texture" id=8]
 [ext_resource path="res://fonts/Jacquard_24/Jacquard24-Regular.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=2]
@@ -17,6 +19,14 @@ size = 126
 outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 9 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Results" type="CanvasLayer"]
 pause_mode = 2
@@ -72,6 +82,14 @@ margin_bottom = 397.0
 custom_colors/default_color = Color( 0.807843, 0.65098, 0.0823529, 1 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "128790455"
+
+[node name="Destroyed3YesNoIndicator" type="AnimatedSprite" parent="."]
+position = Vector2( 1155, 388 )
+frames = SubResource( 4 )
+
+[node name="Destroyed6YesNoIndicator" type="AnimatedSprite" parent="."]
+position = Vector2( 1200, 460 )
+frames = SubResource( 4 )
 
 [connection signal="pressed" from="ButtonMenu" to="." method="_on_ButtonMenu_pressed"]
 [connection signal="pressed" from="ButtonPlay" to="." method="_on_ButtonPlay_pressed"]
