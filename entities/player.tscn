@@ -66,7 +66,7 @@
 [ext_resource path="res://shaketween/ShakeTween.tscn" type="PackedScene" id=64]
 [ext_resource path="res://scenes/GNOMOCAM.tscn" type="PackedScene" id=65]
 [ext_resource path="res://sound/effects/bonk.ogg" type="AudioStream" id=66]
-[ext_resource path="res://sound/effects/Shotgun.mp3" type="AudioStream" id=67]
+[ext_resource path="res://sound/effects/Shotgun.ogg" type="AudioStream" id=67]
 [ext_resource path="res://sound/effects/batefallo.ogg" type="AudioStream" id=68]
 
 [sub_resource type="CapsuleShape" id=1]
@@ -233,7 +233,6 @@ stream = ExtResource( 66 )
 
 [node name="bonkfail_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 68 )
-volume_db = -5.0
 
 [node name="gun_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 67 )

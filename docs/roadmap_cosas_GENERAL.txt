@@ -16,7 +16,7 @@
 ---------------
 1.2
 
-- sonidos
+- sonidos*
 - animaciones menus
 - huevo*
 - efectos juice
@@ -27,12 +27,12 @@
 
 
 Sonido
-- disparo
+- disparo*
 - salto
 - caida
 - dash
 - wallride
-- impactos
+- impactos*
 
 
 

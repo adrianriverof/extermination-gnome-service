@@ -82,3 +82,25 @@ func _on_ButtonMenu_pressed():
 func _on_ButtonPlay_pressed():
 	go_to_level()
 	queue_free()
+
+
+
+
+
+func _on_ButtonPlay_mouse_entered():
+	$AnimationPlayer.play("Play_anim")
+	$Playagain.position = Vector2(680,886)
+
+func _on_ButtonPlay_mouse_exited():
+	$AnimationPlayer.play_backwards("Play_anim")
+	$Playagain.position = (Vector2(680,824))
+	
+	
+
+func _on_ButtonMenu_mouse_entered():
+	$AnimationPlayer.play("Menu_anim")
+	$Returntomeno.position = (Vector2(1227,886))
+
+func _on_ButtonMenu_mouse_exited():
+	$AnimationPlayer.play_backwards("Menu_anim")
+	$Returntomeno.position = (Vector2(1227,824))

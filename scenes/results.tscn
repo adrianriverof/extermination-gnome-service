@@ -1,14 +1,15 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/results.gd" type="Script" id=1]
 [ext_resource path="res://assets/UI/FinalScore/Banner.png" type="Texture" id=2]
 [ext_resource path="res://assets/UI/FinalScore/Final Score.png" type="Texture" id=3]
 [ext_resource path="res://assets/UI/FinalScore/Yes Texture.png" type="Texture" id=4]
-[ext_resource path="res://assets/UI/FinalScore/play again return to menu.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/FinalScore/playagain.png" type="Texture" id=5]
 [ext_resource path="res://assets/UI/FinalScore/Checklist.png" type="Texture" id=6]
 [ext_resource path="res://assets/UI/FinalScore/square.png" type="Texture" id=7]
 [ext_resource path="res://assets/UI/FinalScore/No Texture.png" type="Texture" id=8]
 [ext_resource path="res://fonts/Jacquard_24/Jacquard24-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://assets/UI/FinalScore/Returntomeno.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -27,6 +28,41 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="Animation" id=5]
+resource_name = "Menu_anim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Playagain:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 680, 824 ), Vector2( 680, 886 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Play_anim"
+length = 2.0
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Playagain:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 680, 824 ) ]
+}
 
 [node name="Results" type="CanvasLayer"]
 pause_mode = 2
@@ -68,11 +104,15 @@ centered = false
 texture = ExtResource( 3 )
 centered = false
 
-[node name="PlayAgainReturnToMenu" type="Sprite" parent="."]
-position = Vector2( 58, 44 )
+[node name="Playagain" type="Sprite" parent="."]
+position = Vector2( 680, 824 )
 scale = Vector2( 0.941667, 0.943519 )
 texture = ExtResource( 5 )
-centered = false
+
+[node name="Returntomeno" type="Sprite" parent="."]
+position = Vector2( 1227, 822 )
+scale = Vector2( 0.941667, 0.943519 )
+texture = ExtResource( 10 )
 
 [node name="FinalScoreText" type="RichTextLabel" parent="."]
 margin_left = 1061.0
@@ -99,5 +139,14 @@ frames = SubResource( 4 )
 position = Vector2( 1185, 601 )
 frames = SubResource( 4 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Menu_anim = SubResource( 5 )
+anims/Play_anim = SubResource( 6 )
+anims/RESET = SubResource( 7 )
+
+[connection signal="mouse_entered" from="ButtonMenu" to="." method="_on_ButtonMenu_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonMenu" to="." method="_on_ButtonMenu_mouse_exited"]
 [connection signal="pressed" from="ButtonMenu" to="." method="_on_ButtonMenu_pressed"]
+[connection signal="mouse_entered" from="ButtonPlay" to="." method="_on_ButtonPlay_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonPlay" to="." method="_on_ButtonPlay_mouse_exited"]
 [connection signal="pressed" from="ButtonPlay" to="." method="_on_ButtonPlay_pressed"]
