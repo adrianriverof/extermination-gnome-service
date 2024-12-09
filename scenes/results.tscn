@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/results.gd" type="Script" id=1]
 [ext_resource path="res://assets/UI/FinalScore/Banner.png" type="Texture" id=2]
@@ -8,10 +8,17 @@
 [ext_resource path="res://assets/UI/FinalScore/Checklist.png" type="Texture" id=6]
 [ext_resource path="res://assets/UI/FinalScore/square.png" type="Texture" id=7]
 [ext_resource path="res://assets/UI/FinalScore/No Texture.png" type="Texture" id=8]
+[ext_resource path="res://fonts/Jacquard_24/Jacquard24-Regular.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
 [sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="DynamicFont" id=3]
+size = 126
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 9 )
 
 [node name="Results" type="CanvasLayer"]
 pause_mode = 2
@@ -66,6 +73,15 @@ centered = false
 [node name="YesTexture" type="Sprite" parent="."]
 texture = ExtResource( 4 )
 centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 1063.0
+margin_top = 120.0
+margin_right = 1886.0
+margin_bottom = 397.0
+custom_colors/default_color = Color( 0.807843, 0.65098, 0.0823529, 1 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "128790455"
 
 [connection signal="pressed" from="ButtonMenu" to="." method="_on_ButtonMenu_pressed"]
 [connection signal="pressed" from="ButtonPlay" to="." method="_on_ButtonPlay_pressed"]
