@@ -74,6 +74,7 @@ var ammunition = MAX_AMMUNITION
 
 const DISTANCIA_MELEE = 3
 const DISTANCIA_RANGE = 15
+const EXTRA_PRIMER_TIRO = 5
 const SPREAD_RANGE = 2
 const SPREAD_MELEE = 5
 
@@ -258,16 +259,18 @@ func _shoot():
 			var raycast = $Head/Camera/RayCast
 			
 			
-			raycast.cast_to.z = -DISTANCIA_RANGE
+			
 			for _n in range(6):
 				randomize()
 				#print("---", n)
 				var spread = SPREAD_RANGE
 				
 				if _n > 1:
+					raycast.cast_to.z = -DISTANCIA_RANGE + EXTRA_PRIMER_TIRO
 					raycast.cast_to.x = rand_range(-spread, spread)
 					raycast.cast_to.y = rand_range(-spread, spread)
 				else:
+					raycast.cast_to.z = -DISTANCIA_RANGE
 					raycast.cast_to.x = 0
 					raycast.cast_to.y = 0
 				#print(raycast.cast_to)
