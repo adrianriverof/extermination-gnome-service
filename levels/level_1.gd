@@ -37,13 +37,12 @@ func _ready():
 #	presenter = EarnCookie.new()
 #	presenter.EarnCookie(domain, self)
 	
-	
-	
+	#get_tree().paused = false
+	Engine.time_scale = 1
+
+func start_level():
 	if enable_music:
 		$AudioStreamPlayer.play()
-	
-	#get_tree().paused = false
-	#Engine.time_scale = 1
 
 
 func _physics_process(delta):

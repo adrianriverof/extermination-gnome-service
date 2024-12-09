@@ -1534,6 +1534,7 @@ mesh = SubResource( 8 )
 skin = SubResource( 9 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cucaman_model"]
+autoplay = "Running001"
 anims/Running001 = SubResource( 11 )
 anims/Running1 = SubResource( 4 )
 anims/Running2 = SubResource( 5 )
