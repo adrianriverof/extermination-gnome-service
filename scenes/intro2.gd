@@ -19,7 +19,7 @@ func _input(event):
 			
 		$PassTimer.start()
 	
-	if Input.is_action_just_released("ui_accept") or Input.is_action_just_released("ui_cancel"):
+	if Input.is_action_just_released("shoot") or Input.is_action_just_released("ui_accept") or Input.is_action_just_released("ui_cancel"):
 		$PassTimer.stop()
 		skiptimer.start()
 
