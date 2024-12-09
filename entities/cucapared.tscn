@@ -11,6 +11,7 @@ extents = Vector3( 0.395419, 1, 1 )
 
 [node name="Cucapared" type="KinematicBody"]
 script = ExtResource( 2 )
+lanza_al_jugador = false
 
 [node name="CUCAPARED" parent="." instance=ExtResource( 1 )]
 

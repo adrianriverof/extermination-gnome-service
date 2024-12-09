@@ -21,7 +21,9 @@ func _ready():
 
 func damage():
 	#print("...enemy damaged")
-	level.add_score(100)
+	
+	level.score_manager.cuca_muerta_mira_este_player(level.player)
+	#level.add_score(100)
 	queue_free()
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://models/scenary/Maderass.material" type="Material" id=1]
 [ext_resource path="res://models/scenary/Mar.material" type="Material" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://models/scenary/villacuca.material" type="Material" id=10]
 [ext_resource path="res://models/scenary/Carcasahuevo.material" type="Material" id=11]
 [ext_resource path="res://models/scenary/matric.material" type="Material" id=12]
+[ext_resource path="res://assets/gnomed.png" type="Texture" id=13]
+[ext_resource path="res://models/barras antituberia ole 3.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "NIVELDEF1_Cube003"
@@ -203,3 +205,9 @@ mesh = SubResource( 6 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.99983, 0.018456, 0, -0.018456, 0.99983, 3.46825, 10.3502, 17.9394 )
 shape = SubResource( 3 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 0.669023, 0.0606578, 0.145571, -0.0458928, 0.66995, -0.148022, -0.106504, 0.0923497, 0.978212, 23.7889, 5.21971, -4.95724 )
+texture = ExtResource( 13 )
+
+[node name="barras antituberia ole 3" parent="." instance=ExtResource( 14 )]

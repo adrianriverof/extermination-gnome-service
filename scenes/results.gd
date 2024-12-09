@@ -23,7 +23,8 @@ func _ready():
 	else:
 		$Destroyed6YesNoIndicator.frame = 1
 	
-	
+	level.score_manager.update_max_combo()
+	print("max_combo: ", level.score_manager.max_combo_time)
 	
 
 func _physics_process(delta):

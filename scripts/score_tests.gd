@@ -240,7 +240,22 @@ func test_when_cuca_killed_that_time_is_lastime_killed():
 	
 	assert_eq(sut.last_kill_time,(15))
 	
-
+func test_max_combo_shows_max_combo():
+	var sut = ScoreManager.new()
+	
+	sut.update_max_combo()
+	sut.matar_cuca()
+	sut.time_passed = 15
+	sut.matar_cuca()
+	sut.time_passed += 1
+	sut.matar_cuca()
+	sut.time_passed += 1
+	sut.matar_cuca()
+	sut.time_passed += 1
+	sut.update_max_combo()
+	
+	assert_eq(sut.max_combo_time,(3))
+	
 
 
 

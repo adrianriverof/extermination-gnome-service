@@ -7,13 +7,15 @@ class_name Scoremanager
 var huevo_golpeado = false
 var huevo_golpeado_ultimo_segundo = false
 
+var max_combo_time = 0
+
 
 var puntos_por_cuca = 100
 var multip_cuca_distancia = 2
 var multip_cuca_melee = 4
 
-export var last_kill_time = -100.0
-var first_killtime_in_spree = -100.0
+export var last_kill_time = -100
+var first_killtime_in_spree = -100
 
 var score = 0
 
@@ -42,6 +44,8 @@ var required_kills_combo_4 = 6
 var required_kills_combo_5 = 10
 
 ##################################################
+
+
 
 func get_score():
 	return score
@@ -89,7 +93,7 @@ func calculate_combo_level(time_in_combo: float) -> int:
 
 func select_combo_level_based_on_time():
 	if in_combo():
-		combo_level = calculate_combo_level(time_passed - first_killtime_in_spree)
+		combo_level = calculate_combo_level(calculate_time_in_spree())
 		return combo_level
 	else: 
 		lose_combo()
@@ -158,6 +162,7 @@ func puntos_cuca_segun_tiempo():
 
 func update_last_time_killed():
 	
+	
 	#print("se updatea")
 	if in_combo():
 		# si se updatea pero no lo perdió, se añade el combo al total
@@ -180,12 +185,31 @@ func lose_combo():
 	kills_durante_combo = 0
 	reset_combo_level()
 	
-
-
+func update_max_combo():
+	#print("se nos pide updatear max combo")
+	
+	if max_combo_time >= 100:
+		max_combo_time = 0
+	
+	max_combo_time = max((time_passed - first_killtime_in_spree), max_combo_time)
+#	
+func calculate_time_in_spree():
+	
+	var tiempo = (time_passed - first_killtime_in_spree)
+	#print("tiempo", tiempo)
+	
+	update_max_combo()
+	
+	
+	if tiempo > 0:
+		return tiempo
+	else:
+		return 0
 
 func combo_time_in_spree():
+	
 	if in_combo():
-		return (time_passed - first_killtime_in_spree)
+		return (calculate_time_in_spree())
 	else:
 		return 0
 
@@ -205,6 +229,8 @@ func in_combo():
 		return false
 
 func update_combo_level_based_on_combo():
+	
+	
 	if !in_combo():
 		lose_combo()
 
