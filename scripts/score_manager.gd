@@ -103,13 +103,13 @@ func cuca_muerta_mira_este_player(player):
 	
 	# aquí checkearemos si el jugador estaba en el aire o qué
 	if player.is_wallruning():
-		print("player ha matado una cuca cuando wallruning")
+		#print("player ha matado una cuca cuando wallruning")
 		matar_cuca_wallriding()
 	elif not player.is_on_floor():
-		print("player matado cuca en el aire")
+		#print("player matado cuca en el aire")
 		matar_cuca_en_aire()
 	else:
-		print("player ha matado una cuca de forma normal")
+		#print("player ha matado una cuca de forma normal")
 		matar_cuca()
 	
 

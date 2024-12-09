@@ -1,23 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/results.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI/FinalScore/Banner.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI/FinalScore/Final Score.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/FinalScore/Yes Texture.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/FinalScore/play again return to menu.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/FinalScore/Checklist.png" type="Texture" id=6]
+[ext_resource path="res://assets/UI/FinalScore/square.png" type="Texture" id=7]
+[ext_resource path="res://assets/UI/FinalScore/No Texture.png" type="Texture" id=8]
 
-[node name="Results" type="Control"]
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="Results" type="CanvasLayer"]
 pause_mode = 2
 script = ExtResource( 1 )
 
-[node name="Icon" type="Sprite" parent="."]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 990, 439.875 )
-scale = Vector2( 8.9375, 11.0664 )
-texture = ExtResource( 2 )
-
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 779.0
-margin_top = 142.0
-margin_right = 1215.0
-margin_bottom = 685.0
+margin_left = 775.0
+margin_top = 199.0
+margin_right = 1211.0
+margin_bottom = 742.0
 text = "Bla bla bla
 
 bla b
@@ -40,18 +44,52 @@ desglose o lo que sea
 "
 
 [node name="ButtonMenu" type="Button" parent="."]
-margin_left = 1109.0
-margin_top = 738.0
-margin_right = 1286.0
-margin_bottom = 806.0
-text = "Menu"
+margin_left = 1093.0
+margin_top = 714.0
+margin_right = 1382.0
+margin_bottom = 942.0
+custom_styles/focus = SubResource( 2 )
+flat = true
 
 [node name="ButtonPlay" type="Button" parent="."]
-margin_left = 720.0
-margin_top = 739.0
-margin_right = 897.0
-margin_bottom = 807.0
-text = "Jugar otra vez"
+margin_left = 545.0
+margin_top = 715.0
+margin_right = 793.0
+margin_bottom = 939.0
+custom_styles/focus = SubResource( 1 )
+flat = true
+__meta__ = {
+"_editor_description_": "aueauaoeu eaou "
+}
+
+[node name="Square" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 0.647059 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Banner" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Checklist" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="FinalScore" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="PlayAgainReturnToMenu" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="NoTexture" type="Sprite" parent="."]
+texture = ExtResource( 8 )
+centered = false
+
+[node name="YesTexture" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
 
 [connection signal="pressed" from="ButtonMenu" to="." method="_on_ButtonMenu_pressed"]
 [connection signal="pressed" from="ButtonPlay" to="." method="_on_ButtonPlay_pressed"]

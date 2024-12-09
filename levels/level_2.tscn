@@ -1,0 +1,307 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://entities/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://enviroments/level_enviro_2_mas_claro.tres" type="Environment" id=2]
+[ext_resource path="res://Prototiping/enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sound/20 sec game jam entera.ogg" type="AudioStream" id=4]
+[ext_resource path="res://levels/level_1.gd" type="Script" id=5]
+[ext_resource path="res://entities/cucapared.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/huevo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/nivel_decorado.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/UI/comboindicators/5 Gnomemageddon.png" type="Texture" id=9]
+[ext_resource path="res://assets/UI/comboindicators/3 Gnomination.png" type="Texture" id=10]
+[ext_resource path="res://assets/UI/comboindicators/2 Gnometastic.png" type="Texture" id=11]
+[ext_resource path="res://assets/UI/comboindicators/4 Gnomepocalypse.png" type="Texture" id=12]
+[ext_resource path="res://assets/UI/comboindicators/1 Gnoming.png" type="Texture" id=13]
+[ext_resource path="res://shaketween/ShakeTween.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/new_imagetexture.tres" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ null, ExtResource( 13 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 20.0955, 1, 16.2815 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 15 )
+
+[sub_resource type="PlaneMesh" id=3]
+size = Vector2( 100, 100 )
+
+[node name="test_level" type="Spatial"]
+script = ExtResource( 5 )
+reset_on_timeout = false
+enable_music = false
+
+[node name="enemies" type="Spatial" parent="."]
+
+[node name="enemy4" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, -17.159, 10.0588, -12.0895 )
+
+[node name="enemy5" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, -18.1956, 10.0494, -21.6916 )
+
+[node name="enemy19" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, -10.3815, 7.72053, 8.27797 )
+
+[node name="enemy20" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.258246, 0, 0.966079, 0, 1, 0, -0.966079, 0, 0.258246, -36.7054, 2.23056, 1.18723 )
+
+[node name="enemy26" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, 19.6768, 5.93972, 7.35967 )
+
+[node name="enemy10" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, -5.72037, 13.4919, -5.81416 )
+
+[node name="enemy21" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, 9.14539, 12.3691, -3.95504 )
+aggro_distance = 6
+
+[node name="enemy22" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, 34.6797, 15.8499, -5.46185 )
+
+[node name="enemy23" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, 36.2185, 17.1006, -11.1932 )
+
+[node name="enemy25" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, 28.1603, 18.1968, -20.1124 )
+
+[node name="enemy11" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, 20.4517, 14.8696, 11.6117 )
+aggro_distance = 8
+unaggro_distance = 10
+
+[node name="enemy24" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, 25.4856, 14.8696, 8.8318 )
+aggro_distance = 8
+unaggroable = false
+unaggro_distance = 10
+
+[node name="enemy12" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, 20.5745, 14.5865, 5.77176 )
+aggro_distance = 8
+
+[node name="enemy13" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, 14.4267, 16.5068, 10.3508 )
+aggro_distance = 8
+unaggro_distance = 10
+
+[node name="enemy18" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( -0.99218, 0, -0.124814, 0, 1, 0, 0.124814, 0, -0.99218, 23.2375, 10.3814, -7.01278 )
+
+[node name="enemy16" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, 5.19908, 22.1412, 2.13925 )
+aggro_distance = 5
+unaggro_distance = 10
+
+[node name="enemy8" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, -6.38405, 16.5795, -24.2004 )
+aggro_distance = 5
+unaggroable = false
+unaggro_distance = 10
+
+[node name="enemy9" parent="enemies" instance=ExtResource( 3 )]
+transform = Transform( 0.0304687, 0, -0.999536, 0, 1, 0, 0.999536, 0, 0.0304687, -22.4837, 19.6873, -24.2977 )
+aggro_distance = 5
+unaggro_distance = 10
+
+[node name="Cucapared" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( -0.922406, 0.0547484, -0.38232, 0.098763, 0.990426, -0.0964518, 0.37338, -0.126727, -0.918981, -27.2153, 6.89885, -1.62607 )
+
+[node name="Cucapared2" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( 0.744263, -0.662396, -0.0854658, 0.662261, 0.748501, -0.0340039, 0.0864951, -0.0312929, 0.99576, -30.4958, 20.8254, -1.62607 )
+
+[node name="Cucapared12" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( 0.648328, -0.5986, 0.470477, 0.575371, 0.789903, 0.212137, -0.498617, 0.133164, 0.856532, -31.3266, 27.1413, 14.5299 )
+
+[node name="Cucapared28" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( 0.0292449, -0.207228, 0.977854, 0.380333, 0.906998, 0.180837, -0.924387, 0.366623, 0.105341, -18.2038, 28.4145, 22.2971 )
+
+[node name="Cucapared29" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( -0.865581, 0.0294161, 0.499903, 0.120046, 0.981354, 0.150113, -0.486166, 0.189947, -0.852972, -7.58699, 34.4497, 12.682 )
+
+[node name="Cucapared8" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( -0.079657, -0.995866, -0.0436637, 0.2107, -0.0596344, 0.975729, -0.9743, 0.068524, 0.214579, 5.26241, 5.71132, 11.6496 )
+
+[node name="Cucapared9" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( 0.0505738, 0.994831, -0.0880586, 0.28757, -0.0989429, -0.952634, -0.956423, 0.0228555, -0.291087, 10.6694, 5.71132, 11.6598 )
+
+[node name="Cucapared3" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( -0.943635, -0.308494, 0.11993, 0.0138031, -0.398704, -0.916975, 0.330698, -0.863637, 0.380488, -27.6651, 4.08812, -2.56514 )
+
+[node name="Cucapared10" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( -0.580377, -0.749968, 0.317351, 0.0138031, -0.398704, -0.916975, 0.814231, -0.527812, 0.24175, -8.50985, 4.08812, -2.47985 )
+
+[node name="Cucapared11" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( -0.580377, -0.749968, 0.317351, 0.0138031, -0.398704, -0.916975, 0.814231, -0.527812, 0.24175, 7.43086, 8.505, -1.57605 )
+
+[node name="Cucapared15" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( -0.0321102, -0.977413, 0.208888, 0.0801495, -0.210841, -0.974228, 0.996265, -0.0145405, 0.0851089, 1.39323, 12.9351, -18.7448 )
+
+[node name="Cucapared25" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( 0.00993424, 0.977494, -0.21073, -0.0475157, -0.210041, -0.976536, -0.998821, 0.0197142, 0.04436, 6.96819, 12.9351, -19.2826 )
+
+[node name="Cucapared27" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( 0.00993424, 0.977494, -0.21073, -0.0475157, -0.210041, -0.976536, -0.998821, 0.0197142, 0.04436, -49.3434, 12.9351, 18.7157 )
+
+[node name="Cucapared26" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( 0.0369933, -0.282569, 0.958533, 0.0314313, 0.959045, 0.281506, -0.998821, 0.0197142, 0.04436, -6.28114, 10.1416, -19.0675 )
+
+[node name="Cucapared13" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( -0.0559723, 0.997277, 0.0480285, 0.0447144, -0.0455519, 0.99796, 0.99743, 0.0580058, -0.0420433, 10.2638, 13.3388, -18.7858 )
+
+[node name="Cucapared14" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( -0.0529875, 0.997453, 0.0477607, 0.0144299, -0.0470581, 0.998787, 0.998491, 0.0536125, -0.0119, -5.34395, 13.3388, -18.9065 )
+
+[node name="Cucapared16" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( 0.792827, 0.609202, 0.0172481, 0.00196492, -0.0308566, 0.999521, 0.609443, -0.792415, -0.0256612, 16.8848, 23.2091, -19.2553 )
+
+[node name="Cucapared18" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( -0.81597, -0.569249, -0.100746, -0.046337, -0.109309, 0.992926, -0.576234, 0.814868, 0.0628153, 19.0545, 25.2189, -7.54608 )
+
+[node name="Cucapared22" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( 0.986434, 0.134563, -0.0940214, -0.116694, 0.977649, 0.174889, 0.115453, -0.161545, 0.980088, 20.0409, 19.6832, -2.56448 )
+
+[node name="Cucapared23" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( 0.930869, 0.169051, -0.323891, -0.116694, 0.977649, 0.174889, 0.346216, -0.125002, 0.929789, 22.4869, 23.5521, -9.54916 )
+
+[node name="Cucapared24" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( 0.930869, 0.169051, -0.323891, -0.116694, 0.977649, 0.174889, 0.346216, -0.125002, 0.929789, 22.4869, 23.5521, -9.54916 )
+
+[node name="Cucapared19" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( -0.997122, -0.0546436, -0.052548, -0.0756554, 0.761553, 0.643672, 0.00484592, 0.645796, -0.763494, 18.3481, 22.2957, -3.86073 )
+
+[node name="Cucapared20" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( -0.169515, 0.634916, -0.753754, -0.0390081, 0.759902, 0.648866, 0.984755, 0.139396, -0.104048, 27.9206, 19.0932, -7.6427 )
+
+[node name="Cucapared21" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( 0.841302, 0.37535, -0.389003, -0.0390081, 0.759902, 0.648866, 0.539156, -0.530719, 0.653948, 32.5389, 19.0932, -9.47304 )
+
+[node name="Cucapared5" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( 0.976561, -0.214525, -0.0174978, 0.0404343, 0.103002, 0.993858, -0.211405, -0.971273, 0.109262, -25.8252, 11.8419, -2.83272 )
+
+[node name="Cucapared6" parent="enemies" instance=ExtResource( 6 )]
+transform = Transform( 0.905421, 0.08455, -0.416008, -0.132401, 0.987327, -0.087499, 0.403338, 0.134304, 0.90514, -24.7711, 11.4186, -10.1925 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.00441569, 0, -0.99999, 0, 1, 0, 0.99999, 0, 0.00441569, -43.3173, 4.47524, 0.217205 )
+
+[node name="SpotLight" type="SpotLight" parent="Player"]
+visible = false
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 8.166
+spot_range = 8.45164
+spot_angle = 31.9111
+
+[node name="OmniLight" type="OmniLight" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.885, 0 )
+light_color = Color( 1, 0.0470588, 0.0470588, 1 )
+light_energy = 0.8
+omni_range = 14.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 4 )
+
+[node name="structure" type="Spatial" parent="."]
+
+[node name="structure" parent="structure" instance=ExtResource( 8 )]
+
+[node name="huevo" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.16753, 28.9457, -5.68392 )
+
+[node name="UI" type="Control" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.061
+anchor_right = 0.5
+anchor_bottom = 0.061
+margin_right = 97.0
+margin_bottom = 67.0
+rect_scale = Vector2( 3, 3 )
+text = "rtrtrtr"
+
+[node name="Label" type="Label" parent="UI"]
+margin_left = 1483.0
+margin_top = 239.0
+margin_right = 1524.0
+margin_bottom = 270.0
+rect_scale = Vector2( 5, 5 )
+text = "SCORE
+"
+
+[node name="ScoreLabel" type="RichTextLabel" parent="UI"]
+margin_left = 1501.0
+margin_top = 329.0
+margin_right = 1559.0
+margin_bottom = 361.0
+rect_scale = Vector2( 5, 5 )
+text = "0"
+
+[node name="ComboIndicator" type="AnimatedSprite" parent="UI"]
+frames = SubResource( 2 )
+centered = false
+
+[node name="ShakeTween" parent="UI/ComboIndicator" instance=ExtResource( 14 )]
+x_max = 50
+y_max = 10
+STOP_THRESHOLD = 0.1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 2 )
+
+[node name="Water" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Water"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -12.6909, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Water"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 99.6521, -11.842, -11.2466 )
+material_override = SubResource( 4 )
+mesh = SubResource( 3 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Water"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93.6277, -11.842, -11.5739 )
+material_override = SubResource( 4 )
+mesh = SubResource( 3 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Water"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -94.7549, -11.842, 89.6135 )
+material_override = SubResource( 4 )
+mesh = SubResource( 3 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Water"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0809, -11.842, 78.9444 )
+material_override = SubResource( 4 )
+mesh = SubResource( 3 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="Water"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 94.7302, -11.842, 79.9725 )
+material_override = SubResource( 4 )
+mesh = SubResource( 3 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="Water"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 95.0463, -11.842, -99.3766 )
+material_override = SubResource( 4 )
+mesh = SubResource( 3 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="Water"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36464, -11.842, -100.948 )
+material_override = SubResource( 4 )
+mesh = SubResource( 3 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="Water"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91.9236, -11.842, -102.143 )
+material_override = SubResource( 4 )
+mesh = SubResource( 3 )
+
+[connection signal="body_entered" from="Water" to="." method="_on_Water_body_entered"]

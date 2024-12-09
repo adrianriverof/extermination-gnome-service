@@ -16,17 +16,16 @@ Sonido
 
 
 
-
-
-
 Sistemas
 
 - Puntuación e interfaz:
 	- resultados
 	- indicar multip, si eso.
 	- mostrar últimas cosas: cucakill, wallride, doblekill...
+
 - Menú inicio:
 	- interactuables (sencillo)
+
 
 - menú opciones? 
 	- sensibilidad
@@ -39,6 +38,7 @@ Sistemas
 		Crear opciones para ajustarlo si necesario
 
 - Bamboleo
+
 
 PULIDO
 

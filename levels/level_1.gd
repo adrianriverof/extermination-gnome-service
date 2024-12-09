@@ -38,6 +38,7 @@ func _ready():
 #	presenter.EarnCookie(domain, self)
 	
 	
+	
 	if enable_music:
 		$AudioStreamPlayer.play()
 	
