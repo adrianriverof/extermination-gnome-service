@@ -44,11 +44,10 @@ func _ready():
 	print("max_combo: ", max_combo)
 	
 	if max_combo > 15.0:
+		$"10scomboYesNoIndicator".frame = yes
 		$"15scomboYesNoIndicator".frame = yes
 		final_score *= 5*combo_bonuses_boolean
-		
 	elif max_combo > 10.0:
-		
 		$"10scomboYesNoIndicator".frame = yes
 		final_score *= 3*combo_bonuses_boolean
 	

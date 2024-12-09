@@ -1,8 +1,28 @@
 
 
+-------------
+1.1
 
-Bug:
-- Desajuste de audio en la primera partida. Asegurarse de que se inicia al pulsar/caer/cuando todo esté ready
+- countdown
+- gnometips
+- bate
+- combo bonus
+
+---------------
+1.1.1
+
+- Cargas
+
+---------------
+1.2
+
+- sonidos
+- animaciones
+- huevo
+- efectos juice
+
+-----------------
+
 
 
 
@@ -19,7 +39,6 @@ Sonido
 Sistemas
 
 - Puntuación e interfaz:
-	- resultados
 	- indicar multip, si eso.
 	- mostrar últimas cosas: cucakill, wallride, doblekill...
 

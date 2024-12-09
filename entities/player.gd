@@ -76,11 +76,11 @@ onready var animated_crosshair = $CanvasLayer/Position2D/AnimatedCrosshair
 const MAX_AMMUNITION = 6
 var ammunition = MAX_AMMUNITION
 
-const DISTANCIA_MELEE = 3
+const DISTANCIA_MELEE = 5
 const DISTANCIA_RANGE = 15
 const EXTRA_PRIMER_TIRO = 5
 const SPREAD_RANGE = 2
-const SPREAD_MELEE = 5
+const SPREAD_MELEE = 3
 
 
 func _ready():

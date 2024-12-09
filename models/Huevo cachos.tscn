@@ -1,0 +1,317 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://models/Huevo cachos.glb" type="PackedScene" id=1]
+
+[node name="Huevo cachos" instance=ExtResource( 1 )]
+
+[node name="Sphere001_cell" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53498, 0.551167, 0.0842972 )
+
+[node name="Sphere001_cell001" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8226, -1.90486, 1.13309 )
+
+[node name="Sphere001_cell002" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00763, -1.36534, -1.65734 )
+
+[node name="Sphere001_cell003" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.88077, -0.366619, 0.942757 )
+
+[node name="Sphere001_cell004" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.72774, -3.5047, 2.54317 )
+
+[node name="Sphere001_cell005" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76558, -0.56356, 2.91549 )
+
+[node name="Sphere001_cell006" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73995, -0.633684, -1.19742 )
+
+[node name="Sphere001_cell007" parent="." index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00845, 0.508133, -1.34096 )
+
+[node name="Sphere001_cell008" parent="." index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11938, -2.47872, 3.2645 )
+
+[node name="Sphere001_cell009" parent="." index="9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.339859, -2.04795, 3.80371 )
+
+[node name="Sphere001_cell010" parent="." index="10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46624, -1.96405, 3.15829 )
+
+[node name="Sphere001_cell011" parent="." index="11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53121, -2.04088, 1.70931 )
+
+[node name="Sphere001_cell012" parent="." index="12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95837, -3.95694, -2.64249 )
+
+[node name="Sphere001_cell013" parent="." index="13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83138, 1.52891, 1.81208 )
+
+[node name="Sphere001_cell014" parent="." index="14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12083, -2.28628, -3.02422 )
+
+[node name="Sphere001_cell015" parent="." index="15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45778, -4.52846, 0.748848 )
+
+[node name="Sphere001_cell016" parent="." index="16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.49072, -3.38543, -0.348557 )
+
+[node name="Sphere001_cell017" parent="." index="17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.37953, -2.46003, 0.412182 )
+
+[node name="Sphere001_cell018" parent="." index="18"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52563, -0.435841, -3.00708 )
+
+[node name="Sphere001_cell019" parent="." index="19"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09585, -4.67651, 1.39146 )
+
+[node name="Sphere001_cell020" parent="." index="20"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.34698, 3.05379, 2.61345 )
+
+[node name="Sphere001_cell021" parent="." index="21"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.92324, -2.2715, 1.74619 )
+
+[node name="Sphere001_cell022" parent="." index="22"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15258, 4.03796, 0.626766 )
+
+[node name="Sphere001_cell023" parent="." index="23"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.168343, 3.50811, 2.10603 )
+
+[node name="Sphere001_cell024" parent="." index="24"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98553, 0.363461, 2.45491 )
+
+[node name="Sphere001_cell025" parent="." index="25"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.86337, 3.06647, 1.19252 )
+
+[node name="Sphere001_cell026" parent="." index="26"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86199, -4.71532, -1.21941 )
+
+[node name="Sphere001_cell027" parent="." index="27"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.352699, 2.00857, 3.38197 )
+
+[node name="Sphere001_cell028" parent="." index="28"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19519, 0.240726, -3.49162 )
+
+[node name="Sphere001_cell029" parent="." index="29"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53256, 2.72792, 2.38376 )
+
+[node name="Sphere001_cell030" parent="." index="30"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.20904, 0.849396, 1.85233 )
+
+[node name="Sphere001_cell031" parent="." index="31"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74735, -3.6494, -0.418388 )
+
+[node name="Sphere001_cell032" parent="." index="32"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60363, 0.20261, 0.733116 )
+
+[node name="Sphere001_cell033" parent="." index="33"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43961, -1.44998, -1.31203 )
+
+[node name="Sphere001_cell034" parent="." index="34"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.94305, -2.06668, 0.692478 )
+
+[node name="Sphere001_cell035" parent="." index="35"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30896, 2.93642, 2.46227 )
+
+[node name="Sphere001_cell036" parent="." index="36"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.31975, -1.57528, 0.101395 )
+
+[node name="Sphere001_cell037" parent="." index="37"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.31673, 0.546833, -1.08504 )
+
+[node name="Sphere001_cell038" parent="." index="38"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.45176, -2.17267, -2.23579 )
+
+[node name="Sphere001_cell039" parent="." index="39"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.779839, -3.00676, -3.04077 )
+
+[node name="Sphere001_cell040" parent="." index="40"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39803, 2.88925, -1.26297 )
+
+[node name="Sphere001_cell041" parent="." index="41"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.924316, -1.52624, -3.31048 )
+
+[node name="Sphere001_cell042" parent="." index="42"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.199013, 3.51978, -3.20628 )
+
+[node name="Sphere001_cell043" parent="." index="43"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.06003, -2.27911, -0.874702 )
+
+[node name="Sphere001_cell044" parent="." index="44"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52643, 1.6781, -2.75346 )
+
+[node name="Sphere001_cell045" parent="." index="45"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.78232, 1.49287, 1.17464 )
+
+[node name="Sphere001_cell046" parent="." index="46"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500458, -3.19644, 2.27119 )
+
+[node name="Sphere001_cell047" parent="." index="47"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5686, 3.83165, -0.856312 )
+
+[node name="Sphere001_cell048" parent="." index="48"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8095, 2.40453, 0.0105743 )
+
+[node name="Sphere001_cell049" parent="." index="49"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107651, -4.83853, 0.0770721 )
+
+[node name="Sphere001_cell050" parent="." index="50"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91154, 2.80597, -1.86389 )
+
+[node name="Sphere001_cell051" parent="." index="51"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03907, -1.47077, 1.54229 )
+
+[node name="Sphere001_cell052" parent="." index="52"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25945, -0.264259, -2.88664 )
+
+[node name="Sphere001_cell053" parent="." index="53"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.81571, 3.35694, -2.48488 )
+
+[node name="Sphere001_cell054" parent="." index="54"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3244, 4.27679, 0.218815 )
+
+[node name="Sphere001_cell055" parent="." index="55"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.609146, -4.75829, 1.0616 )
+
+[node name="Sphere001_cell056" parent="." index="56"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.36539, -3.82646, 2.62425 )
+
+[node name="Sphere001_cell057" parent="." index="57"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47452, 1.32333, -1.9995 )
+
+[node name="Sphere001_cell058" parent="." index="58"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93437, -0.99696, 0.119965 )
+
+[node name="Sphere001_cell059" parent="." index="59"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45691, -0.971519, -1.0889 )
+
+[node name="Sphere001_cell060" parent="." index="60"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.27307, 1.66988, 0.716019 )
+
+[node name="Sphere001_cell061" parent="." index="61"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.865219, 0.982235, 2.59443 )
+
+[node name="Sphere001_cell062" parent="." index="62"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03024, 2.1936, 1.21984 )
+
+[node name="Sphere001_cell063" parent="." index="63"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85331, 1.34769, -0.0152588 )
+
+[node name="Sphere001_cell064" parent="." index="64"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45914, -1.01259, 3.57349 )
+
+[node name="Sphere001_cell065" parent="." index="65"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30011, 4.0444, -1.76241 )
+
+[node name="Sphere001_cell066" parent="." index="66"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34507, -1.67875, -2.64777 )
+
+[node name="Sphere001_cell067" parent="." index="67"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0607529, 2.76191, -2.71912 )
+
+[node name="Sphere001_cell068" parent="." index="68"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19747, -3.16701, -1.67309 )
+
+[node name="Sphere001_cell069" parent="." index="69"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32291, -2.22693, -2.50781 )
+
+[node name="Sphere001_cell070" parent="." index="70"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11211, 1.47604, -3.01762 )
+
+[node name="Sphere001_cell071" parent="." index="71"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238945, 0.579117, -1.90729 )
+
+[node name="Sphere001_cell072" parent="." index="72"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01833, 2.30733, -0.94297 )
+
+[node name="Sphere001_cell073" parent="." index="73"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.330917, -4.5966, -2.6641 )
+
+[node name="Sphere001_cell074" parent="." index="74"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75133, -0.167542, -0.88448 )
+
+[node name="Sphere001_cell075" parent="." index="75"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00156, -1.34921, 2.3083 )
+
+[node name="Sphere001_cell076" parent="." index="76"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77586, -3.69322, 0.99596 )
+
+[node name="Sphere001_cell077" parent="." index="77"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.462151, 4.1901, -1.02884 )
+
+[node name="Sphere001_cell078" parent="." index="78"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.194664, -0.442314, 3.79778 )
+
+[node name="Sphere001_cell079" parent="." index="79"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29137, -1.1947, -0.0625916 )
+
+[node name="Sphere001_cell080" parent="." index="80"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10892, -1.11231, -3.48732 )
+
+[node name="Sphere001_cell081" parent="." index="81"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43179, -1.03478, 1.67437 )
+
+[node name="Sphere001_cell082" parent="." index="82"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.69692, -3.26652, -1.30922 )
+
+[node name="Sphere001_cell083" parent="." index="83"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99857, -2.28788, -3.26914 )
+
+[node name="Sphere001_cell084" parent="." index="84"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8297, -4.64622, -0.894436 )
+
+[node name="Sphere001_cell085" parent="." index="85"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.994156, -4.68226, -1.72235 )
+
+[node name="Sphere001_cell086" parent="." index="86"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.94303, 0.231297, -1.32032 )
+
+[node name="Sphere001_cell087" parent="." index="87"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.982719, 0.512939, -3.27705 )
+
+[node name="Sphere001_cell088" parent="." index="88"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10881, -0.783697, -3.47342 )
+
+[node name="Sphere001_cell089" parent="." index="89"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15677, 0.904472, 3.19115 )
+
+[node name="Sphere001_cell090" parent="." index="90"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99172, -3.09052, 1.0374 )
+
+[node name="Sphere001_cell091" parent="." index="91"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72255, 1.6622, -2.35479 )
+
+[node name="Sphere001_cell092" parent="." index="92"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.749947, -4.882, -0.670139 )
+
+[node name="Sphere001_cell093" parent="." index="93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87999, -4.86423, 0.414085 )
+
+[node name="Sphere001_cell094" parent="." index="94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0856018, -4.60085, 2.34656 )
+
+[node name="Sphere001_cell095" parent="." index="95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3754, -4.71885, -0.607864 )
+
+[node name="Sphere001_cell096" parent="." index="96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64291, -3.79583, 2.05901 )
+
+[node name="Sphere001_cell097" parent="." index="97"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0725861, -3.42927, -2.30472 )
+
+[node name="Sphere001_cell098" parent="." index="98"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.83781, 3.68409, -0.431686 )
+
+[node name="Sphere001_cell099" parent="." index="99"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.17719, 0.715485, 1.76377 )
+
+[node name="Sphere001_cell100" parent="." index="100"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.16888, 1.75847, 2.76648 )
+
+[node name="Sphere001_cell101" parent="." index="101"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24836, 1.76772, -1.28677 )
+
+[node name="Sphere001_cell102" parent="." index="102"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.12582, -2.52974, 2.7825 )
+
+[node name="Sphere001_cell103" parent="." index="103"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61217, -1.04873, -0.932564 )

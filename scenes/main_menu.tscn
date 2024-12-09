@@ -50,4 +50,7 @@ custom_styles/focus = SubResource( 3 )
 custom_styles/normal = SubResource( 1 )
 flat = true
 
+[node name="cambiodeescena" type="Timer" parent="."]
+wait_time = 5.0
+
 [connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]

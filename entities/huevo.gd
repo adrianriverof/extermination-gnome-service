@@ -5,6 +5,7 @@ onready var level = get_parent()
 
 var damaged = false
 
+onready var impact_scene = preload("res://particles/huevo_particulas.tscn")
 
 func _ready():
 	play_normal_animation()
@@ -29,6 +30,12 @@ func damage():
 		pass
 	
 	$DamageCooldown.start()
+	
+	
+	var impact_instance = impact_scene.instance()
+	impact_instance.translation = self.translation
+	get_parent().add_child(impact_instance)
+	queue_free()
 
 
 
