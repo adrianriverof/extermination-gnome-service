@@ -9,6 +9,7 @@ func _ready():
 	
 	Engine.time_scale = 0.5
 	get_parent().stop_player_control()
+	$FinalScoreText.text = get_parent().get_score_text()
 	
 
 func _physics_process(delta):

@@ -1,13 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/results.gd" type="Script" id=1]
 [ext_resource path="res://assets/UI/FinalScore/Banner.png" type="Texture" id=2]
 [ext_resource path="res://assets/UI/FinalScore/Final Score.png" type="Texture" id=3]
-[ext_resource path="res://assets/UI/FinalScore/Yes Texture.png" type="Texture" id=4]
 [ext_resource path="res://assets/UI/FinalScore/play again return to menu.png" type="Texture" id=5]
 [ext_resource path="res://assets/UI/FinalScore/Checklist.png" type="Texture" id=6]
 [ext_resource path="res://assets/UI/FinalScore/square.png" type="Texture" id=7]
-[ext_resource path="res://assets/UI/FinalScore/No Texture.png" type="Texture" id=8]
 [ext_resource path="res://fonts/Jacquard_24/Jacquard24-Regular.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=2]
@@ -56,7 +54,7 @@ centered = false
 texture = ExtResource( 6 )
 centered = false
 
-[node name="FinalScore" type="Sprite" parent="."]
+[node name="FinalScoreBanner" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 centered = false
 
@@ -66,16 +64,8 @@ scale = Vector2( 0.941667, 0.943519 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="NoTexture" type="Sprite" parent="."]
-texture = ExtResource( 8 )
-centered = false
-
-[node name="YesTexture" type="Sprite" parent="."]
-texture = ExtResource( 4 )
-centered = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 1063.0
+[node name="FinalScoreText" type="RichTextLabel" parent="."]
+margin_left = 1061.0
 margin_top = 120.0
 margin_right = 1886.0
 margin_bottom = 397.0

@@ -77,7 +77,15 @@ func _show_score():
 	
 	#score_view.text = str(score)
 	score_view.text = str(score_manager.get_score())
-	
+
+func get_score_text():
+	return score_view.text
+func get_result_huevo_golpeado():
+	return score_manager.huevo_golpeado
+func get_result_huevo_golpeado_ultimo_segundo():
+	return score_manager.huevo_golpeado_ultimo_segundo
+
+
 func _show_time():
 	time_view.text = str("%2.2f" % total_time)
 func _end_when_timeout():

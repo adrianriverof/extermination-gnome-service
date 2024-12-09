@@ -3,6 +3,11 @@ class_name Scoremanager
 
 
 
+
+var huevo_golpeado = false
+var huevo_golpeado_ultimo_segundo = false
+
+
 var puntos_por_cuca = 100
 var multip_cuca_distancia = 2
 var multip_cuca_melee = 4
@@ -212,8 +217,10 @@ func segundos_en_combo():
 
 
 func golpear_huevo():
+	huevo_golpeado = true
 	if time_passed >= 19.0:
 		score *= 6
+		huevo_golpeado_ultimo_segundo = true
 	else:
 		score *= 3
 
