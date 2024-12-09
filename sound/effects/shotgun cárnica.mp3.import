@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/shotgun cárnica.mp3-ea282e285140dd837b9b77245358803c.mp3str"
+
+[deps]
+
+source_file="res://sound/effects/shotgun cárnica.mp3"
+dest_files=[ "res://.import/shotgun cárnica.mp3-ea282e285140dd837b9b77245358803c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

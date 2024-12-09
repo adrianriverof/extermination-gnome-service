@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/splash-6213.mp3-d54de7783c16cddb6c54fa3bcc433ae0.mp3str"
+
+[deps]
+
+source_file="res://sound/effects/splash-6213.mp3"
+dest_files=[ "res://.import/splash-6213.mp3-d54de7783c16cddb6c54fa3bcc433ae0.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

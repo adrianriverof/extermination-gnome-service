@@ -29,6 +29,7 @@ func damage():
 		play_hitted_animation()
 		pass
 	
+	level.play_huevo_sound()
 	$DamageCooldown.start()
 	
 	

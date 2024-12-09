@@ -260,6 +260,7 @@ func _shoot():
 			weapon_sprite.frame = 0
 			weapon_sprite.playing = true
 			
+			$gun_sound.play()
 			var raycast = $Head/Camera/RayCast
 			
 			
@@ -329,6 +330,8 @@ func _melee():
 			
 			
 			
+			
+			
 			raycast.cast_to.z = -DISTANCIA_MELEE
 			for _n in range(10):
 				randomize()
@@ -355,6 +358,8 @@ func _melee():
 						coll.damage()
 						reload_ammo() 
 						
+						$bonk_sound.play()
+						
 						#spawn_impact_at(coll_point)
 					else:
 						#print("spawn impact")
@@ -362,6 +367,8 @@ func _melee():
 						
 						# ganar puntos por impactar en pared
 						earn_score(50)
+						if !$bonk_sound.playing:
+							$bonkfail_sound.play()
 						
 						pass
 				

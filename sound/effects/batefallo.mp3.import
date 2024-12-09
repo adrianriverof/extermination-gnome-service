@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/batefallo.mp3-33f9356acdcf7e25beb023bc0571ec75.mp3str"
+
+[deps]
+
+source_file="res://sound/effects/batefallo.mp3"
+dest_files=[ "res://.import/batefallo.mp3-33f9356acdcf7e25beb023bc0571ec75.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

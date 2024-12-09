@@ -11,14 +11,14 @@
 ---------------
 1.1.1
 
-- Cargas
+- cargas
 
 ---------------
 1.2
 
 - sonidos
-- animaciones
-- huevo
+- animaciones menus
+- huevo*
 - efectos juice
 
 -----------------

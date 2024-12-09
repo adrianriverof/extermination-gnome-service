@@ -116,9 +116,13 @@ func add_score(points:int):
 
 
 
-
+func play_huevo_sound():
+	$huevo_sound.play()
 
 func respawn_player():
+	
+	$water_splash.play()
+	
 	player.velocity = Vector3.ZERO
 	player.translation = Vector3(-43.317, 4.475, 0.217)
 	player.rotation_degrees = Vector3(0,-89.747,0)
@@ -127,6 +131,7 @@ func respawn_player():
 
 
 func _on_Water_body_entered(body):
+	
 	print("cuerpo al agua")
 	if body.name == "Player":
 		respawn_player()
