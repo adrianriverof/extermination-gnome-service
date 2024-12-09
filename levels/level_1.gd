@@ -42,8 +42,8 @@ func _ready():
 	if enable_music:
 		$AudioStreamPlayer.play()
 	
-	get_tree().paused = false
-	Engine.time_scale = 1
+	#get_tree().paused = false
+	#Engine.time_scale = 1
 
 
 func _physics_process(delta):

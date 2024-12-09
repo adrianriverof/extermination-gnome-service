@@ -35,8 +35,6 @@ size = Vector2( 100, 100 )
 
 [node name="test_level" type="Spatial"]
 script = ExtResource( 5 )
-total_time = 2
-enable_music = false
 
 [node name="enemies" type="Spatial" parent="."]
 

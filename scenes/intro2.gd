@@ -6,8 +6,11 @@ onready var skiptimer = $SkipTextTimer
 
 func _ready():
 	skiplabel.visible = false
+	
 
 func go_to_menu():
+	
+	var level_preload = preload("res://scenes/main_menu.tscn")
 	print("nos vamos al menú")
 	get_tree().change_scene("res://scenes/main_menu.tscn")
 
