@@ -77,6 +77,8 @@ func _show_score():
 	#score_view.text = str(score)
 	score_view.text = str(score_manager.get_score())
 
+func get_score_number():
+	return score_manager.score
 func get_score_text():
 	return score_view.text
 func get_result_huevo_golpeado():
