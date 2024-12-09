@@ -15,9 +15,12 @@ onready var level = get_parent()
 # Constant variables for Movement
 var SPEED = 30
 
+export var reload_animation_active = true
+
 export var Run_Speed = 15
 export var Wall_Speed = 20
 export var Dash_Speed = 20
+
 
 export var GRAVITY = 20
 export var JUMP = 8
@@ -42,6 +45,7 @@ var double_jump_charged = true
 
 
 var player_input_active = true
+
 
 
 # Vectors for movement
@@ -286,7 +290,7 @@ func _shoot():
 				if raycast.is_colliding():
 					spawn_impact_at(coll_point)
 					
-					print(coll.name)
+					#print(coll.name)
 					
 					if coll.has_method("damage"):
 						#print(coll.name)
@@ -560,13 +564,14 @@ func sync_ammo():
 
 
 func _on_ReloadStartTimer_timeout():
-	weapon_sprite.frame = 0
-	weapon_sprite.animation = "reload"
-	weapon_sprite.playing = true
+	if reload_animation_active: 
+		weapon_sprite.frame = 0
+		weapon_sprite.animation = "reload"
+		weapon_sprite.playing = true
 
 func cucapared_knockback(knock_direction):
 	
-	print("knockback")
+	#print("knockback")
 	
 	
 	#direction = knock_direction

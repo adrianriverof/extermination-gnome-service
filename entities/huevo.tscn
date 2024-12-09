@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://models/scenary/Huevo.material" type="Material" id=1]
 [ext_resource path="res://entities/huevo.gd" type="Script" id=2]
@@ -6,6 +6,13 @@
 [sub_resource type="CapsuleShape" id=7]
 radius = 4.17899
 height = 2.13265
+
+[sub_resource type="SpatialMaterial" id=8]
+flags_unshaded = true
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.05
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "huevo_Sphere006"
@@ -344,6 +351,7 @@ bones/7/enabled = true
 bones/7/bound_children = [  ]
 
 [node name="huevomesh" type="MeshInstance" parent="huevo/Skeleton"]
+material_overlay = SubResource( 8 )
 mesh = SubResource( 1 )
 skin = SubResource( 2 )
 

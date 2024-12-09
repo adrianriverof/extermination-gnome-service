@@ -14,6 +14,7 @@ size = Vector2( 0.3, 0.3 )
 [node name="impact" type="Spatial"]
 
 [node name="Cross" type="Spatial" parent="."]
+visible = false
 
 [node name="Sprite" type="Sprite3D" parent="Cross"]
 transform = Transform( 0.03, 0, 0, 0, 0.445, 0, 0, 0, 1, 0, 0, 0 )
