@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/Countdown.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://fonts/Jacquard_24/Jacquard24-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://assets/UI/gnometips/1.png" type="Texture" id=10]
 [ext_resource path="res://shaketween/ShakeTween.tscn" type="PackedScene" id=11]
+[ext_resource path="res://sound/effects/minijoeg sfx momento dagas ritual.wav" type="AudioStream" id=12]
+[ext_resource path="res://sound/effects/AMBIENCE INSIDE.ogg" type="AudioStream" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -71,6 +73,30 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AudioStreamPlayer2:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -138,6 +164,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.505882 ), Color( 0, 0, 0, 0.505882 ), Color( 0, 0, 0, 0 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2.1, 3.1, 4.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AudioStreamPlayer2:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [node name="Countdown" type="CanvasLayer"]
 pause_mode = 2
@@ -164,7 +214,6 @@ texture = ExtResource( 2 )
 [node name="GnomecamCountdown" type="AnimatedSprite" parent="."]
 position = Vector2( 2, -59 )
 frames = SubResource( 1 )
-frame = 2
 playing = true
 centered = false
 
@@ -196,5 +245,11 @@ text = "3"
 autoplay = "countdown"
 anims/RESET = SubResource( 5 )
 anims/countdown = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

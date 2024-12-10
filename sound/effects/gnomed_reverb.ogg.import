@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/gnomed_reverb.ogg-3ff9210596b762f73d3a941e00a62d12.oggstr"
+
+[deps]
+
+source_file="res://sound/effects/gnomed_reverb.ogg"
+dest_files=[ "res://.import/gnomed_reverb.ogg-3ff9210596b762f73d3a941e00a62d12.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

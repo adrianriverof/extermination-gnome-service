@@ -97,6 +97,7 @@ func _ready():
 func _physics_process(delta):
 	
 	
+	_manage_bamboleo()
 	_manage_dash()
 	
 	_manage_tilting()
@@ -127,6 +128,12 @@ func _physics_process(delta):
 	
 	_regresar_a_escopeta()
 	
+
+func _manage_bamboleo():
+	if (is_on_floor() or is_wallruning()) and direction != Vector3.ZERO:
+		$CanvasLayer/Control/AnimationPlayer.play("run")
+	else:
+		$CanvasLayer/Control/AnimationPlayer.stop()
 
 func _regresar_a_escopeta():
 	if weapon_sprite.frame == repeat_frame and !weapon_sprite.animation == "reload":

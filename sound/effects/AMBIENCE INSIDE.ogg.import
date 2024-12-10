@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/AMBIENCE INSIDE.ogg-65087cff366a31279c7bc89597ac4f8a.oggstr"
+
+[deps]
+
+source_file="res://sound/effects/AMBIENCE INSIDE.ogg"
+dest_files=[ "res://.import/AMBIENCE INSIDE.ogg-65087cff366a31279c7bc89597ac4f8a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -19,9 +19,20 @@
 - sonidos*
 - animaciones menus*
 - huevo*
-- efectos juice
 
 -----------------
+1.3
+
+- mucho pulido*
+
+-----------------
+1.4
+
+- efectos juice
+- animaciones recuento resultados
+- números en pantalla
+- log de proezas
+
 
 
 

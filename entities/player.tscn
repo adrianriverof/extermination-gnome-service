@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://entities/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/weapons/BATE/bat1.png0013.png" type="Texture" id=2]
@@ -121,6 +121,38 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 960, 826 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "run"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 920, 826 ), Vector2( 960, 860 ), Vector2( 963, 826 ), Vector2( 960, 850 ), Vector2( 920, 826 ) ]
+}
+
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 57 ), ExtResource( 63 ), ExtResource( 62 ), ExtResource( 60 ), ExtResource( 59 ), ExtResource( 58 ), ExtResource( 61 ) ],
@@ -184,8 +216,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_top = -254.0
-margin_bottom = -254.0
+margin_left = 960.0
+margin_top = 826.0
+margin_right = 960.0
+margin_bottom = 826.0
 rect_scale = Vector2( 2, 2 )
 
 [node name="ShotgunShoot" type="AnimatedSprite" parent="CanvasLayer/Control"]
@@ -194,6 +228,12 @@ scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 4 )
 speed_scale = 3.0
 centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control"]
+autoplay = "run"
+playback_speed = 2.5
+anims/RESET = SubResource( 6 )
+anims/run = SubResource( 7 )
 
 [node name="Position2D" type="Control" parent="CanvasLayer"]
 anchor_left = 0.5
@@ -245,10 +285,11 @@ stream = ExtResource( 66 )
 
 [node name="bonkfail_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 68 )
+volume_db = -7.0
 
 [node name="bonkmetal" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 76 )
-volume_db = 7.0
+volume_db = 10.0
 
 [node name="gun_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 67 )
