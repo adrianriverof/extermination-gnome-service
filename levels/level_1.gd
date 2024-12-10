@@ -118,7 +118,7 @@ func add_score(points:int):
 
 func play_huevo_sound():
 	$huevo_sound.play()
-
+ 
 func respawn_player():
 	
 	$water_splash.play()

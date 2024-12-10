@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/minijoeg sfx momento dagas ritual.wav-c038969a1c56407e5dd2247cd93a4eaa.sample"
+
+[deps]
+
+source_file="res://sound/effects/minijoeg sfx momento dagas ritual.wav"
+dest_files=[ "res://.import/minijoeg sfx momento dagas ritual.wav-c038969a1c56407e5dd2247cd93a4eaa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

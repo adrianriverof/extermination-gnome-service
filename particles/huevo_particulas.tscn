@@ -42,7 +42,7 @@ texture = ExtResource( 1 )
 [node name="moradas" type="CPUParticles" parent="."]
 material_override = SubResource( 3 )
 emitting = false
-amount = 150
+amount = 300
 lifetime = 5.0
 one_shot = true
 speed_scale = 2.06
@@ -61,7 +61,7 @@ script = ExtResource( 2 )
 [node name="verdes" type="CPUParticles" parent="."]
 material_override = SubResource( 4 )
 emitting = false
-amount = 100
+amount = 200
 lifetime = 5.0
 one_shot = true
 speed_scale = 2.06
@@ -79,3 +79,7 @@ script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.5815 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="moradas" method="_on_Timer_timeout"]

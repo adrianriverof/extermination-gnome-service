@@ -5,8 +5,11 @@ var loaded_level = null
 var is_loading = true  # Bandera para verificar si la carga ha finalizado.
 
 func _ready():
-	$AudioStreamPlayer.play()
+	Engine.time_scale = 1
 	iniciar_precarga()
+
+func iniciar_sonido():
+	$AudioStreamPlayer.play()
 
 func iniciar_precarga():
 	print("Iniciando la precarga del nivel...")
@@ -44,3 +47,20 @@ func _input(event):
 
 func _on_Button_button_down():
 	go_to_level()
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "intro":
+		$AnimationPlayer.play("idle")
+	if anim_name == "idle":
+		$AnimationPlayer.play("idle")
+
+
+func _on_Button_mouse_entered():
+	$elements/Play/playanimation.play("move")
+
+
+
+
+func _on_Button_mouse_exited():
+	$elements/Play/playanimation.play_backwards("move")

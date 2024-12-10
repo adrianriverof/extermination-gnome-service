@@ -56,7 +56,8 @@ func _ready():
 	$FinalScoreText.text = str(final_score)
 
 func _physics_process(delta):
-	Engine.time_scale -= delta
+	if Engine.time_scale > 0.01:
+		Engine.time_scale -= delta
 
 func go_to_menu():
 	print("nos vamos al menú")

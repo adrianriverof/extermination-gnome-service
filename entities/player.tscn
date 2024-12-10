@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://entities/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/weapons/BATE/bat1.png0013.png" type="Texture" id=2]
@@ -68,6 +68,14 @@
 [ext_resource path="res://sound/effects/bonk.ogg" type="AudioStream" id=66]
 [ext_resource path="res://sound/effects/Shotgun.ogg" type="AudioStream" id=67]
 [ext_resource path="res://sound/effects/batefallo.ogg" type="AudioStream" id=68]
+[ext_resource path="res://assets/weapons/BATE_MISS/bat1.png0010.png" type="Texture" id=69]
+[ext_resource path="res://assets/weapons/BATE_MISS/bat1.png0009.png" type="Texture" id=70]
+[ext_resource path="res://assets/weapons/BATE_MISS/bat1.png0006.png" type="Texture" id=71]
+[ext_resource path="res://assets/weapons/BATE_MISS/bat1.png0008.png" type="Texture" id=72]
+[ext_resource path="res://assets/weapons/BATE_MISS/bat1.png0005.png" type="Texture" id=73]
+[ext_resource path="res://assets/weapons/BATE_MISS/bat1.png0007.png" type="Texture" id=74]
+[ext_resource path="res://assets/weapons/BATE_MISS/bat1.png0004.png" type="Texture" id=75]
+[ext_resource path="res://sound/effects/mixkit-punching-boxing-gloves-hit-2103.ogg" type="AudioStream" id=76]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -80,6 +88,11 @@ animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 20 ), ExtResource( 24 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 56 ) ],
 "loop": false,
 "name": "bate",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 75 ), ExtResource( 73 ), ExtResource( 71 ), ExtResource( 74 ), ExtResource( 72 ), ExtResource( 70 ), ExtResource( 69 ), null, null, null, null, null ],
+"loop": false,
+"name": "batemiss",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 14 ) ],
@@ -179,7 +192,6 @@ rect_scale = Vector2( 2, 2 )
 position = Vector2( -480, -413 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 4 )
-frame = 11
 speed_scale = 3.0
 centered = false
 
@@ -233,6 +245,10 @@ stream = ExtResource( 66 )
 
 [node name="bonkfail_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 68 )
+
+[node name="bonkmetal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 76 )
+volume_db = 7.0
 
 [node name="gun_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 67 )

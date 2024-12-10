@@ -129,7 +129,7 @@ func _physics_process(delta):
 	
 
 func _regresar_a_escopeta():
-	if weapon_sprite.frame == 10 and !weapon_sprite.animation == "reload":
+	if weapon_sprite.frame == repeat_frame and !weapon_sprite.animation == "reload":
 		weapon_sprite.animation = "neworder"
 		weapon_sprite.playing = false
 	# añadir aquí bamboleo al poner y quitar arma?
@@ -322,21 +322,13 @@ func _melee():
 		
 		if !weapon_sprite.playing or weapon_sprite.frame > repeat_frame:
 			
-			
-			
-			weapon_sprite.animation = "bate"
-			weapon_sprite.frame = 0
-			weapon_sprite.playing = true
-			
-			
-			
-			
-			
 			raycast.cast_to.z = -DISTANCIA_MELEE
+			var spread = SPREAD_MELEE
+			var has_bonked = false
+			var has_bonked_enemy = false
+			
 			for _n in range(10):
 				randomize()
-				#print("---", n)
-				var spread = SPREAD_MELEE
 				
 				if _n > 1:
 					raycast.cast_to.x = rand_range(-spread, spread)
@@ -344,40 +336,52 @@ func _melee():
 				else:
 					raycast.cast_to.x = 0
 					raycast.cast_to.y = 0
-				#print(raycast.cast_to)
-				#print(rand_range(-spread, spread))
 				
 				raycast.force_raycast_update()
 				
 				var coll = raycast.get_collider()
 				var coll_point = raycast.get_collision_point()
-				#print("punto de colisión = ", coll_point)
+				
 				
 				if raycast.is_colliding():
+					has_bonked = true
 					if coll.has_method("damage"):
 						coll.damage()
 						reload_ammo() 
-						
-						$bonk_sound.play()
-						
-						#spawn_impact_at(coll_point)
+						has_bonked_enemy = true
+						#_play_bate_animation()
 					else:
-						#print("spawn impact")
-						#print(coll_point)
-						
-						# ganar puntos por impactar en pared
 						earn_score(50)
-						if !$bonk_sound.playing:
-							$bonkfail_sound.play()
-						
-						pass
-				
+					
+					
 					spawn_impact_at(coll_point)
-	
+					
+				
+			
+			if has_bonked_enemy:
+				_play_bate_animation()
+			elif has_bonked:
+				_play_batenotenemy_animation()
+			else:
+				_play_batemiss_animation()
 
+func _play_bate_animation():
+	$bonk_sound.play()
+	weapon_sprite.animation = "bate"
+	weapon_sprite.frame = 0
+	weapon_sprite.playing = true
 
+func _play_batemiss_animation():
+	$bonkfail_sound.play()
+	weapon_sprite.animation = "batemiss"
+	weapon_sprite.frame = 0
+	weapon_sprite.playing = true
 
-
+func _play_batenotenemy_animation():
+	weapon_sprite.animation = "bate"
+	weapon_sprite.frame = 0
+	weapon_sprite.playing = true
+	$bonkmetal.play()
 
 func dash():
 	

@@ -21,21 +21,24 @@ func damage():
 		play_hitted_animation()
 		damaged = true
 		
+		
+		var impact_instance = impact_scene.instance()
+		impact_instance.translation = self.translation
+		get_parent().add_child(impact_instance)
+	
+		print('dañado al huevo ESTO SOLO DEBERÏA SALIR UNA VEZ')
 		level.score_manager.golpear_huevo()
 		
 	elif $DamageCooldown.is_stopped():
 		# dar puntos por golpear
 		print("golpeado")
 		play_hitted_animation()
-		pass
+		
 	
 	level.play_huevo_sound()
 	$DamageCooldown.start()
 	
 	
-	var impact_instance = impact_scene.instance()
-	impact_instance.translation = self.translation
-	get_parent().add_child(impact_instance)
 	queue_free()
 
 
