@@ -1,14 +1,15 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/dummy_intro/image.png" type="Texture" id=1]
 [ext_resource path="res://scenes/main_menu.gd" type="Script" id=2]
 [ext_resource path="res://sound/20 sec game jam menu.ogg" type="AudioStream" id=3]
-[ext_resource path="res://scenes/EGS2_menu_final.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/mainmenu/disparo.png" type="Texture" id=4]
 [ext_resource path="res://assets/UI/mainmenu/lepixel_background.png" type="Texture" id=5]
 [ext_resource path="res://assets/UI/mainmenu/play.png" type="Texture" id=6]
 [ext_resource path="res://assets/UI/mainmenu/figures.png" type="Texture" id=7]
 [ext_resource path="res://assets/UI/mainmenu/title.png" type="Texture" id=8]
 [ext_resource path="res://assets/UI/mainmenu/lepixel_oscuro.png" type="Texture" id=9]
+[ext_resource path="res://assets/UI/mainmenu/EGS2 menú final 2.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -66,6 +67,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("elements/Figures/Disparo:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "idle"
@@ -110,7 +123,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "intro"
-length = 1.1
+length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("elements/Title:position")
 tracks/0/interp = 2
@@ -160,6 +173,18 @@ tracks/3/keys = {
 "args": [  ],
 "method": "iniciar_sonido"
 } ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("elements/Figures/Disparo:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.7, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -262,15 +287,20 @@ position = Vector2( 1085.5, 9.00005 )
 scale = Vector2( 31.8889, 117.778 )
 texture = ExtResource( 9 )
 
+[node name="Disparo" type="Sprite" parent="elements/Figures"]
+visible = false
+position = Vector2( 580, 1 )
+texture = ExtResource( 4 )
+
 [node name="LepixelBackground" type="Sprite" parent="."]
 position = Vector2( 1081, 553 )
 scale = Vector2( 392, 250.714 )
 z_index = -5
 texture = ExtResource( 5 )
 
-[node name="Egs2MenuFinal" type="Sprite" parent="."]
+[node name="Egs2MenúFinal2" type="Sprite" parent="."]
 visible = false
-texture = ExtResource( 4 )
+texture = ExtResource( 10 )
 centered = false
 
 [connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
