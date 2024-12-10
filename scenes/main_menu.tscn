@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/dummy_intro/image.png" type="Texture" id=1]
 [ext_resource path="res://scenes/main_menu.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/UI/mainmenu/title.png" type="Texture" id=8]
 [ext_resource path="res://assets/UI/mainmenu/lepixel_oscuro.png" type="Texture" id=9]
 [ext_resource path="res://assets/UI/mainmenu/EGS2 menú final 2.png" type="Texture" id=10]
+[ext_resource path="res://assets/UI/mainmenu/exit.png" type="Texture" id=11]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -79,6 +80,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("elements/Exit:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 177, 779 ) ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "idle"
@@ -123,7 +136,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "intro"
-length = 1.2
+length = 1.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("elements/Title:position")
 tracks/0/interp = 2
@@ -131,7 +144,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.8 ),
+"times": PoolRealArray( 0.5, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -670, 287 ), Vector2( 535, 287 ) ]
@@ -143,7 +156,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.8 ),
+"times": PoolRealArray( 0.5, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 2514, 539 ), Vector2( 959, 539 ) ]
@@ -155,7 +168,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1.1 ),
+"times": PoolRealArray( 0.5, 1.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -640, 631 ), Vector2( 191, 631 ) ]
@@ -167,7 +180,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -181,10 +194,53 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.7, 1, 1.2 ),
+"times": PoolRealArray( 0.5, 1.2, 1.5, 1.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("elements/Exit:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.5, 1.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -666, 779 ), Vector2( 177, 779 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 177, 779 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "move"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 177, 779 ), Vector2( 230, 779 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -221,6 +277,7 @@ tracks/0/keys = {
 [node name="MainMenu" type="Node2D"]
 position = Vector2( 2, 0 )
 script = ExtResource( 2 )
+platform_desktop = true
 
 [node name="Image" type="Sprite" parent="."]
 visible = false
@@ -255,6 +312,16 @@ custom_styles/focus = SubResource( 3 )
 custom_styles/normal = SubResource( 1 )
 flat = true
 
+[node name="ExitButton" type="Button" parent="."]
+margin_left = 63.0
+margin_top = 731.0
+margin_right = 286.0
+margin_bottom = 832.0
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 1 )
+flat = true
+
 [node name="cambiodeescena" type="Timer" parent="."]
 wait_time = 5.0
 
@@ -269,6 +336,14 @@ anims/intro = SubResource( 5 )
 [node name="Title" type="Sprite" parent="elements"]
 position = Vector2( 535, 287 )
 texture = ExtResource( 8 )
+
+[node name="Exit" type="Sprite" parent="elements"]
+position = Vector2( 177, 779 )
+texture = ExtResource( 11 )
+
+[node name="exitanimation" type="AnimationPlayer" parent="elements/Exit"]
+anims/RESET = SubResource( 9 )
+anims/move = SubResource( 10 )
 
 [node name="Play" type="Sprite" parent="elements"]
 position = Vector2( 191, 631 )
@@ -298,6 +373,13 @@ scale = Vector2( 392, 250.714 )
 z_index = -5
 texture = ExtResource( 5 )
 
+[node name="lepixeltapar" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1081, 553 )
+scale = Vector2( 392, 250.714 )
+z_index = 1
+texture = ExtResource( 5 )
+
 [node name="Egs2MenúFinal2" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 10 )
@@ -306,4 +388,7 @@ centered = false
 [connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
 [connection signal="mouse_entered" from="Button" to="." method="_on_Button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_Button_mouse_exited"]
+[connection signal="button_down" from="ExitButton" to="." method="_on_ExitButton_button_down"]
+[connection signal="mouse_entered" from="ExitButton" to="." method="_on_ExitButton_mouse_entered"]
+[connection signal="mouse_exited" from="ExitButton" to="." method="_on_ExitButton_mouse_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

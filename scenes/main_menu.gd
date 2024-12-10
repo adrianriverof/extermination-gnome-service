@@ -4,9 +4,24 @@ var loader = null
 var loaded_level = null
 var is_loading = true  # Bandera para verificar si la carga ha finalizado.
 
+
+
+export var platform_web = false
+export var platform_desktop = false
+
+
 func _ready():
 	Engine.time_scale = 1
 	iniciar_precarga()
+	$lepixeltapar.visible = true
+	
+	if platform_web:
+		$ExitButton.disabled = true
+		$elements/Exit.visible = false
+	if platform_desktop:
+		$ExitButton.disabled = false
+		$elements/Exit.visible = true
+	
 
 func iniciar_sonido():
 	$AudioStreamPlayer.play()
@@ -31,6 +46,10 @@ func _process(delta):
 			loader = null
 			is_loading = false  # Marca la carga como finalizada.
 			set_process(false)
+			
+			
+			$AnimationPlayer.play("intro")
+			$lepixeltapar.visible = false
 
 func go_to_level():
 	if is_loading:
@@ -64,3 +83,22 @@ func _on_Button_mouse_entered():
 
 func _on_Button_mouse_exited():
 	$elements/Play/playanimation.play_backwards("move")
+
+
+func _on_ExitButton_button_down():
+	get_tree().quit()
+	
+
+
+
+
+func _on_ExitButton_mouse_entered():
+	$elements/Exit/exitanimation.play("move")
+
+func _on_ExitButton_mouse_exited():
+	$elements/Exit/exitanimation.play_backwards("move")
+
+
+
+
+
